@@ -3,7 +3,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :timeoutable
-  has_many :posts, dependent: :destroy 
+  has_many :posts, dependent: :destroy
 
   has_many :likes, dependent: :destroy
 
@@ -17,7 +17,7 @@ class User < ApplicationRecord
   foreign_key: "followed_id",
   dependent: :destroy
 
-  has_many :following, through: :active_relationships, source: :followed #
+  has_many :following, through: :active_relationships, source: :followed 
 
   has_many :follower, through: :passive_relationships, source: :following
 
