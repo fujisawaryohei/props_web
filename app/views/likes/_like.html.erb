@@ -7,6 +7,7 @@
   <% if post.likes.find_by(user_id: current_user.id).exists? %>
     <div class="change_to_unlike" color="blue">
       <p>Like!</p>
+      <!-- **以下のlinkのpathにlike_idを追加する必要あり-->
       <%= link_to post_like_path(post_id: post.id), method: :delete, id: "id_like", remote: true do %>
         <!-- **以下の文字の代わりにimgタグでボタンを設置 -->
         <!-- このボタンを押すとLike -> Unlikeになる -->
