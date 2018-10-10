@@ -1,0 +1,34 @@
+<!-- 当部分テンプレートは一つの投稿(post)に対するものとして想定している-->
+
+<!-- ユーザがログインしている場合-->
+<% if user_signed_in? %>
+  <!-- 投稿をすでにクリップしている場合-->
+    <!-- **以下のifの条件は後で変数にする-->
+  <% if post.clips.find_by(user_id: current_user.id).exists? %>
+    <div class="change_to_unclip">
+      <p>Clip</p>
+      <!-- **以下のlinkのpathにclip_idを追加する必要あり-->
+      <%= link_to post_clip_path(post_id: post.id), method: :delete, id: "id_clip", remote: true do %>
+        <!-- **以下の文字の代わりにimgタグでボタンを設置 -->
+        <!-- このボタンを押すとClip -> Unclipになる -->
+        Change_to_unclip
+      <% end %>
+    </div>
+  <% else %>
+    <!-- 投稿をまだクリップしていない場合-->
+    <div class="change_to_clip">
+      <p>Unclip</p>
+      <%= link_to post_clips_path, method: :post, id: "id_clip", remote: true do %>
+        <!-- **以下の文字の代わりにimgタグでボタンを設置 -->
+        <!-- このボタンを押すとUnclip -> Clipになる -->
+        change_to_clip
+      <% end %>
+    </div>
+    <!-- **以下のclip数は後で変数にする -->
+    <span>**<%= Clip.where(post_id: params[:post_id]).count %> clips**</span>
+  <% end %>
+<!-- ユーザがログインしていない場合-->
+<% else %>
+  <!-- **以下のclip数は後で変数にする -->
+  <span>**<%= Clip.where(post_id: params[:post_id]).count %> clips**</span>
+<% end %>
