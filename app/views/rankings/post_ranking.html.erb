@@ -1,14 +1,189 @@
-<!-- **要編集** 投稿ランキング用のページ(動作確認用)-->
-<h1>Post_ranking</h1>
+<!DOCTYPE HTML>
+<html lang="jp">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title></title>
+        <!--bootstrap4-->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <!--bootstrap4-->
 
-<div>
-  <% @post_ranks.each.with_index(1) do |post, i| %>
-    <div>
-      <h2>Rank <%= i %> : <%= post.title %></h2>
-      <h3>Track Image: <%= post.track_image %></h3>
-      <h3><%= post.text %></h3>
-      <h3>投稿者: <%= post.user.name %> </h3>
-      <%= image_tag "#{ post.user.image }" %>
-    </div>
-  <% end %>
-</div>
+        <!-- fontawesome -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    </head>
+    <body>
+        <header class="bg-white">
+            <div class="header">
+                <div class="header-content">
+                    <a href="#"><img class="props-logo" src="..." alt="props"></a>
+                    <form><input type="text" placeholder="投稿・ユーザーを検索" class="bg-gray">
+                        <label><i class="fas fa-search"></i></label>
+                    </form>
+                    <a href="#" class="bell mr-auto"><i class="far fa-bell bg-gray"></i></a>
+                    <a href="#" class="user-icon"></a>
+                    <p><a href="#" class="orange-button text-white bg-orange" id="post-button">投稿</a></p>
+                </div>
+            </div>
+        </header>
+
+        <div class="all container">
+            <div class="row">
+                <div class="col-md-8 main">
+                    <div class="box bg-white">
+                        <p class="ranking-post-title mb-0" >投稿ランキング</p>
+<!--  main ここから繰り返し -->
+                        <% @post_ranks.each.with_index(1) do |post, i| %>
+                            <div class="ranking-number"><span class="text-white"><%= i %></span></div>
+                            <div class="post-ranking-content">
+                                <div class="container pr-0">
+                                    <div class="row">
+                                        <div class="col-left col-md-3 p-0">
+                                            <div class="post-image">
+                                                <!-- <img src="" alt="" class=""> -->
+                                                <%= image_tag "#{ post.track_image }"%>
+                                                <div class="song-info text-white">
+                                                    <p class="song-title"><i class="far fa-user"></i>WAY OF GLORY</p>
+                                                    <p class="artist"><i class="far fa-dot-circle"></i>AAA</p>
+                                                </div>
+                                            </div><!-- /post-image -->
+                                        </div>
+                                        <div class="col-right col-md-9">
+                                            <div class="post-user">
+                                                <a href="#" class="user-icon">
+                                                </a>
+                                                <p class="user-name text-gray"><a href="#"><%= post.user.name %></a></p>
+                                                <p ><%= post.title %></p>
+                                            </div><!-- /post-user -->
+                                            <div class="clear"></div>
+                                            <p class="text text-gray"><%= post.text %></p>
+                                        </div>
+                                    </div><!-- /row -->
+                                </div><!-- /container -->
+                                <div class="action" id="post-content-action">
+                                    <i class="far fa-comment-dots"><p>12</p></i>
+                                    <i class="fas fa-heart"><p>212</p></i>
+                                    <i class="fas fa-link"><p>106</p></i>
+                                    <i class="fas fa-external-link-alt"></i>
+                                </div><!-- /action -->
+                            </div><!-- /post-ranking-content -->
+                            <hr class="mb-0">
+                        <% end %>
+<!--  /main ここまで繰り返し -->
+
+                    </div><!-- /box -->
+                </div><!-- /col-md-8 main -->
+
+
+                <div class="col-md-4 side-bar">
+                    <div class="box bg-white mb-3">
+                        <div class="ranking-user">
+                            <p class="ranking-user-title"><i class="far fa-user"></i>ユーザーランキング</p>
+<!--  side-bar ユーザーランキング ここから繰り返し -->
+                            <div class="user-panel">
+                                <div class="flex mb-2">
+                                    <a href="#" class="user-icon"></a>
+                                    <p class="user-name mr-auto"><a href="#">Name</a></p>
+                                    <p><a href="#" class="orange-button text-orange">フォロー</a></p>
+                                </div>
+                                <p class="user-explanation text-gray">かぎはゴーシュのアンコール窓たちが仲間をつかまえるかっこうですた。するとちょっと下手ございございという下やた。生</p>
+                                <hr>
+                            </div>
+<!--  /side-bar ユーザーランキング ここまで繰り返し -->
+<!--  side-bar ユーザーランキング ここから繰り返し -->
+                            <div class="user-panel">
+                                <div class="flex mb-2">
+                                    <a href="#" class="user-icon"></a>
+                                    <p class="user-name mr-auto"><a href="#">Name</a></p>
+                                    <p><a href="#" class="orange-button text-orange">フォロー</a></p>
+                                </div>
+                                <p class="user-explanation text-gray">かぎはゴーシュのアンコール窓たちが仲間をつかまえるかっこうですた。するとちょっと下手ございございという下やた。生</p>
+                                <hr>
+                            </div>
+<!--  /side-bar ユーザーランキング ここまで繰り返し -->
+<!--  side-bar ユーザーランキング ここから繰り返し -->
+                            <div class="user-panel">
+                                <div class="flex mb-2">
+                                    <a href="#" class="user-icon"></a>
+                                    <p class="user-name mr-auto"><a href="#">Name</a></p>
+                                    <p><a href="#" class="orange-button text-orange">フォロー</a></p>
+                                </div>
+                                <p class="user-explanation text-gray">かぎはゴーシュのアンコール窓たちが仲間をつかまえるかっこうですた。するとちょっと下手ございございという下やた。生</p>
+                                <hr>
+                            </div>
+<!--  /side-bar ユーザーランキング ここまで繰り返し -->
+                            <a href="#" class="more">もっと見る</a>
+                        </div><!-- /ranking-user -->
+                    </div><!-- /box -->
+
+                    <div class="box bg-white">
+                        <div class="ranking-post">
+                            <p class="ranking-post-title"><i class="far fa-user"></i>投稿ランキング</p>
+<!--  side-bar 投稿ランキング ここから繰り返し -->
+                            <div class="post-panel">
+                                <div class="flex">
+                                    <p class="post-panel-title mr-auto">ここに見出しが入ります。</p>
+                                    <img src="..." alt="" class="post-panel-image">
+                                </div>
+                                <div class="action" id="post-panel-action">
+                                    <i class="far fa-comment-dots"><p>58</p></i>
+                                    <i class="fas fa-heart"><p>2</p></i>
+                                    <i class="fas fa-link"><p>1</p></i>
+                                </div>
+                                <div class="flex">
+                                    <a href="#" class="user-icon" id="post-panel-user-icon"></a>
+                                    <p class="user-name" id="post-panel-user-name"><a href="#">Name</a></p>
+                                </div>
+                                <hr>
+                            </div><!-- /post-panel -->
+<!--  /side-bar 投稿ランキング ここまで繰り返し -->
+<!--  side-bar 投稿ランキング ここから繰り返し -->
+                            <div class="post-panel">
+                                <div class="flex">
+                                    <p class="post-panel-title mr-auto">ここに見出しが入ります。</p>
+                                    <img src="..." alt="" class="post-panel-image">
+                                </div>
+                                <div class="action" id="post-panel-action">
+                                    <i class="far fa-comment-dots"><p>58</p></i>
+                                    <i class="fas fa-heart"><p>2</p></i>
+                                    <i class="fas fa-link"><p>1</p></i>
+                                </div>
+                                <div class="flex">
+                                    <a href="#" class="user-icon" id="post-panel-user-icon"></a>
+                                    <p class="user-name" id="post-panel-user-name"><a href="#">Name</a></p>
+                                </div>
+                                <hr>
+                            </div><!-- /post-panel -->
+<!--  /side-bar 投稿ランキング ここまで繰り返し -->
+<!--  side-bar 投稿ランキング ここから繰り返し -->
+                            <div class="post-panel">
+                                <div class="flex">
+                                    <p class="post-panel-title mr-auto">ここに見出しが入ります。</p>
+                                    <img src="..." alt="" class="post-panel-image">
+                                </div>
+                                <div class="action" id="post-panel-action">
+                                    <i class="far fa-comment-dots"><p>58</p></i>
+                                    <i class="fas fa-heart"><p>2</p></i>
+                                    <i class="fas fa-link"><p>1</p></i>
+                                </div>
+                                <div class="flex">
+                                    <a href="#" class="user-icon" id="post-panel-user-icon"></a>
+                                    <p class="user-name" id="post-panel-user-name"><a href="#">Name</a></p>
+                                </div>
+                                <hr>
+                            </div><!-- /post-panel -->
+<!--  /side-bar 投稿ランキング ここまで繰り返し -->
+                            <a href="#" class="more">もっと見る</a>
+                        </div><!-- /ranking-post -->
+                    </div><!-- /box -->
+                </div><!-- /col-md-4 side-bar bg-white -->
+            </div><!-- /row -->
+        </div><!-- /container -->
+
+        <!--bootstrap4-->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+        <!--bootstrap4-->
+    </body>
+</html>
