@@ -1,0 +1,29 @@
+.user-ranking-content{
+	padding: 0 20px;
+    margin-top: -30px;
+}
+
+.user-ranking-content .user-icon{
+	width: 70px;
+	height: 70px;
+	float: none;
+}
+
+.user-ranking-content .user-name{
+	font-size: 1.3rem;
+	margin-bottom: 1rem;
+}
+
+.follow-follower{
+	padding-left: 0;
+    padding-top: 1rem;
+}
+
+.follow-follower li{
+	display: inline-block;
+	margin-right: 1rem;
+}
+
+.follow-follower .text-light-gray{
+	font-size: .75rem;
+}
