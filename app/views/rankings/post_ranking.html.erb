@@ -1,0 +1,14 @@
+<!-- **要編集** 投稿ランキング用のページ(動作確認用)-->
+<h1>Post_ranking</h1>
+
+<div>
+  <% @post_ranks.each.with_index(1) do |post, i| %>
+    <div>
+      <h2>Rank <%= i %> : <%= post.title %></h2>
+      <h3>Track Image: <%= post.track_image %></h3>
+      <h3><%= post.text %></h3>
+      <h3>投稿者: <%= post.user.name %> </h3>
+      <%= image_tag "#{ post.user.image }" %>
+    </div>
+  <% end %>
+</div>
