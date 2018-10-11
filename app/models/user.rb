@@ -17,7 +17,7 @@ class User < ApplicationRecord
   foreign_key: "followed_id",
   dependent: :destroy
 
-  has_many :following, through: :active_relationships, source: :followed 
+  has_many :following, through: :active_relationships, source: :followed
 
   has_many :follower, through: :passive_relationships, source: :following
 
@@ -26,4 +26,11 @@ class User < ApplicationRecord
   has_many :notifications, dependent: :destroy
 
   has_many :comments, dependent: :destroy
+
+#user登録関係のvalidation
+validates :name, presence:true, length: {maximum: 24}
+validates :email, presence:true, length: {maximum: 24}
+validates :email, presence:true ,length: {minimum:6}
+validates :password, presence:true, length: {maximum: 10}
+validates :password, presence:true, length: {minimum:6}
 end
