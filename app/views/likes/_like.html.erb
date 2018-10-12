@@ -6,29 +6,39 @@
     <!-- **以下のifの条件は後で変数にする-->
   <% if post.likes.find_by(user_id: current_user.id).exists? %>
     <div class="change_to_unlike" color="blue">
-      <p>Like!</p>
       <!-- **以下のlinkのpathにlike_idを追加する必要あり-->
       <%= link_to post_like_path(post_id: post.id), method: :delete, id: "id_like", remote: true do %>
-        <!-- **以下の文字の代わりにimgタグでボタンを設置 -->
         <!-- このボタンを押すとLike -> Unlikeになる -->
-        Change_to_unlike
+        <i class="fas fa-heart">
+          <!-- **以下のlike数は後で変数にする -->
+          <p><%= Like.where(post_id: params[:post_id]).count %></p>
+        </i>
       <% end %>
     </div>
   <% else %>
     <!-- 投稿をまだいいねしていない場合-->
     <div class="change_to_like" color="red">
-      <p>Unlike</p>
       <%= link_to post_likes_path, method: :post, id: "id_like", remote: true do %>
         <!-- **以下の文字の代わりにimgタグでボタンを設置 -->
         <!-- このボタンを押すとUnlike -> Likeになる -->
-        change_to_like
+        <i class="far fa-heart">
+          <!-- **以下のlike数は後で変数にする -->
+          <p><%= Like.where(post_id: params[:post_id]).count %></p>
+        </i>
       <% end %>
     </div>
-    <!-- **以下のlike数は後で変数にする -->
-    <span>**<%= Like.where(post_id: params[:post_id]).count %> likes**</span>
   <% end %>
 <!-- ユーザがログインしていない場合-->
 <% else %>
-  <!-- **以下のlike数は後で変数にする -->
-  <span>**<%= Like.where(post_id: params[:post_id]).count %> likes**</span>
+  <i class="far fa-heart">
+    <!-- **以下のlike数は後で変数にする -->
+    <p><%= Like.where(post_id: params[:post_id]).count %></p>
+  </i>
 <% end %>
+
+
+<div class="action" id="post-panel-action">
+  <i class="far fa-comment-dots"><p>58</p></i>
+  <i class="fas fa-heart"><p>2</p></i>
+  <i class="fas fa-link"><p>1</p></i>
+</div>
