@@ -1,5 +1,7 @@
+<!-- -以下の fontawsomeのlinkはgemで導入後削除する-->
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
 <!-- 当部分テンプレートは一つの投稿(post)に対するものとして想定している-->
+<!-- likes_controllerの変数をpost: @post, likes_count: @likes_countとして使用している -->
 
 <!-- ユーザがログインしている場合-->
 <% if user_signed_in? %>
@@ -7,12 +9,10 @@
     <!-- **以下のifの条件は後で変数にする-->
   <% if post.likes.find_by(user_id: current_user.id).exists? %>
     <div class="change_to_unlike" color="blue">
-      <!-- **以下のlinkのpathにlike_idを追加する必要あり-->
-      <%= link_to post_like_path(post_id: post.id), method: :delete, id: "id_like", remote: true do %>
+      <%= link_to post_like_path(like, post_id: post.id), method: :delete, id: "id_like", remote: true do %>
         <!-- このボタンを押すとLike -> Unlikeになる -->
         <i class="fas fa-heart">
-          <!-- **以下のlike数は後で変数にする -->
-          <p><%= Like.where(post_id: params[:id]).count %></p>
+          <p><%= likes_count %></p>
         </i>
       <% end %>
     </div>
@@ -20,11 +20,9 @@
     <!-- 投稿をまだいいねしていない場合-->
     <div class="change_to_like" color="red">
       <%= link_to post_likes_path, method: :post, id: "id_like", remote: true do %>
-        <!-- **以下の文字の代わりにimgタグでボタンを設置 -->
         <!-- このボタンを押すとUnlike -> Likeになる -->
         <i class="far fa-heart">
-          <!-- **以下のlike数は後で変数にする -->
-          <p><%= Like.where(post_id: params[:id]).count %></p>
+          <p><%= likes_count %></p>
         </i>
       <% end %>
     </div>
@@ -32,7 +30,6 @@
 <!-- ユーザがログインしていない場合-->
 <% else %>
   <i class="far fa-heart">
-    <!-- **以下のlike数は後で変数にする -->
-    <p><%= Like.where(post_id: params[:id]).count %></p>
+    <p><%= likes_count %></p>
   </i>
 <% end %>

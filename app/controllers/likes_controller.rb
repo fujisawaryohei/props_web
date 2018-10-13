@@ -15,7 +15,7 @@ class LikesController < ApplicationController
   def set_variables
     #投稿
     @post = Post.find_by(params[:post_id])
-    #like数
+    #いいね数
     @likes_count = Like.where(post_id: params[:post_id]).count
   end
 end
