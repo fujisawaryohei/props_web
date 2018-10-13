@@ -32,6 +32,7 @@ gem 'cancancan'
 gem 'rails_admin'
 #検索機能が実装できるgem
 gem 'ransack'
+gem "font-awesome-rails"
 
 group :development, :test do
 
