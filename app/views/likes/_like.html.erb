@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
 <!-- 当部分テンプレートは一つの投稿(post)に対するものとして想定している-->
 
 <!-- ユーザがログインしている場合-->
@@ -11,7 +12,7 @@
         <!-- このボタンを押すとLike -> Unlikeになる -->
         <i class="fas fa-heart">
           <!-- **以下のlike数は後で変数にする -->
-          <p><%= Like.where(post_id: params[:post_id]).count %></p>
+          <p><%= Like.where(post_id: params[:id]).count %></p>
         </i>
       <% end %>
     </div>
@@ -23,7 +24,7 @@
         <!-- このボタンを押すとUnlike -> Likeになる -->
         <i class="far fa-heart">
           <!-- **以下のlike数は後で変数にする -->
-          <p><%= Like.where(post_id: params[:post_id]).count %></p>
+          <p><%= Like.where(post_id: params[:id]).count %></p>
         </i>
       <% end %>
     </div>
@@ -32,13 +33,6 @@
 <% else %>
   <i class="far fa-heart">
     <!-- **以下のlike数は後で変数にする -->
-    <p><%= Like.where(post_id: params[:post_id]).count %></p>
+    <p><%= Like.where(post_id: params[:id]).count %></p>
   </i>
 <% end %>
-
-
-<div class="action" id="post-panel-action">
-  <i class="far fa-comment-dots"><p>58</p></i>
-  <i class="fas fa-heart"><p>2</p></i>
-  <i class="fas fa-link"><p>1</p></i>
-</div>
