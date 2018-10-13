@@ -1,0 +1,95 @@
+ja:
+  devise:
+    user:
+        confirmation_sent_at: "パスワード確認送信時刻"
+        confirmation_token: "パスワード確認用トークン"
+        confirmed_at: "パスワード確認時刻"
+        created_at: "作成日"
+        current_password: "現在のパスワード"
+        current_sign_in_at: "現在のログイン時刻"
+        current_sign_in_ip: "現在のログインIPアドレス"
+        email: Eメール
+        encrypted_password: "暗号化パスワード"
+        failed_attempts: "失敗したログイン試行回数"
+        last_sign_in_at: "最終ログイン時刻"
+        last_sign_in_ip: "最終ログインIPアドレス"
+        locked_at: "ロック時刻"
+        password: "パスワード"
+        password_confirmation: "パスワード（確認用）"
+        remember_created_at: "ログイン記憶時刻"
+        remember_me: "ログインを記憶する"
+        reset_password_sent_at: "パスワードリセット送信時刻"
+        reset_password_token: "パスワードリセット用トークン"
+        sign_in_count: "ログイン回数"
+        unconfirmed_email: "未確認Eメール"
+        unlock_token: "ロック解除用トークン"
+        updated_at: "更新日"
+    confirmations:
+      confirmed: "アカウントが確認されました。ログインしています。"
+      send_instructions: "アカウントの確認方法を数分以内にメールでご連絡します。"
+      send_paranoid_instructions: "ご登録のメールアドレスが保存されている場合、アカウントの確認方法をメールでご連絡します。"
+    failure:
+      already_authenticated: "既にログインしています。"
+      inactive: "Your account is not activated yet."
+      invalid: "メールアドレスもしくはパスワードが有効ではありません."
+      locked: "アカウントがロックされています。"
+      last_attempt: "あなたのアカウントがロックされる前に、もう1つの試みを持っています。"
+      not_found_in_database: "メールアドレスまたはパスワードが無効です。"
+      timeout: "一定時間が経過したため、再度ログインが必要です"
+      unauthenticated: "ログインまたは登録が必要です。"
+      unconfirmed: "本登録を行ってください。"
+      mailer:
+      confirmation_instructions:
+        subject: "アカウントの登録方法"
+      reset_password_instructions:
+        subject: "パスワードの再設定"
+      unlock_instructions:
+        subject: "アカウントのロック解除"
+    omniauth_callbacks:
+      failure: "%{kind} から承認されませんでした。理由：%{reason}"
+      success: "%{kind} から承認されました。"
+    passwords:
+      no_token: "このページにアクセスする事が出来ません。正しいURLでアクセスしている事を確認して下さい。"
+      send_instructions: "パスワードのリセット方法を数分以内にメールでご連絡します。"
+      send_paranoid_instructions: ""
+      updated: "パスワードを変更しました。"
+      updated_not_active: "パスワードを変更しました。"
+      registrations:
+      destroyed: "アカウントを削除しました。またのご利用をお待ちしております。"
+      signed_up: "アカウント登録を受け付けました。"
+      signed_up_but_inactive: "アカウントは登録されていますが、アクティブになっていないため利用できません。"
+      signed_up_but_locked: "アカウントは登録されていますが、ロックされているため利用できません。"
+      signed_up_but_unconfirmed: "確認メールを登録したメールアドレス宛に送信しました。リンクを開いてアカウントを有効にして下さい。"
+      update_needs_confirmation: "アカウント情報が更新されました。更新の確認メールを新しいメールアドレス宛に送信しましたので、リンクを開いて更新を有効にして下さい。"
+      updated: "アカウントが更新されました。"
+    sessions:
+      signed_in:  "ログインしました。"
+      signed_out: "ログアウトしました。"
+    unlocks:
+      send_instructions: "アカウントのロックを解除する方法を数分以内にメールでご連絡します。"
+      send_paranoid_instructions: "アカウントが存在する場合、ロックを解除する方法をメールでご連絡します。"
+      unlocked: "アカウントのロックが解除されました。ログインしています。"
+    errors:
+      models:
+          user:
+            attributes:
+              name:
+                blank: "名前を入力してください"
+              email:
+                blank: "メールアドレスを入力してください"
+              password:
+                blank: "パスワードを入力してください"
+      messages:
+        already_confirmed: "は既に登録済みです。ログインしてください"
+        confirmation_period_expired: "%{period}以内に確認する必要がありますので、新しくリクエストしてください。"
+        expired: "有効期限切れです。新規登録してください。"
+        not_found: "は見つかりませんでした。"
+        not_locked: "ロックされていません。"
+        not_saved:
+          one: "エラーにより、この %{resource} を保存できません："
+          other: "%{count} 個のエラーにより、この %{resource} を保存できません："
+        taken: "は既に使用されています。"
+        too_short: "は%{count}文字以上に設定して下さい。"
+        too_long: "は%{count}文字以下に設定して下さい。"
+        invalid: "は有効でありません。"
+        confirmation: "が内容とあっていません。"
