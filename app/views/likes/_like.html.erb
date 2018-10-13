@@ -1,7 +1,6 @@
 <!-- -以下の fontawsomeのlinkはgemで導入後削除する-->
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
 <!-- 当部分テンプレートは一つの投稿(post)に対するものとして想定している-->
-<!-- likes_controllerの変数をpost: @post, likes_count: @likes_countとして使用している -->
 
 <!-- ユーザがログインしている場合-->
 <% if user_signed_in? %>
@@ -9,10 +8,11 @@
     <!-- **以下のifの条件は後で変数にする-->
   <% if post.likes.find_by(user_id: current_user.id).exists? %>
     <div class="change_to_unlike" color="blue">
-      <%= link_to post_like_path(like, post_id: post.id), method: :delete, id: "id_like", remote: true do %>
+      <%= link_to post_like_path(like, post_id: params[:id]), method: :delete, id: "id_like", remote: true do %>
         <!-- このボタンを押すとLike -> Unlikeになる -->
         <i class="fas fa-heart">
-          <p><%= likes_count %></p>
+          <!-- **後で以下を変数にする -->
+          <p><%= Like.where(post_id: params[:id]).count %></p>
         </i>
       <% end %>
     </div>
@@ -22,7 +22,8 @@
       <%= link_to post_likes_path, method: :post, id: "id_like", remote: true do %>
         <!-- このボタンを押すとUnlike -> Likeになる -->
         <i class="far fa-heart">
-          <p><%= likes_count %></p>
+          <!-- **後で以下を変数にする -->
+          <p><%= Like.where(post_id: params[:id]).count %></p>
         </i>
       <% end %>
     </div>
@@ -30,6 +31,7 @@
 <!-- ユーザがログインしていない場合-->
 <% else %>
   <i class="far fa-heart">
-    <p><%= likes_count %></p>
+    <!-- **後で以下を変数にする -->
+    <p><%= Like.where(post_id: params[:id]).count %></p>
   </i>
 <% end %>
