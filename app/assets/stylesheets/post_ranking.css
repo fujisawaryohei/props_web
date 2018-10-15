@@ -1,24 +1,24 @@
 /*** ランキング ***/
 .ranking-number {
   position: relative;
-    display: inline-block;
-    /* margin: 0; */
-    padding: 5px 10px 20px;
-    /* min-width: 20px; */
-    /* max-width: 100%; */
-    /* color: #555; */
-    /* font-size: 16px; */
-    background: #FF9500;
+  display: inline-block;
+  /* margin: 0; */
+  padding: 5px 10px 20px;
+  /* min-width: 20px; */
+  /* max-width: 100%; */
+  /* color: #555; */
+  /* font-size: 16px; */
+  background: #FF9500;
 }
 
 .ranking-number:before{
-      content: "";
-    position: absolute;
-    top: 19px;
-    left: 52%;
-    margin-left: -15px;
-    border: 14px solid transparent;
-    border-bottom: 16px solid #FFF;
+  content: "";
+  position: absolute;
+  top: 19px;
+  left: 52%;
+  margin-left: -15px;
+  border: 14px solid transparent;
+  border-bottom: 16px solid #FFF;
 }
 
 .ranking-number span {
