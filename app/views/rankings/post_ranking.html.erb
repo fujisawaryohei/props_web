@@ -1,15 +1,15 @@
 <div class="all container">
-    <div class="row">
-        <div class="col-md-8 main">
-            <div class="box bg-white">
-                <p class="ranking-post-title mb-0" >投稿ランキング</p>
-                <%= render partial: 'post_rank', collection: @post_ranks, as: 'post' %>
-            </div><!-- /box -->
-        </div><!-- /col-md-8 main -->
+  <div class="row">
+    <div class="col-md-8 main">
+      <div class="box bg-white">
+        <p class="ranking-post-title mb-0" >投稿ランキング</p>
+        <%= render partial: 'post_rank', collection: @post_ranks, as: 'post' %>
+      </div><!-- /box -->
+    </div><!-- /col-md-8 main -->
 
-        <!-- ランキングサイドバー -->
-        <div class="col-md-4 side-bar">
-            <%= render partial: 'sidebars/sidebar_user_ranking' %>
-        </div><!-- /col-md-4 side-bar bg-white -->
-    </div><!-- /row -->
+    <!-- ランキングサイドバー -->
+    <div class="col-md-4 side-bar">
+      <%= render partial: 'sidebars/sidebar_user_ranking' %>
+    </div><!-- /col-md-4 side-bar bg-white -->
+  </div><!-- /row -->
 </div><!-- /container -->
