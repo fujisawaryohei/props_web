@@ -2,6 +2,8 @@ class RankingsController < ApplicationController
   layout 'sub_layout'
   before_action :post_ranking, :user_ranking
 
+  protected
+
   def post_ranking
 
     #いいねの数が多い投稿を順に10個product_idを取得
