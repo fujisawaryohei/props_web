@@ -1,0 +1,90 @@
+/***** ホーム *****/
+
+.all .box{
+  padding: 15px 15px 1.5rem;
+}
+
+/***** main *****/
+.all .main{
+  padding: 0;
+}
+
+/*** main 投稿者 ***/
+.post-user{
+  position: relative;
+}
+
+.user-icon{
+  display: inline-block;
+  height:50px;
+  width: 50px;
+  background-color: pink;
+  border-radius: 50%;
+  float: left;
+  margin-right: .5rem;
+}
+
+/* ユーザー名 */
+.user-name{
+  margin-bottom: 3px;
+}
+
+/* 投稿日 */
+.post-date{
+  font-size: .75rem;
+}
+
+/*** 投稿曲 ***/
+.post-image{
+  position: relative;
+  /*margin: 1rem 0;*/
+}
+
+.post-image img{
+  background-color: pink;
+  width: auto;
+  height: 200px;
+  display: block;
+}
+
+/* 曲について */
+.song-info{
+  position: absolute;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.7);
+  display: inline-block;
+  padding:5px 20px 5px 5px;
+}
+
+.song-info i{
+  width: 20px;
+  text-align: center;
+}
+
+/*** 投稿テキスト ***/
+.post-text h4{
+  margin: 1rem 0;
+}
+
+/*** アクション ***/
+.action{
+  color: #C8C7CD;
+  margin-top: 1.5rem;
+}
+
+.action p{
+  display: inline-block;
+}
+
+#post-content-action i{
+  margin-right: 2rem;
+}
+
+#post-content-action p{
+  font-weight: 400;
+}
+
+.action i:before{
+  padding-right: 5px;
+}
+
