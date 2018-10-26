@@ -5,4 +5,6 @@ Rails.application.routes.draw do
   resources :posts do
     resources :likes, only: [:create, :destroy]
   end
+
+  get 'rankings/post_ranking', to: 'rankings#post_ranking'
 end
