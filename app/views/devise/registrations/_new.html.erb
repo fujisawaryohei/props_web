@@ -1,0 +1,31 @@
+<div class="modal" id="register-modal">
+    <div class="modal-contents" id="register-form">
+        <img class="form-props-logo" src="..." alt="PROPS">
+          <%= form_for(resource, as: resource_name,url: registration_path(resource_name),html: {class: "modal-form"}) do |f| %>
+          <%= devise_error_messages! %>
+
+          <%= f.text_field :name, autocomplete: "name", class: "bg-gray",placeholder:"　　　　ユーザーネーム"%>
+          <label><%= fa_icon("user",class:"user")%></label>
+
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "bg-gray",placeholder:"　　　　Eメール"%>
+          <label><%= fa_icon("envelope",class:"email")%></label>
+
+         <% if @minimum_password_length %>
+         <em>(<%= @minimum_password_length %> characters minimum)</em>
+         <% end %><br />
+         <%= f.password_field :password, autocomplete: "new-password", class: "bg-gray",placeholder:"　　　　パスワード"%>
+         <label><%= fa_icon("lock",class:"pass")%></label>
+
+         <%= f.password_field :password_confirmation, autocomplete: "new-password",class: "bg-gray",placeholder:"　　　　パスワード確認"%>
+         <label><%= fa_icon("lock",class:"pass")%></label>
+
+      <%= f.submit("登録する",class:"form-submit")%>
+    <% end %>
+   </div><!-- /modal-contents -->
+   <div class="modal-contents confirm" id="register-account-confirm">
+    <p class="account-confirm">
+        アカウントをお持ちですか？
+        <%= link_to "ログインする",new_user_session_path,class:"account-confirm-link"%>
+    </p>
+  </div><!-- /modal-contents -->
+</div>

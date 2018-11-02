@@ -1,3 +1,463 @@
 // Place all the styles related to the posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+body {
+font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", YuGothic, "ヒラギノ角ゴ ProN W3", Hiragino Kaku Gothic ProN, Arial, "メイリオ", Meiryo, sans-serif;
+background-color: #F7F7F7;
+font-weight: bold;
+}
+
+/***** 共通 ******/
+/* 文字 */
+p{
+    margin-bottom: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: bold;
+}
+
+a{
+    color: inherit;
+}
+
+a:hover{
+    /*text-decoration: none;*/
+    color: inherit;
+}
+
+.text-gray{
+    color: #5E5E5E;
+}
+
+.text-light-gray{
+    color:#8E8E93;
+}
+
+.text-orange{
+    color: #FF9500;
+}
+
+.hr-gray{
+    border-top: 1px solid #8E8E93;
+}
+
+/* 背景色 */
+.bg-white{
+    background-color: #FFF;
+}
+
+.bg-gray{
+    background-color: #EFEFF4;
+}
+
+.bg-orange{
+    background-color: #FF9500;
+}
+
+/* float flex */
+.clear{
+    clear: both;
+    margin: 1rem 0;
+}
+
+.flex{
+    display: flex;
+}
+
+/* hr */
+hr {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-top: 1px solid #707070;
+}
+
+/* もっと見るボタン */
+.more{
+    border:1px solid #333;
+    background-color: #333;
+    color: #fff;
+    padding:5px 10px;
+    border-radius: 30px;
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    width:50%;
+}
+
+/* オレンジボタン */
+.orange-button{
+    line-height: 50px;
+    border: 2px solid #FF9500;
+    padding: 7px 15px;
+    border-radius: 30px;
+    color: #FF9500;
+    margin-left:60px;
+}
+
+.orange-button:hover{
+    background-color: #FF9500;
+    color: #FFF;
+    transition: 0.3s;
+    text-decoration: none;
+}
+
+/***** header *****/
+header {
+    top: 0;
+    width: 100%;
+    height: 80px;
+    line-height: 48px;
+    margin-bottom: 1rem;
+}
+
+.header{
+    max-width: 980px;
+    margin: 0 auto;
+}
+
+.props-logo{
+    width: 130px;
+    margin-right: 2rem;
+    /****** あとで変更 ******/
+    display: block;
+    background-color: pink;
+    /****** /あとで変更 ******/
+}
+
+.header-content {
+    display: flex;
+    position: absolute;
+    padding-top: 16px;
+    width: 980px;
+}
+
+.header-content label {
+    position: absolute;
+    left: 15px;
+    top: 0;
+    color: #8E8E93;
+    display: inline-block;
+    /*max-width: 100%;*/
+}
+
+.header-content form {
+    position: relative;
+    /*width: 100%;*/
+}
+
+.header-content input{
+    width: 300px;
+    height: 40px;
+    padding: 5px 20px 5px 35px;
+    border: 1px solid #EFEFF4;
+    border-radius: 30px;
+    margin-right: 1rem;
+    font-weight: bold;
+}
+
+.bell{
+    text-align: center;
+}
+
+.fa-bell{
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    line-height: 40px !important;
+}
+.header-left{
+  padding-left:350px;
+}
+/*** 投稿ランキングページのheader ***/
+#post-button{
+    padding:10px 35px;
+    margin-left: 1rem;
+}
+
+/***** ホーム *****/
+
+.all .box{
+	padding: 15px 15px 1.5rem;
+}
+
+/***** main *****/
+.all .main{
+	padding: 0;
+}
+
+/*** main 投稿者 ***/
+.post-user{
+	position: relative;
+}
+
+.user-icon{
+	display: inline-block;
+	height:50px;
+	width: 50px;
+	background-color: pink;
+	border-radius: 50%;
+	float: left;
+	margin-right: .5rem;
+  margin-bottom:20px;
+}
+
+/* ユーザー名 */
+.user-name{
+	margin-bottom: 3px;
+}
+
+/* 投稿日 */
+.post-date{
+	font-size: .75rem;
+}
+
+/*** 投稿曲 ***/
+.post-image{
+	position: relative;
+	/*margin: 1rem 0;*/
+}
+
+.post-image img{
+	background-color: pink;
+	width: auto;
+	height: 200px;
+	display: block;
+}
+
+/* 曲について */
+.song-info{
+	position: absolute;
+	bottom: 0;
+	background-color: rgba(0,0,0,0.7);
+	display: inline-block;
+	padding:5px 20px 5px 5px;
+}
+
+.song-info i{
+	width: 20px;
+	text-align: center;
+}
+
+/*** 投稿テキスト ***/
+.post-text h4{
+	margin: 1rem 0;
+}
+
+/*** アクション ***/
+.action{
+	color: #C8C7CD;
+	margin-top: 1.5rem;
+}
+
+.action p{
+	display: inline-block;
+}
+
+#post-content-action i{
+	margin-right: 2rem;
+}
+
+#post-content-action p{
+	font-weight: 400;
+}
+
+.action i:before{
+	padding-right: 5px;
+}
+
+/***** side-bar *****/
+.side-bar{
+    height: 100%;
+    padding-right: 0;
+}
+
+/***** ユーザーランキング ＆ 投稿ランキング *****/
+/* (タイトル部分) */
+.ranking-user i, .ranking-post i{
+	text-align: center;
+}
+
+.ranking-user i:before, .ranking-post i:before{
+	padding-right: 5px;
+}
+
+.ranking-user-title, .ranking-post-title{
+	border-bottom: 1px solid #707070;
+	padding-bottom: 5px;
+	margin-bottom: 1rem;
+}
+
+/***** ユーザーランキング *****/
+/* ユーザー名*/
+.user-panel .user-name{
+	line-height: 50px;
+}
+
+/* ユーザーの説明 */
+.user-explanation{
+	margin-left: 50px;
+}
+
+/***** 投稿ランキング *****/
+/* 投稿曲写真 */
+.post-panel-image{
+  margin-left:80px;
+	width: 50px;
+	height: 50px;
+	background-color: pink;
+	display: block;
+}
+
+/* 投稿ランキングのアクション */
+#post-panel-action i{
+	margin-right: .5rem;
+	font-size: .75rem;
+}
+
+#post-panel-action{
+	margin-bottom: 1rem;
+}
+
+/* 投稿ランキングのユーザー欄 */
+#post-panel-user-icon{
+	height: 25px;
+	width: 25px;
+}
+
+#post-panel-user-name{
+	color: #8E8E93;
+}
+
+/*
+ * modal.css
+*/
+
+.like-a-tag {
+  display: inline-block;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.modal-contents {
+  background: white;
+  width: 375.5px;
+  box-sizing: border-box;
+  padding: 30px 45.5px;
+}
+
+#register-form {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+}
+
+#register-account-confirm {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+}
+
+#login-form {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 80px;
+}
+
+#login-account-confirm {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+}
+
+
+.form-props-logo {
+  display: block;
+  font-size: 2em;
+  height: 45.86px;
+  margin-bottom: 10px;
+}
+
+.modal-form {
+  position: relative;
+}
+
+.modal-form > input {
+  border: none;
+  border-radius: 3px;
+  width: -webkit-fill-available;
+  height: 50px;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+  font-size: 0.8rem;
+}
+
+.modal-form > label {
+  position: absolute;
+  display: inline-block;
+  margin-top: -55px;
+  left: 10px;
+  height: 20px;
+  color: gray;
+}
+
+.form-submit {
+  margin-top: 20px;
+  width: -webkit-fill-available;
+  height: 50px;
+  border: none;
+  border-radius: 3px;
+  background: #FF9500;
+  color: white;
+}
+
+.twitter-link {
+  color: #FF9500;
+  font-weight: normal;
+  font-size: 0.8rem;
+  text-align: center;
+  display: block;
+  margin-top: 18px;
+}
+
+.account-confirm {
+  font-size: 0.8rem;
+  color: gray;
+}
+
+.account-confirm-link {
+  float: right;
+  color: #FF9500;
+}
+
+#forget-pass {
+  font-size: 0.7em;
+  color: #007AFF;
+  float: right;
+}
+
+.user {
+  font-size: 20px;
+}
+
+.email {
+  font-size: 17.5px;
+}
+
+.pass {
+  font-size: 20px;
+}
+
+.confirm {
+  padding: 27px 45.5px;
+}
