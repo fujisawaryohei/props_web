@@ -1,12 +1,12 @@
 <div class="modal" id="login-modal">
   <div class="modal-contents" id="login-form">
     <img class="form-props-logo" src="..." alt="PROPS">
-   <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {class:"modal-form"}) do |f| %>
+   <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {id:"sessions",class:"modal-form"}) do |f| %>
 
-    <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"bg-gray",placeholder:"　　　　メールアドレス" %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"bg-gray",id:"session-email",placeholder:"　　　　メールアドレス" %>
     <label><%= fa_icon("envelope",class:"email")%></label>
 
-    <%= f.password_field :password, autocomplete: "current-password", class:"bg-gray",placeholder:"　　　　パスワード"%>
+    <%= f.password_field :password, autocomplete: "current-password", class:"bg-gray", id:"session-password", placeholder:"　　　　パスワード"%>
     <label><%= fa_icon("lock",class:"pass")%></label>
 
     <%= link_to "パスワードを忘れた場合は",new_user_password_path,{id:"forget-pass"}%>
@@ -21,10 +21,5 @@
     <%= f.submit("ログイン",class:"form-submit") %>
 <% end %>
   </div>
-    <div class="modal-contents confirm" id="login-account-confirm">
-      <p class="account-confirm">
-        アカウントをお持ちでないですか？
-        <%= link_to "登録する",new_user_registration_path, class:"account-confirm-link"%>
-      </p>
-    </div><!-- /modal-contents -->
+    <!-- /modal-contents -->
  </div>
