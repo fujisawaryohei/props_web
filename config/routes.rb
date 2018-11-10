@@ -1,14 +1,9 @@
 Rails.application.routes.draw do
   devise_for :user,skip: :all,controllers: { passwords: 'passwords' }
   devise_scope :user do
-    #get 'login', to: 'devise/sessions#new', as: :new_user_session
     post 'login', to: 'devise/sessions#create', as: :user_session
     delete 'logout', to: 'devise/sessions#destroy', as: :destroy_user_session
-
-    get 'sign_in', to: 'devise/registrations#new', as: :new_registration
     post 'sign_in', to: 'devise/registrations#create', as: :user_registration
-
-    get 'password/new', to: 'users/passwords#new', as: :new_user_password
     get 'password/edit', to: 'users/passwords#edit', as: :edit_user_password
     patch 'password/edit', to: 'users/passwords#update'
     put 'password/edit', to: 'users/passwords#update'

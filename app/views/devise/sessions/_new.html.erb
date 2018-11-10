@@ -8,8 +8,8 @@
 
     <%= f.password_field :password, autocomplete: "current-password", class:"bg-gray", id:"session-password", placeholder:"　　　　パスワード"%>
     <label><%= fa_icon("lock",class:"pass")%></label>
-
-    <%= link_to "パスワードを忘れた場合は",new_user_password_path,{id:"forget-pass"}%>
+    
+    <%= link_to "パスワードを忘れた場合は",root_path,{id:"forget-pass-btn"}%>
 
   <div class="field">
     <% if devise_mapping.rememberable? %>

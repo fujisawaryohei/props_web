@@ -24,7 +24,7 @@
   box-sizing: border-box;
   padding: 30px 45.5px;
 }
-
+//登録モーダル
 #register-form {
   margin-left: auto;
   margin-right: auto;
@@ -36,7 +36,7 @@
   margin-right: auto;
   margin-top: 10px;
 }
-
+//ログインモーダル
 #login-form {
   margin-left: auto;
   margin-right: auto;
@@ -49,7 +49,31 @@
   margin-top: 10px;
 }
 
+//パスワードを忘れた場合はモーダル
+#password-form {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 80px;
+}
 
+#password-account-confirm {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+}
+
+#password-form password-form {
+  padding-top:25px;
+}
+
+//パスワードの編集モーダル
+#password-edit-form {
+  margin-left:auto;
+  margin-right:auto;
+  margin-top:80px;
+}
+
+//共通
 .form-props-logo {
   display: block;
   font-size: 2em;
@@ -109,7 +133,7 @@
   color: #FF9500;
 }
 
-#forget-pass {
+#forget-pass-btn {
   font-size: 0.7em;
   color: #007AFF;
   float: right;
