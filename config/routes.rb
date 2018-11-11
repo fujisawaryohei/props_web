@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  #devise Usersコントローラー生成(認証) userコントローラー(登録後のuser操作)
   devise_for :user,skip: :all,controllers: { passwords: 'passwords' }
   devise_scope :user do
     post 'login', to: 'devise/sessions#create', as: :user_session
@@ -17,6 +18,11 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root "posts#index"
   resources :posts
-  resources :users
+  resources :relationships, only:[:create,:destroy]
+  get 'user', to: 'user#user_show'
+  get 'user/edit', to: 'user#edit'
+  put 'user/update', to: 'user#update'
+  get 'user/:id/follwoing', to: 'user#follwing'
+  get 'user/:id/followers', to: 'user#follower'
   get 'rankings/post_ranking', to: 'rankings#post_ranking'
 end

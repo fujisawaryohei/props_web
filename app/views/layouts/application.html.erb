@@ -14,14 +14,17 @@
     <header class="bg-white">
           <div class="header">
               <div class="header-content">
-                  <a href="#"><img class="props-logo" src="..." alt="props"></a>
+                <%= link_to root_path do %>
+                  <img class="props-logo" src="..." alt="props">
+                <% end %>
                   <form><input type="text" placeholder="投稿・ユーザーを検索" class="bg-gray">
                       <label><i class="fas fa-search"></i></label>
                   </form>
                   <a href="#" class="bell mr-auto"><i class="far fa-bell bg-gray"></i></a>
+                  <%= link_to user_path do%>
                   <img src="<%= current_user.image %>" class="user-icon">
+                  <% end %>
                   <p><a href="#" class="orange-button text-white bg-orange" id="post-button">投稿</a></p>
-                  <%= link_to 'ログアウト',destroy_user_session_path,{method: :delete}%>
               </div>
           </div>
       </header>
