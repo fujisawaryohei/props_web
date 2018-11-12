@@ -1,0 +1,13 @@
+  <% if user_signed_in? %>
+    <% if !current_user.following?(@user) %>
+      <%=form_for(current_user.following_relationships.build(following_id:@user.id,remote: true)) do |f| %>
+        <div><%= f.hidden_field :following_id %></div>
+        <%= f.submit "フォローする",class:"orange-button text-orange",id:"id_following"%>
+        <% end %>
+    <% else %>
+      <%= form_for(current_user.find_by(following_id:@user.id).destroy,remote: true) do |f| %>
+        <div><%= f.hidden_field :following_id %></div>
+        <% f.submit "フォロー中", class:"orange-button text-orange",id:"id_unfollowing"%>
+      <% end %>
+    <% end %>
+  <% end %>

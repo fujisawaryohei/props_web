@@ -19,7 +19,7 @@ Rails.application.routes.draw do
   root "posts#index"
   resources :posts
   resources :relationships, only:[:create,:destroy]
-  get 'user', to: 'user#user_show'
+  get 'user', to: 'user#show'
   get 'user/edit', to: 'user#edit'
   put 'user/update', to: 'user#update'
   get 'user/:id/follwoing', to: 'user#follwing'
