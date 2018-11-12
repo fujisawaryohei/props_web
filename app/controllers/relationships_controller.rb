@@ -1,7 +1,7 @@
 class RelationshipsController < ApplicationController
   #ユーザーをフォローする
   def create
-    @user=User.find(params[:relationships][:id])
+    @user=User.find_by(id:params[:id])
     current_user.follow!(@user)
       if(current_user.follow?(@user))
         respond_to do |format|
@@ -13,7 +13,7 @@ class RelationshipsController < ApplicationController
   end
   #ユーザーのフォローを解除
   def destroy
-    @user=User.find(params[:relationsips][:id])
+    @user=User.find_by(id:params[:id])
     current_user.unfollow!(@user)
       if(!current_user.follow?(@user))
         respond_to do |format|
