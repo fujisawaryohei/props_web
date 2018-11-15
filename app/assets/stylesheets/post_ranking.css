@@ -1,56 +1,56 @@
 /*** ランキング ***/
 .ranking-number {
- 	position: relative;
-    display: inline-block;
-    /* margin: 0; */
-    padding: 5px 10px 20px;
-    /* min-width: 20px; */
-    /* max-width: 100%; */
-    /* color: #555; */
-    /* font-size: 16px; */
-    background: #FF9500;
+  position: relative;
+  display: inline-block;
+  /* margin: 0; */
+  padding: 5px 10px 20px;
+  /* min-width: 20px; */
+  /* max-width: 100%; */
+  /* color: #555; */
+  /* font-size: 16px; */
+  background: #FF9500;
 }
 
 .ranking-number:before{
-	    content: "";
-    position: absolute;
-    top: 19px;
-    left: 52%;
-    margin-left: -15px;
-    border: 14px solid transparent;
-    border-bottom: 16px solid #FFF;
+  content: "";
+  position: absolute;
+  top: 19px;
+  left: 52%;
+  margin-left: -15px;
+  border: 14px solid transparent;
+  border-bottom: 16px solid #FFF;
 }
 
 .ranking-number span {
-	margin: 0;
-	padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 /*** 投稿ランキング ***/
 
 .post-ranking-content{
-	padding:5px 30px 0;
+  padding:5px 30px 0;
 }
 
 .post-ranking-content .col-right{
-	padding-right: 0;
-	padding-left: 24px;
+  padding-right: 0;
+  padding-left: 24px;
 }
 
 .post-ranking-content img{
-	height: 140px;
-	background-color: pink;
-	display: block;
+  height: 140px;
+  background-color: pink;
+  display: block;
 }
 
 .post-ranking-content .song-info{
-	width: 100%;
-	font-size: .75rem;
-	padding:3px 20px 3px 5px;
+  width: 100%;
+  font-size: .75rem;
+  padding:3px 20px 3px 5px;
 }
 
 .post-ranking-content .user-name{
-	font-size: .9rem;
-	margin-bottom: 0;
-	line-height: 1.8;
+  font-size: .9rem;
+  margin-bottom: 0;
+  line-height: 1.8;
 }
