@@ -26,8 +26,10 @@
   </div><!-- /container -->
   <div class="action" id="post-content-action">
     <i class="far fa-comment-dots"><p>12</p></i>
-    <i class="fas fa-heart"><p>212</p></i>
-    <i class="fas fa-link"><p>106</p></i>
+<!--     <i class="fas fa-heart"><p>212</p></i> -->
+    <%= render partial: 'likes/like', locals: { post: post }%>
+<!--     <i class="fas fa-link"><p>106</p></i> -->
+    <%= render partial: 'clips/clip', locals: { post: post}%>
     <i class="fas fa-external-link-alt"></i>
   </div><!-- /action -->
 </div><!-- /post-ranking-content -->
