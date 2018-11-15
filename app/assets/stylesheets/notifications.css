@@ -1,0 +1,74 @@
+/***** 通知 *****/
+
+.quotemedia{
+  position: relative;
+  float: left;
+}
+
+.quotemedia-img{
+  width: 100px;
+  height: 100px;
+  background-color: pink;
+  display: block;
+}
+
+.activity-main{
+  padding-right: 4rem;
+}
+
+.activity-icon i{
+  font-size: 1.5rem;
+    border: 3px solid #FF9500;
+    padding: 10px;
+    border-radius: 50%;
+    color: #FF9500;
+    background-color: #FFF;
+}
+
+.activity-icon{
+  position: absolute;
+    top: -18%;
+    left: 0;
+}
+
+.activity-userIcon{
+  padding-left: 0;
+}
+
+.activity-displayText{
+  padding-top: 1rem;
+}
+
+.activity-displayText strong{
+  color: #000;
+}
+
+.activity-time{
+  color: #C7C7CC;
+  font-weight: normal;
+  margin-left: 1rem;
+  font-size: .75rem;
+}
+
+.hr-gray{
+  border-top: 1px solid #8E8E93;
+}
+
+
+.notification .container{
+  margin-top: 2rem;
+  margin-left: 1rem;
+
+}
+
+.reply .user-icon{
+  float: none;
+}
+
+.reply .activity-main{
+  display: flex;
+}
+
+.reply .activity-displayText{
+  padding-left: 1rem;
+}
