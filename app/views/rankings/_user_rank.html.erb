@@ -1,0 +1,32 @@
+<div class="ranking-number"><span class="text-white"><%= user_counter + 1 %></span></div>
+<div class="user-ranking-content">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-2">
+        <a href="#" class="user-icon"><%= image_tag "#{ user.image }"%></a>
+      </div>
+        <div class="col-md-7 pr-0">
+          <p class="user-name mr-auto"><a href="#"><%= user.name %></a></p>
+          <p class="user-explanation text-gray ml-0"><%= user.self_comment %></p>
+          <ul class="follow-follower">
+            <li>
+              <a href="#">
+                <span>186</span>
+                <span class="text-light-gray">フォロー中</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <span>82</span>
+                <span class="text-light-gray">フォロワー</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      <div class="col-md-3">
+        <p><a href="#" class="orange-button">フォロー</a></p>
+      </div>
+    </div><!-- /row -->
+  </div><!-- /container -->
+</div><!-- /user-ranking-content -->
+<hr class="mb-0">
