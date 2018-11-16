@@ -1,0 +1,32 @@
+<div class="post-ranking-content">
+  <div class="container pr-0">
+    <div class="row">
+      <div class="col-left col-md-3 p-0">
+        <div class="post-image">
+          <%= image_tag "#{ post.track_image }"%>
+          <div class="song-info text-white">
+            <p class="song-title"><i class="far fa-user"></i>WAY OF GLORY</p>
+            <p class="artist"><i class="far fa-dot-circle"></i>AAA</p>
+          </div>
+        </div><!-- /post-image -->
+      </div>
+      <div class="col-right col-md-9">
+        <div class="post-user">
+          <a href="#" class="user-icon">
+          </a>
+          <p class="user-name text-gray"><a href="#"><%= post.user.name %></a></p>
+          <p><%= post.title %></p>
+        </div><!-- /post-user -->
+        <div class="clear"></div>
+        <p class="text text-gray"><%= post.text %></p>
+      </div>
+    </div><!-- /row -->
+  </div><!-- /container -->
+  <div class="action" id="post-content-action">
+    <i class="far fa-comment-dots"><p>12</p></i>
+    <i class="fas fa-heart"><p>212</p></i>
+    <i class="fas fa-link"><p>106</p></i>
+    <i class="fas fa-external-link-alt"></i>
+  </div><!-- /action -->
+</div><!-- /post-ranking-content -->
+<hr>
