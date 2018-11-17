@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :user,skip: :all,controllers: { passwords: 'passwords' }
+  devise_for :user, skip: :all, controllers: { passwords: 'passwords' }
   devise_scope :user do
     post 'login', to: 'devise/sessions#create', as: :user_session
     delete 'logout', to: 'devise/sessions#destroy', as: :destroy_user_session

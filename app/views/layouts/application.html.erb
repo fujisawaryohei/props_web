@@ -10,42 +10,7 @@
   </head>
 
   <body>
-    <% if user_signed_in? %>
-    <header class="bg-white">
-          <div class="header">
-              <div class="header-content">
-                  <a href="#"><img class="props-logo" src="..." alt="props"></a>
-                  <form><input type="text" placeholder="投稿・ユーザーを検索" class="bg-gray">
-                      <label><i class="fas fa-search"></i></label>
-                  </form>
-                  <a href="#" class="bell mr-auto"><i class="far fa-bell bg-gray"></i></a>
-                  <img src="<%= current_user.image %>" class="user-icon">
-                  <p><a href="#" class="orange-button text-white bg-orange" id="post-button">投稿</a></p>
-                  <%= link_to 'ログアウト',destroy_user_session_path,{method: :delete}%>
-              </div>
-          </div>
-      </header>
-      <% else %>
-      <header class="bg-white modal-blur">
-            <div class="header">
-                <div class="header-content">
-                    <a href="#"><img class="props-logo" src="..." alt="props"></a>
-                    <form><input type="text" placeholder="投稿・ユーザーを検索" class="bg-gray">
-                       <label><%= fa_icon("search")%></label>
-                    </form>
-                    <a href="#" class="bell mr-auto">
-                       <%= fa_icon("bell",class:"fa-bell bg-gray")%>
-                    </a>
-                    <!-- <p><a href="#">新規登録</a>｜<a href="#">ログイン</a></p> -->
-                    <p class="header-left">
-                        <button type="button" class="like-a-tag" id="register-btn">新規登録</button>
-                        |
-                        <button type="button" class="like-a-tag" id="login-btn">ログイン</button>
-                    </p>
-                </div>
-            </div>
-        </header>
-        <% end %>
+    <%= render 'layouts/header'%>
     <% if notice %>
      <p class="alert alert-notice"><%= notice %></p>
     <% end %>
