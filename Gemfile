@@ -33,6 +33,8 @@ gem 'rails_admin'
 #検索機能が実装できるgem
 gem 'ransack'
 
+gem 'font-awesome-rails'
+
 group :development, :test do
 
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
@@ -47,6 +49,7 @@ group :development, :test do
   gem 'rails-controller-testing'
   #メールの送信が正常に行われているか開発環境で確認できるgem
   gem 'letter_opener'
+  gem 'letter_opener_web'
 end
 
 group :development do
