@@ -1,0 +1,16 @@
+<div class="all container notification">
+  <div class="row">
+    <div class="col-md-8 main">
+      <div class="box bg-white">
+        <p class="ranking-post-title mb-0">通知</p>
+        <!-- 下記を後で次のように変更 render partial: 'notification', collcetion: @notifications, as: notification -->
+        <%= render @notification %>
+      </div><!-- /box -->
+    </div><!-- /col-md-8 main -->
+
+    <div class="col-md-4 side-bar">
+      <%= render partial: 'sidebars/sidebar_user_ranking' %>
+      <%= render partial: 'sidebars/sidebar_post_ranking' %>
+    </div><!-- /col-md-4 side-bar bg-white -->
+  </div><!-- /row -->
+</div><!-- /container -->

@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="activity-item row">
+    <div class="quotemedia col-3">
+      <img src="..." alt="" class="quotemedia-img">
+      <div class="activity-icon">
+        <i class="fas fa-paperclip"></i>
+      </div>
+    </div><!-- /quotemedia -->
+    <div class="activity-main col-9">
+      <ul class="activity-userIcon">
+        <!-- いいねしたユーザーのアイコン(最大10件？)を並べる-->
+        <% clip_some_notifications(notification).limit(10).each do |nt| %>
+          <!-- 後で変更する -->
+          <li class="user-icon-small"><a href="#"></a></li>
+        <% end %>
+      </ul>
+      <div class="clear"></div>
+      <p class="activity-displayText text-gray"><strong><%= User.find(notification.user_id).name %></strong>さんと<strong>他<span class="count-wrap"><%= clip_some_notifications(notification).count %></span>人</strong>があなたの投稿に「いいね」しました
+        <span class="activity-time"><%= nt_time(notification.created_at) %></span>
+      </p>
+    </div><!-- /activity-main -->
+  </div><!-- /activity-item -->
+</div><!-- /container -->
+<hr class="mb-0 hr-gray">
