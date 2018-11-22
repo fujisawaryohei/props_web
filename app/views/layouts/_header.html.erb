@@ -2,12 +2,44 @@
   <div class="header">
     <div class="header-content">
       <a href="#"><img class="props-logo" src="..." alt="props"></a>
-      <form><input type="text" placeholder="投稿・ユーザーを検索" class="bg-gray">
-        <label><i class="fas fa-search"></i></label>
-      </form>
+      <%= render 'searches/search_form' %>
       <a href="#" class="bell mr-auto"><i class="far fa-bell bg-gray"></i></a>
       <a href="#" class="user-icon"></a>
       <p><a href="#" class="orange-button text-white bg-orange" id="post-button">投稿</a></p>
     </div>
   </div>
 </header>
+<!-->
+<% if user_signed_in? %>
+  <header class="bg-white">
+    <div class="header">
+      <div class="header-content">
+        <a href="#"><img class="props-logo" src="..." alt="props"></a>
+        <%= render 'searches/search_form' %>
+        <a href="#" class="bell mr-auto"><i class="far fa-bell bg-gray"></i></a>
+        <a href="#" class="user-icon"></a>
+        <p><a href="#" class="orange-button text-white bg-orange" id="post-button">投稿</a></p>
+      </div>
+    </div>
+  </header>
+<% else %>
+  <header class="bg-white modal-blur">
+    <div class="header">
+      <div class="header-content">
+        <a href="#">
+          <img class="props-logo" src="..." alt="props">
+        </a>
+        <% render 'searches/search_form' %>
+        <a href="#" class="bell mr-auto">
+          <%= fa_icon("bell",class:"fa-bell bg-gray")%>
+        </a>
+        <p class="header-left">
+          <button type="button" class="like-a-tag" id="register-btn">新規登録</button>
+          |
+          <button type="button" class="like-a-tag" id="login-btn">ログイン</button>
+        </p>
+      </div>
+    </div>
+  </header>
+<% end %>
+<-->

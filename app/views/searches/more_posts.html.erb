@@ -1,0 +1,14 @@
+<div class="all container">
+<p id="searched-result-title">検索結果</p>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="box bg-white">
+        <div class="box bg-white">
+            <div class="ranking-post">
+              <p class="ranking-post-title"><i class="far fa-user"></i>投稿</p>
+              <%= render partial: 'searched_post', collection: @searched_posts, as: 'post' %>
+            </div>
+        </div>
+    </div><!-- /col-md-8 main -->
+  </div><!-- /row -->
+</div>

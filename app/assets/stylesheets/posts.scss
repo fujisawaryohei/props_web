@@ -1,3 +1,155 @@
 // Place all the styles related to the posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+/***** ホーム *****/
+
+.all .box{
+	padding: 15px 15px 1.5rem;
+}
+
+/***** main *****/
+.all .main{
+	padding: 0;
+}
+
+/*** main 投稿者 ***/
+.post-user{
+	position: relative;
+}
+
+.user-icon{
+	display: inline-block;
+	height:50px;
+	width: 50px;
+	border-radius: 50%;
+	float: left;
+	margin-right: .5rem;
+  margin-bottom:20px;
+}
+
+/* ユーザー名 */
+.user-name{
+  margin-bottom: 3px;
+}
+
+/* 投稿日 */
+.post-date{
+  font-size: .75rem;
+}
+
+/*** 投稿曲 ***/
+.post-image{
+  position: relative;
+  /*margin: 1rem 0;*/
+}
+
+.post-image img{
+  background-color: pink;
+  width: auto;
+  height: 200px;
+  display: block;
+}
+
+/* 曲について */
+.song-info{
+  position: absolute;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.7);
+  display: inline-block;
+  padding:5px 20px 5px 5px;
+}
+
+.song-info i{
+  width: 20px;
+  text-align: center;
+}
+
+/*** 投稿テキスト ***/
+.post-text h4{
+  margin: 1rem 0;
+}
+
+/*** アクション ***/
+.action{
+  color: #C8C7CD;
+  margin-top: 1.5rem;
+}
+
+.action p{
+  display: inline-block;
+}
+
+#post-content-action i{
+  margin-right: 2rem;
+}
+
+#post-content-action p{
+  font-weight: 400;
+}
+
+.action i:before{
+  padding-right: 5px;
+}
+
+/***** side-bar *****/
+.side-bar{
+  height: 100%;
+  padding-right: 0;
+}
+
+/***** ユーザーランキング ＆ 投稿ランキング *****/
+/* (タイトル部分) */
+.ranking-user i, .ranking-post i{
+  text-align: center;
+}
+
+.ranking-user i:before, .ranking-post i:before{
+  padding-right: 5px;
+}
+
+.ranking-user-title, .ranking-post-title{
+  border-bottom: 1px solid #707070;
+  padding-bottom: 5px;
+  margin-bottom: 1rem;
+}
+
+/***** ユーザーランキング *****/
+/* ユーザー名*/
+.user-panel .user-name{
+  line-height: 50px;
+}
+
+/* ユーザーの説明 */
+.user-explanation{
+  margin-left: 50px;
+}
+
+/***** 投稿ランキング *****/
+/* 投稿曲写真 */
+.post-panel-image{
+  margin-left:80px;
+  width: 50px;
+  height: 50px;
+  background-color: pink;
+  display: block;
+}
+
+/* 投稿ランキングのアクション */
+#post-panel-action i{
+  margin-right: .5rem;
+  font-size: .75rem;
+}
+
+#post-panel-action{
+  margin-bottom: 1rem;
+}
+
+/* 投稿ランキングのユーザー欄 */
+#post-panel-user-icon{
+  height: 25px;
+  width: 25px;
+}
+
+#post-panel-user-name{
+  color: #8E8E93;
+}

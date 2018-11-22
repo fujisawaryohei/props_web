@@ -1,0 +1,162 @@
+/*
+ * modal.css
+*/
+
+.like-a-tag {
+  display: inline-block;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.modal-contents {
+  background: white;
+  width: 375.5px;
+  box-sizing: border-box;
+  padding: 30px 45.5px;
+}
+//登録モーダル
+#register-form {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+}
+
+#register-account-confirm {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+}
+//ログインモーダル
+#login-form {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 80px;
+}
+
+#login-account-confirm {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+}
+
+//パスワードを忘れた場合はモーダル
+#password-form {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 80px;
+}
+
+#password-account-confirm {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+}
+
+#password-form password-form {
+  padding-top:25px;
+}
+
+//パスワードの編集モーダル
+#password-edit-form {
+  margin-left:auto;
+  margin-right:auto;
+  margin-top:80px;
+}
+
+//共通
+.form-props-logo {
+  display: block;
+  font-size: 2em;
+  height: 45.86px;
+  margin-bottom: 10px;
+}
+
+.modal-form {
+  position: relative;
+}
+
+.modal-form > input {
+  border: none;
+  border-radius: 3px;
+  width: -webkit-fill-available;
+  height: 50px;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+  font-size: 0.8rem;
+}
+
+.modal-form > label {
+  position: absolute;
+  display: inline-block;
+  margin-top: -55px;
+  left: 10px;
+  height: 20px;
+  color: gray;
+}
+
+.form-submit {
+  margin-top: 20px;
+  width: -webkit-fill-available;
+  height: 50px;
+  border: none;
+  border-radius: 3px;
+  background: #FF9500;
+  color: white;
+}
+
+.twitter-link {
+  color: #FF9500;
+  font-weight: normal;
+  font-size: 0.8rem;
+  text-align: center;
+  display: block;
+  margin-top: 18px;
+}
+
+.account-confirm {
+  font-size: 0.8rem;
+  color: gray;
+}
+
+.account-confirm-link {
+  float: right;
+  color: #FF9500;
+}
+
+#forget-pass-btn {
+  font-size: 0.7em;
+  color: #007AFF;
+  float: right;
+}
+
+.user {
+  font-size: 20px;
+}
+
+.email {
+  font-size: 17.5px;
+}
+
+.pass {
+  font-size: 20px;
+}
+
+.confirm {
+  padding: 27px 45.5px;
+}
+
+#password-edit-modal{
+  margin-left:auto;
+  margin-right:auto;
+  margin-top:20px;
+}
