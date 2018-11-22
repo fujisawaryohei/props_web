@@ -5,19 +5,19 @@
       <div class="col-md-2">
         <a href="#" class="user-icon"><%= image_tag "#{ user.image }"%></a>
       </div>
-        <div class="col-md-7 pr-0">
+        <div class="col-md-4 pr-0">
           <p class="user-name mr-auto"><a href="#"><%= user.name %></a></p>
           <p class="user-explanation text-gray ml-0"><%= user.self_comment %></p>
           <ul class="follow-follower">
             <li>
               <a href="#">
-                <span>186</span>
+                <span><%= user.followings.count %></span>
                 <span class="text-light-gray">フォロー中</span>
               </a>
             </li>
             <li>
               <a href="#">
-                <span>82</span>
+                <span><%= user.followers.count %></span>
                 <span class="text-light-gray">フォロワー</span>
               </a>
             </li>
