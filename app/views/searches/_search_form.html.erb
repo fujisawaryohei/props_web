@@ -1,0 +1,4 @@
+<%= form_tag searches_index_path, method: :get, autocomplete: "off" do %>
+  <%= text_field_tag(:q, '', class: "bg-gray", placeholder: "投稿・ユーザーを検索") %>
+  <label><i class="fas fa-search"></i></label>
+<% end %>

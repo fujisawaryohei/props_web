@@ -1,0 +1,11 @@
+<div class="user-panel">
+    <div class="flex mb-2">
+        <a href="#" class="user-icon"><%= image_tag "#{ user.image }"%></a>
+        <p class="user-name mr-auto"><a href="#"><%= user.name %></a></p>
+        <p><a href="#" class="orange-button text-orange">フォロー</a></p>
+    </div>
+    <p class="user-explanation text-gray">
+      <%= user.self_comment %>
+    </p>
+    <hr>
+</div>
