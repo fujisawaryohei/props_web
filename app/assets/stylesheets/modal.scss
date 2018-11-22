@@ -160,3 +160,35 @@
   margin-right:auto;
   margin-top:20px;
 }
+
+/*
+ * modal.css
+*/
+
+#modal-back {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 10001;
+}
+
+#modal {
+  margin: auto;
+  border-radius: 20px;
+}
+
+@media (min-width: 768px) {
+  #modal {
+    width: 600px;
+    transform: scale(0.8, 0.8);
+  }
+}
+
+/* modal-0, modal-1 init */
+#modal-0, #modal-1 {
+  display: none;
+}
