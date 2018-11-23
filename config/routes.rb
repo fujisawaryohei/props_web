@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   resources :posts
   resources :users
   get 'rankings/post_ranking', to: 'rankings#post_ranking'
+  get 'rankings/user_ranking', to: 'rankings#user_ranking'
   get 'searches/index', to: 'searches#index'
   get 'searches/more_posts', to: 'searches#more_posts'
   get 'searches/more_users', to: 'searches#more_users'
