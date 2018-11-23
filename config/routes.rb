@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   #devise Usersコントローラー生成(認証) userコントローラー(登録後のuser操作)
-  devise_for :user,skip: :all,controllers: { passwords: 'passwords' }
+  devise_for :user,skip: :all, controllers: { passwords: 'passwords' }
   devise_scope :user do
     post 'login', to: 'devise/sessions#create', as: :user_session
     delete 'logout', to: 'devise/sessions#destroy', as: :destroy_user_session
