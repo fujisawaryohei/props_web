@@ -48,40 +48,8 @@
     // Polyfillを読み込む
     await loadFetchPolyfill();
 
-    // modal 読み込み
-    // erbのrenderを使うといらない
-    // ここから
-    const modalHTML = await Promise.all([
-      fetch('./post-page-1.html')
-        .then(res => res.text()),
-      fetch('./post-page-2.html')
-        .then(res => res.text()),
-      fetch('./post-page-3.html')
-        .then(res => res.text())
-    ])
-      .catch(e => {
-        throw e;
-      });
-
-    const modalBody = modalHTML.map(html => bodyParser(html));
-
-    const modalBack = document.createElement('div');
-    modalBack.id = 'modal-back';
-
-    const modal = document.createElement('div');
-    modal.id = 'modal';
-
-    document.body.appendChild(modalBack);
-    modalBack.appendChild(modal);
-
-    for (const [i, body] of modalBody.entries()) {
-      const m = document.createElement('div');
-      m.id = `modal-${i}`;
-      m.innerHTML = body;
-      modal.appendChild(m);
-      m.style.display = 'none';
-    }
-    // ここまで
+   const modal = document.getElementById('modal');
+   const modalBack = document.getElementById('modal-back');
 
     // aタグの無効化
     for (const a of document.querySelectorAll('#modal a')) {
@@ -105,7 +73,8 @@
 
     // 別モーダルへ移動
     const modalSwitch = (ID) => {
-      for (let i = 0; i <= 2; i++) {
+      //0,1,2
+      for (i = 0; i <= 1; i++) {
         const elem = document.getElementById(`modal-${i}`);
         if (i === ID) {
           elem.style.display = 'block';

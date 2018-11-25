@@ -3,6 +3,13 @@
       <div class="click-select bg-dark-gray flex sp-hidden" id="music-jacket-select">
         <p class="text-white">クリックして曲を選んでください</p>
       </div>
+      <div id="music-panel" class="music-panel text-gray box-shadow">
+          <img src="..." alt="" class="music-panel-image">
+          <div class="music-panel-info">
+            <p class="song-title"><i class="far fa-user"></i>WAY OF GLORY</p>
+            <p class="artist"><i class="far fa-dot-circle"></i>AAA</p>
+          </div>
+      </div><!-- /music-panel -->
     <hr class="sp-show">
     <div class="edit text-light-gray">
       <div class="write-title">
@@ -24,19 +31,13 @@
         <p class="orange-button text-center">下書きに保存する</p>
       </div>
     </div>
-
-    <!-- モーダル -->
-    <!-- erbでrenderを使うときはここに -->
-    <!--
-      <div id="modal-back">
+    <div id="modal-back">
         <div id="modal">
           <div id="modal-0">
-            ここにトレンド一覧のモーダル
+            <%= render 'posts/post-page-1' %>
           </div>
           <div id="modal-1">
-            ここに検索フォームのモーダル
+            <%= render 'posts/post-page-2' %>
           </div>
-          modal-2 は検索結果なのでなし
         </div>
       </div>
-    -->
