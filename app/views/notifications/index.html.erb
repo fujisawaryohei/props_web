@@ -4,7 +4,11 @@
       <div class="box bg-white">
         <p class="ranking-post-title mb-0">通知</p>
         <!-- 下記を後で次のように変更 render partial: 'notification', collcetion: @notifications, as: notification -->
-        <%= render @notification %>
+        <% if @notifications.empty? %>
+          <p>通知はありません</p>
+        <% else %>
+          <%= render @notifications %>
+        <% end %>
       </div><!-- /box -->
     </div><!-- /col-md-8 main -->
 

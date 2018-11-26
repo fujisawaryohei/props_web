@@ -1,0 +1,31 @@
+<div class="container position-relative">
+  <%= link_to "", link_through_path(notification), class: "stretched-link" %>
+  <div class="activity-item row">
+    <div class="quotemedia col-3">
+      <img src="..." alt="" class="quotemedia-img">
+      <div class="activity-icon">
+        <i class="fas fa-paperclip"></i>
+      </div>
+    </div><!-- /quotemedia -->
+    <div class="activity-main col-9">
+      <ul class="activity-userIcon">
+        <!-- いいねしたユーザーのアイコン(最大10件？)を並べる-->
+        <% some_notifications(notification).limit(10).each do |nt| %>
+          <!-- 後で変更する -->
+          <li class="user-icon-small"><a href="#"></a></li>
+        <% end %>
+      </ul>
+      <div class="clear"></div>
+      <% if some_notifications(notification).count > 1 %>
+        <p class="activity-displayText text-gray"><strong><%= User.find(notification.notified_by_id).name %></strong>さんと<strong>他<span class="count-wrap"><%= some_notifications(notification).count - 1 %></span>人</strong>があなたの投稿に「クリップ」しました
+          <span class="activity-time"><%= nt_time(notification.created_at) %></span>
+        </p>
+      <% else %>
+        <p class="activity-displayText text-gray"><strong><%= User.find(notification.notified_by_id).name %></strong>さんがあなたの投稿を「クリップ」しました
+          <span class="activity-time"><%= nt_time(notification.created_at) %></span>
+        </p>
+      <% end %>
+    </div><!-- /activity-main -->
+  </div><!-- /activity-item -->
+</div><!-- /container -->
+<hr class="mb-0 hr-gray">

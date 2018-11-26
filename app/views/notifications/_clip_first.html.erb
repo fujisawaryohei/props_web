@@ -1,17 +1,19 @@
-<div class="container">
+<div class="container position-relative">
+  <%= link_to "", link_through_path(notification), class: "stretched-link" %>
   <div class="activity-item row">
     <div class="quotemedia col-3">
       <img src="..." alt="" class="quotemedia-img">
       <div class="activity-icon">
-        <i class="fas fa-heart"></i>
+        <i class="fas fa-paperclip"></i>
       </div>
     </div><!-- /quotemedia -->
     <div class="activity-main col-9">
       <ul class="activity-userIcon">
+         <!-- 後で変更する-->
         <li class="user-icon-small"><a href="#"></a></li>
       </ul>
       <div class="clear"></div>
-      <p class="activity-displayText text-gray"><strong><%= User.find(notification.notified_by_id).name %></strong>さんがあなたの投稿を「いいね」しました
+      <p class="activity-displayText text-gray"><strong><%= User.find(notification.notified_by_id).name %></strong>さんがあなたの投稿を「クリップ」しました
         <span class="activity-time"><%= nt_time(notification.created_at) %></span>
       </p>
     </div><!-- /activity-main -->
