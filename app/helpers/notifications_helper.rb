@@ -4,7 +4,7 @@ module NotificationsHelper
   end
 
   def passed_time(notification)
-    (Time.now - Post.find(notification.post_id).created_at.to_time)
+    (Time.now - notification.post.created_at.to_time)
   end
 
   def like_some_notification?(notification)
@@ -16,8 +16,8 @@ module NotificationsHelper
     end
   end
 
-  def like_some_notifications(notification)
-    Notification.where(user_id: notification.user_id, post_id: notification.post_id, notified_type: 'like', read: false).order('created_at DESC')
+  def some_notifications(notification)
+    Notification.where(user_id: notification.user_id, post_id: notification.post_id, notified_type: notification.notified_type, read: false).order('created_at DESC')
   end
 
   def clip_some_notification?(notification)
