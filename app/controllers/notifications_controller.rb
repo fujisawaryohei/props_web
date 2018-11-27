@@ -6,7 +6,7 @@ class NotificationsController < ApplicationController
   end
 
   def link_through
-    @notification = Notification.find(params[:id])
+    @notification = Notification.find_by(id: params[:id])
 
     if @notification.notified_type == 'like' || @notification.notified_type == 'clip'
       notifications = Notification.where(user_id: @notification.user_id, post_id: @notification.post_id, notified_type: @notification.notified_type, read: false)
