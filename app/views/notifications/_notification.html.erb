@@ -1,25 +1,25 @@
 <% if notification.notified_type == "like" %>
   <!-- 通知対象の投稿が投稿されてから30分以内-->
-  <% if passed_time(notification) <= 1800 %>
+  <% if passed_time_min(notification) <= 30 %>
     <%= render partial: 'like_first', locals: { notification: notification } %>
   <% else %>
-    <!-- 通知対象の投稿が投稿されてから1時間後-->
-    <% if passed_time(notification)/(24*60*60) >= 1 %>
+    <!-- 通知対象の投稿が投稿されてから1時間後(ただし通知を表示するのは1日後)-->
+    <% if passed_time_min(notification) >= (24*60) %>
       <!-- 対象の通知のうち最新の投稿に対してのみレンダリング-->
-      <% if like_some_notification?(notification) == "true" %>
+      <% if some_notifications?(notification) == "true" %>
         <%= render partial: 'like_second', locals: { notification: notification } %>
       <% end %>
     <% end %>
   <% end %>
 <% elsif notification.notified_type == "clip" %>
   <!-- 通知対象の投稿が投稿されてから30分以内 -->
-  <% if passed_time(notification) <= 1800 %>
+  <% if passed_time_min(notification) <= 30 %>
     <%= render partial: 'clip_first', locals: { notification: notification } %>
   <% else %>
-    <!-- 通知対象の投稿が投稿されてから1時間後 -->
-    <% if passed_time(notification)/(24*60*60) >= 1 %>
+    <!-- 通知対象の投稿が投稿されてから1時間後(ただし通知を表示するのは1日後) -->
+    <% if passed_time_min(notification) >= (24*60) %>
       <!-- 対象の通知のうち最新の投稿に対してのみレンダリング -->
-      <% if clip_some_notification?(notification) == "true" %>
+      <% if some_notifications?(notification) == "true" %>
         <%= render partial: 'clip_second', locals: { notification: notification } %>
       <% end %>
     <% end %>
