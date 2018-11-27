@@ -5,7 +5,7 @@
       <li class="user-icon user-icon-big"><a href="#"></a></li>
     </ul>
     <div class="activity-displayText">
-      <p class="text-gray mb-2"><strong><%= User.find(notification.notified_by_id).name %></strong>さんから返信がありました
+      <p class="text-gray mb-2"><strong><%= User.find_by(id: notification.notified_by_id).name %></strong>さんから返信がありました
         <span class="activity-time"><%= nt_time(notification.created_at) %></span>
       </p>
       <p class="text-gray">この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れて</p>

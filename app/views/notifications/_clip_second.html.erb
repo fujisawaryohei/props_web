@@ -17,11 +17,11 @@
       </ul>
       <div class="clear"></div>
       <% if some_notifications(notification).count > 1 %>
-        <p class="activity-displayText text-gray"><strong><%= User.find(notification.notified_by_id).name %></strong>さんと<strong>他<span class="count-wrap"><%= some_notifications(notification).count - 1 %></span>人</strong>があなたの投稿に「クリップ」しました
+        <p class="activity-displayText text-gray"><strong><%= User.find_ by(id: notification.notified_by_id).name %></strong>さんと<strong>他<span class="count-wrap"><%= some_notifications(notification).count - 1 %></span>人</strong>があなたの投稿に「クリップ」しました
           <span class="activity-time"><%= nt_time(notification.created_at) %></span>
         </p>
       <% else %>
-        <p class="activity-displayText text-gray"><strong><%= User.find(notification.notified_by_id).name %></strong>さんがあなたの投稿を「クリップ」しました
+        <p class="activity-displayText text-gray"><strong><%= User.find_by(id: notification.notified_by_id).name %></strong>さんがあなたの投稿を「クリップ」しました
           <span class="activity-time"><%= nt_time(notification.created_at) %></span>
         </p>
       <% end %>
