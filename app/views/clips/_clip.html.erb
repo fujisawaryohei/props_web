@@ -6,13 +6,13 @@
     <!-- **以下のifの条件は後で変数にする-->
   <% if post.clips.find_by(user_id: current_user.id).exists? %>
     <div class="change_to_unclip">
-      <%= link_to post_clip_path(clip, post_id: params[:id]), method: :delete, id: "id_clip", remote: true do %>
+      <%= link_to post_clip_path(clip, post_id: post.id), method: :delete, id: "id_clip", remote: true do %>
         <!-- **以下の文字の代わりにimgタグでボタンを設置 -->
         <!-- このボタンを押すとClip -> Unclipになる -->
         <!-- 以下のアイコン(fas fa-paperclip)の色を変更する必要あり -->
         <i class="fas fa-paperclip">
           <!-- **以下のclip数は後で変数にする -->
-          <p><%= Clip.where(post_id: params[:id]).count %></p>
+          <p><%= Clip.where(post_id: post.id).count %></p>
         </i>
       <% end %>
     </div>
@@ -24,7 +24,7 @@
         <!-- このボタンを押すとUnclip -> Clipになる -->
         <i class="fas fa-paperclip">
           <!-- **以下のclip数は後で変数にする -->
-          <p><%= Clip.where(post_id: params[:id]).count %></p>
+          <p><%= Clip.where(post_id: post.id).count %></p>
         </i>
       <% end %>
     </div>
@@ -33,6 +33,6 @@
 <% else %>
   <i class="fas fa-paperclip">
     <!-- **以下のclip数は後で変数にする -->
-    <p><%= Clip.where(post_id: params[:id]).count %></p>
+    <p><%= Clip.where(post_id: post.id).count %></p>
   </i>
 <% end %>

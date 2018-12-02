@@ -1,0 +1,13 @@
+<div class="container position-relative">
+  <%= link_to "", link_through_path(notification), class: "stretched-link" %>
+  <div class="activity-main">
+    <ul class="activity-userIcon">
+      <li class="user-icon user-icon-big"><a href="#"></a></li>
+    </ul>
+    <div class="clear"></div>
+    <p class="activity-displayText text-gray"><strong><%= User.find_by(id: notification.notified_by_id).name %></strong>さんがあなたをフォローしました
+      <span class="activity-time"><%= nt_time(notification.created_at) %></span>
+    </p>
+  </div><!-- /activity-main -->
+</div>
+<hr class="mb-0 hr-gray">

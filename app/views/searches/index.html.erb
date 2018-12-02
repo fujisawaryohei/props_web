@@ -1,0 +1,50 @@
+<div class="all container">
+<p id="searched-result-title">検索結果："<%= @q %>"</p>
+  <div class="row">
+    <div class="col-md-8 main">
+      <div class="box bg-white">
+        <div class="box bg-white">
+            <div class="ranking-post">
+                <p class="ranking-post-title"><i class="far fa-user"></i>投稿</p>
+                  <% if @q.empty? %>
+                    <p>投稿は見つかりませんでした</p>
+                  <% else %>
+                    <% if @searched_posts.limit(10).last %>
+                      <!-- 検索した投稿は10件まで表示される("もっと見る"で他の結果も表示される)-->
+                      <%= render partial: 'searched_post', collection: @searched_posts.limit(10), as: 'post' %>
+                    <% elsif @searched_posts.exists? %>
+                      <!-- 検索した投稿は10件まで表示される("もっと見る"で他の結果も表示される)-->
+                      <%= render partial: 'searched_post', collection: @searched_posts.limit(10), as: 'post' %>
+                      <%= link_to "もっと見る", searches_more_posts_path, class: "more"%>
+                    <% else %>
+                      <p>投稿は見つかりませんでした</p>
+                    <% end %>
+                  <% end%>
+            </div>
+        </div>
+    </div><!-- /col-md-8 main -->
+  </div><!-- /row -->
+
+  <div class="col-md-4 side-bar">
+    <div class="box bg-white mb-3">
+        <div class="ranking-user">
+            <p class="ranking-user-title"><i class="far fa-user"></i>ユーザー</p>
+              <% if @q.empty? %>
+                <p>ユーザーは見つかりませんでした</p>
+              <% else %>
+                <% if @searched_users.limit(10).last %>
+                  <!-- 検索したユーザーは10件まで表示される("もっと見る"で他の結果も表示される)-->
+                  <%= render partial: 'searched_user', collection: @searched_users.limit(10), as: 'user' %>
+                <% elsif @searched_users.exists? %>
+                  <!-- 検索したユーザーは10件まで表示される("もっと見る"で他の結果も表示される)-->
+                  <%= render partial: 'searched_user', collection: @searched_users.limit(10), as: 'user' %>
+                  <%= link_to "もっと見る", searches_more_users_path, class: "more" %>
+                <% else %>
+                  <p>ユーザーは見つかりませんでした</p>
+                <% end %>
+              <% end %>
+        </div>
+      </div><!-- /box -->
+    </div><!-- /box -->
+  </div><!-- /col-md-4 side-bar bg-white -->
+</div><!-- /container -->
