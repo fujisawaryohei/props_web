@@ -27,14 +27,20 @@ class User < ApplicationRecord
 
 #引数にきたuserをフォローしているかを調べるメソッド
   def following?(other_user)
-    self.following_relationships.find_by(following_id:other_user.id)
+    unless other_user.following_relationships.nil?
+      self.following_relationships.find_by(following_id:other_user.id)
+    end
   end
 #フォローするメソッド
   def follow!(other_user)
-    self.following_relationships.create!(following_id:other_user.id)
+    unless other_user.following_relationships.nil?
+      self.following_relationships.create!(following_id:other_user.id)
+    end
   end
 #フォロー解除するメソッド
   def unfollow!(other_user)
-    self.following_relationships.find_by(following_id:other_user.id).destroy
+    unless other_user.following_relationships.nil?
+      self.following_relationships.find_by(following_id:other_user.id).destroy
+    end
   end
 end

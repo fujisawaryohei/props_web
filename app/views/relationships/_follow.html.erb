@@ -1,12 +1,8 @@
-<!-- >フォローボタン<-->
-<!-->ユーザーがログインしている場合はボタンを表示<-->
+
   <% if user_signed_in? %>
-  <!-->フォローしていない場合は<-->
     <% if !current_user.following?(@user) %>
       <%= link_to 'フォローする',relationships_path(following_id:@user.id),remote:true,class:"orange-button text-orange",id:"id_following"%>
     <% else %>
-  <!-->フォローしている場合は<-->
-      <%= link_to 'フォロー中',relationships_path(following_id:@user.id),remote:true,class:"orange-button",id:"id_unfollowing",method: :delete %>
+      <%= link_to 'フォロー中',relationship_path(following_id:@user.id),remote:true,class:"orange-button",id:"id_unfollowing",method: :delete %>
     <% end %>
-  <!-->ログインしていない場合はボタンを非表示<-->
   <% end %>
