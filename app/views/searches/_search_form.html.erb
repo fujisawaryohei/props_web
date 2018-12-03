@@ -1,4 +1,7 @@
-<%= form_tag searches_index_path, method: :get, autocomplete: "off" do %>
-  <%= text_field_tag(:q, '', class: "bg-gray", placeholder: "投稿・ユーザーを検索") %>
-  <label><i class="fas fa-search"></i></label>
+<%= form_tag searches_index_path, class: "header-search-form", method: :get, autocomplete: "off" do %>
+  <%= text_field_tag(:q, '', class: "header-search-input bg-gray", placeholder: "投稿・ユーザーを検索") %>
+  <label class="header-search-label"><i class="fas fa-search"></i></label>
+  <%= link_to notifications_index_path, class: "bell mr-auto" do %>
+    <i class="far fa-bell bg-gray"></i>
+  <% end %>
 <% end %>
