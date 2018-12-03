@@ -1,0 +1,43 @@
+<div class="post-page bg-white container profile-edit all">
+  <%= form_for(@user) do |f| %>
+    <div class="top-bar flex">
+      <p class="cancel mr-auto"><a href="#" class="text-gray">キャンセル</a></p>
+<!--       <p><a href="#" class="orange-button text-white bg-orange save-button">保存</a></p> -->
+      <p><%= f.submit "保存", class: "orange-button text-white bg-orange save-button" %></p>
+    </div>
+    <hr class="m-0">
+      <div class="user-panel profile-icon">
+        <div class="mb-2">
+          <p class="user-icon user-icon-superbig"></p>
+          <p>
+            <%= f.label :image, "プロフィール写真を変更", class: "text-orange" %>
+            <%= f.file_field :image %>
+          </p>
+        </div>
+      </div>
+      <hr class="m-0">
+
+      <table class="text-left profile-edit-table">
+        <tbody>
+          <tr class="border-bottom">
+            <th>ユーザー名</th>
+      <!-- <td>Clownfish</td> -->
+            <td><%= f.text_field :name, placeholder: "ニックネーム" %></td>
+          </tr>
+          <tr class="border-bottom">
+            <th>自己紹介</th>
+            <td><%= f.text_area :self_comment %></td>
+          </tr>
+          <tr class="border-bottom">
+            <th>メールアドレス</th>
+            <td><%= f.email_field :email %></td>
+          </tr>
+          <!-- パスワード -->
+    <!--       <tr>
+            <th>***</th>
+            <td>*********</td>
+          </tr> -->
+        </tbody>
+      </table>
+  <% end %>
+</div>

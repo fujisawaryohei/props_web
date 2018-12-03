@@ -1,0 +1,55 @@
+<div class="all container userpage sp-container">
+  <!-- user-panel -->
+  <div class="user-panel">
+    <div class="mb-2 flex justify-content-between">
+      <%= image_tag @user.image, class: "user-icon user-icon-superbig" %>
+      <div class="user-explanation">
+        <p class="user-name mr-auto"><%= @user.name %></p>
+        <p class=""><%= @user.self_comment %></p>
+      </div>
+      <!-------------------------------------------------->
+      <div class="user-panel-button">
+        <label for="label1" class="label1" onclick="showButtonContents()"><span class="sp-hidden"><i class="fas fa-ellipsis-v"></i></span></label>
+<!--         <span class="button-contents" id="makeButtonContents">
+          <a href="#">ユーザーを報告</a><br>
+          <a href="#">ブロック</a><br>
+          <a href="#">キャンセル</a>
+        </span> -->
+      </div>
+      <!-------------------------------------------------->
+
+      <p><a href="#" class="orange-button profile-edit-button sp-show following">フォロー中</a></p>
+    </div>
+    <!-- フォロー数 -->
+    <div class="follow_follower-number sp-show">
+      <p><%= @user.followings.count %><span class="text-light-gray">フォロー中</span>&emsp;<%= @user.followers.count %><span class="text-light-gray">フォロワー</span></p>
+    </div>
+    <!-- /フォロー数 -->
+  </div><!-- /user-panel -->
+
+  <!-- PC版 nav -->
+  <div class="userpage-nav sp-hidden">
+    <div class="userpage-nav-content flex justify-content-around">
+      <p class="userpage-nav-button"><%= link_to "投稿", user_path(@user) %><span class="clip-number"><%= @user.posts.count %></span></p>
+      <p class="userpage-nav-button"><%= link_to "フォロー", user_following_path(@user), remote: true %><span class="clip-number"><%= @user.followings.count %></span></p>
+      <p class="userpage-nav-button"><%= link_to "フォロワー", user_follower_path(@user), remote: true %><span class="clip-number"><%= @user.followers.count %></span></p>
+      <p class="userpage-nav-button"><%= link_to "クリップ", user_clip_path(@user), remote: true %><span class="clip-number"><%= @user.clips.count %></span></p>
+      <p class="userpage-nav-button"><%= link_to "いいね", user_like_path(@user), remote: true %><span class="clip-number"><%= @user.likes.count %></span></p>
+    </div>
+  </div>
+  <!-- /PC版 nav -->
+
+  <!-- SP版 nav -->
+  <div class="userpage-sp-nav sp-show">
+    <div class="userpage-nav-content flex justify-content-between text-light-gray">
+      <p class="userpage-sp-nav-button"><%= link_to "投稿", user_path(@user) %></p>
+      <p class="userpage-sp-nav-button"><%= link_to "クリップ", user_clip_path(@user), remote: true %></p>
+      <p class="userpage-sp-nav-button"><%= link_to "いいね", user_like_path(@user), remote: true %></p>
+    </div>
+  </div>
+  <!-- /SP版 nav -->
+
+  <div class="userpage-content-list row" id="userpage-content-render"><!-- justify-content-between -->
+    <%= render partial: 'post', collection: @posts, as: 'post' %>
+  </div>
+</div>
