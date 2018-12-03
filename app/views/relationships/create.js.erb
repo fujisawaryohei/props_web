@@ -1,1 +1,1 @@
-$("#id_following").html("<%= j(render partial:'follow')%>")
+$("#follow-<%=@user.id%>").html("<%= j(render partial:'follow',locals:{user:@user})%>")
