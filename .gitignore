@@ -23,3 +23,9 @@
 .byebug_history
 
 /.env
+/Gemfile
+/Gemfile.lock
+/.ruby-version
+/application.js
+/application.scss
+/application.html.erb

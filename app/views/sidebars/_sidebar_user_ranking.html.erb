@@ -2,15 +2,7 @@
     <div class="ranking-user">
         <p class="ranking-user-title"><i class="far fa-user"></i>ユーザーランキング</p>
 <!--  side-bar ユーザーランキング ここから繰り返し -->
-        <div class="user-panel">
-            <div class="flex mb-2">
-                <a href="#" class="user-icon"></a>
-                <p class="user-name mr-auto"><a href="#">Name</a></p>
-                <%= render 'relationships/follow' %>
-            </div>
-            <p class="user-explanation text-gray">かぎはゴーシュのアンコール窓たちが仲間をつかまえるかっこうですた。するとちょっと下手ございございという下やた。生</p>
-            <hr>
-        </div>
+        <%= render partial:'rankings/user_rank', collection:@user_ranks, as:'user' %>
 <!--  /side-bar ユーザーランキング ここまで繰り返し -->
         <%= link_to "もっと見る", rankings_user_ranking_path, class: "more" %>
     </div><!-- /ranking-user -->
