@@ -24,7 +24,7 @@
 	border-radius: 50%;
 	float: left;
 	margin-right: .5rem;
-  margin-bottom:20px;
+  // margin-bottom:20px;
 }
 
 /* ユーザー名 */
@@ -152,4 +152,11 @@
 
 #post-panel-user-name{
   color: #8E8E93;
+}
+
+#user-icon-for-post img{
+  display: inline-block;
+  background-color: pink;
+  width: 40px;
+  height: 40px;
 }

@@ -1,5 +1,664 @@
+/* 共通 */
+
 @media (min-width: 1200px){
   .container {
     max-width: 980px;
   }
 }
+
+@media (min-width: 768px){
+  .detail-body {
+    max-width: 730px;
+  }
+
+  .sp-icon{
+    display: none !important;
+  }
+}
+
+@media (min-width: 768px){
+  .post-page{
+    max-width: 600px;
+  }
+
+  .post-page-1 ,.post-page-3{
+    margin-top: 0;
+  }
+}
+
+@media (min-width: 980px){
+  .header-content{
+    width: 980px;
+  }
+}
+
+@media (min-width: 768px){
+  .header-content{
+    width: 768px;
+    padding: 16px;
+  }
+
+  /******   11/8   ******/
+  /* 投稿ページ header バツボタン */
+  .fa-times{
+    display: none !important;
+  }
+
+  /* 曲 */
+  .post-page .music-panel{
+    display: none;
+  }
+}
+
+/******   11/8   ******/
+@media (min-width: 370px){
+  .sp-activity-displayText{
+    line-height: 40px;
+  }
+}
+
+@media (max-width: 980px){
+  .orange-button{
+    padding:7px;
+  }
+
+  .userpage-content-list-col {
+    width: 30%;
+    margin: 0 11px 15px;
+  }
+}
+
+@media (max-width: 767px){
+  /* header */
+  .props-logo{
+    margin: 0 auto;
+  }
+
+  .header-content {
+    display: block;
+    position: static;
+    padding-top: 16px;
+  }
+
+  header{
+    margin-bottom: 0;
+    height: auto;
+  }
+
+  .navbar-brand{
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    text-align:center;
+    margin: auto;
+  }
+
+  .navbar-toggler{
+    z-index: 10000;
+  }
+
+  /* 共通 */
+  hr{
+    margin-top: 1rem
+  }
+
+  .sp-hidden{
+    display: none;
+  }
+
+  .sp-show{
+    display: block;
+  }
+
+  .sp-box-shadow{
+    box-shadow: 0 0px 20px rgba(0,0,0,0.1);
+    padding: 5px;
+  }
+
+  .all{
+    /*border-top: 1px solid #ababab;*/
+    /*padding-top: 56px;*/
+    margin-top: 56px;
+  }
+
+  .post-page{
+    /**********************padding-top: 58px;*/
+    padding-top: 10px;
+  }
+
+  nav{
+    border-bottom: 1px solid #ababab;
+  }
+
+  .sp-container{
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  /* ホーム */
+  .sp-activity-time{
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  .music-panel{
+    width: 100%;
+    margin-top: 1rem;
+  }
+
+  .detail-content{
+    padding:0;
+  }
+
+  .post-content-action{
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .post-content-action i{
+    margin-right: 0;
+  }
+
+  /* 通知 */
+  .notification hr{
+    margin-top: 0;
+  }
+
+  .activity-main{
+    padding-right:0;
+  }
+
+  .quotemedia-img{
+    width: 70px;
+    height: 70px;
+  }
+
+  .user-icon-big{
+    width: 40px;
+    height: 40px;
+  }
+
+  .sp-activity-main{
+    display: flex;
+  }
+
+  .reply .activity-displayText{
+    padding:0;
+  }
+
+  .notification .container{
+    margin-top: 1.5rem;
+    margin-left: 0;
+  }
+
+  .follow .activity-displayText{
+    padding-top: 0;
+  }
+
+  .activity-displayText{
+    margin-bottom: 1.5rem;
+    padding-top: 0rem;
+  }
+
+  .activity-icon i {
+    font-size: 1.2rem;
+    padding: 9px;
+  }
+  .activity-icon{
+    top: -10%;
+  }
+
+  .user-icon, .user-icon-small, .user-icon-big {
+    margin-bottom: 5px;
+  }
+
+  .activity-item .activity-main{
+    padding-left: 20px;
+  }
+
+  .follow, .reply{
+    padding:0;
+  }
+
+  /***** 投稿詳細 *****/
+  .header-post-title{
+    padding-top: 3px;
+    line-height: 24px;
+  }
+
+  .header-post-title span{
+    font-size: 1rem;
+  }
+
+  /*アイコン*/
+  .user-icon-superbig {
+    width: 60px;
+    height: 60px;
+  }
+
+  /* メインイメージの */
+  #detail-top-image {
+    height: 380px;
+  }
+
+  /* 見出し */
+  .detail-content h4{
+    font-size: 1.6rem;
+  }
+
+  /* ユーザーパネル */
+  .detail-content .user-explanation {
+    margin-left: 74px;
+    font-size: 0.8rem;
+  }
+
+  .user-panel .user-name{
+    line-height: inherit;
+  }
+
+  .detail-content .user-panel {
+    padding: 20px 10px;
+  }
+
+  .detail-content .user-panel .flex{
+    display: block;
+    position: relative;
+  }
+
+  .user-panel-follow{
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  .user-panel-follow .orange-button{
+    line-height: inherit;
+  }
+
+  /* クリップ＆いいね */
+  .clip-like{
+    padding:0 15px;
+  }
+
+  /* コメント */
+  .comment-list .reply{
+    margin-top: 0;
+  }
+
+  .reply .activity-main{
+    position: relative;
+  }
+
+  .reply .activity-time{
+    position: absolute;
+    right: 0;
+  }
+  /* 重要！ */
+  .reply-line::before{
+    content: "";
+    width: 3px;
+    background: #FF9500;
+    display: block;
+    position: absolute;
+    top: 40px;
+    bottom: 0;
+    left: 18px;
+  }
+
+  /*** 投稿ページ ***/
+  /* header */
+
+  #post-button {
+    padding: 5px 15px;
+  }
+
+  /* 曲 */
+  .post-page .music-panel{
+    width: 90%;
+    margin: 2rem auto;
+    z-index: 1000;
+  }
+
+  .post-page .music-panel-info{
+    font-size: .8rem;
+    margin-left: 1rem;
+  }
+
+  .post-page .box-shadow {
+    box-shadow: 0 0px 20px rgba(0,0,0,0.2);
+  }
+
+  /* レビュー */
+  .edit {
+    padding: 0 1rem;
+  }
+
+  .write-text {
+    display: block;
+    position: relative;
+    padding-bottom: 0;
+  }
+
+  .write-text .fa-chevron-right{
+    position: absolute;
+    right: 0;
+  }
+
+  .review-ex{
+    font-size: .8rem;
+    padding-right: 15px;
+    margin-top: 32px;
+  }
+
+  .write-title h4{
+    font-size: 1.25rem;
+  }
+
+  /* 下書きの保存 */
+  .post-page .orange-button{
+    display: inline-block;
+    padding: 0 30px;
+    border-radius: 10px;
+  }
+
+  .draft-button{
+    text-align: center;
+  }
+
+  /*** 投稿画面 = post-page-1 ***/
+  /* 全体 */
+  .border-radius-30{
+    border-radius: inherit;
+  }
+
+  .post-page-content {
+    padding: 0;
+  }
+
+  .post-page-nav{
+    padding-top: 10px;
+  }
+
+  /* header */
+  .header-next{
+    margin-left: 1rem;
+  }
+
+  /* 曲りスト */
+  .song-list .post-image img {
+    height: 90px;
+  }
+
+  /* post-page-3 */
+  .header-search-form{
+    width: 50%;
+    margin: 0 auto;
+  }
+  .header-search-input{
+    background-color: #EFEFF4;
+    width: 100%;
+    padding-left: 40px;
+  }
+
+  /* 曲りスト */
+
+  .post-page-3 .post-image img{
+    width: 75px;
+    height: 75px;
+  }
+
+  .post-page-3 .post-image{
+    padding:15px 15px 0;
+    display: flex;
+  }
+
+  .sp-song-info{
+    margin-left: 20px;
+    width: 70%;
+    border-bottom: 1px solid #b4b4b4;
+    padding-bottom: 15px;
+  }
+
+  .sp-song-title{
+    margin-bottom: 10px;
+  }
+
+  .sp-song-info .text-light-gray{
+    font-size: .8rem;
+  }
+
+  /* 背景色 */
+  .post-page .bg-light-gray{
+    background-color: white;
+  }
+
+
+  /* ユーザー.png*/
+  .userpage .user-panel{
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+
+  .userpage .user-panel .flex{
+    flex-direction: column;
+    position: relative;
+  }
+
+  .userpage .user-panel{
+    width: 100%;
+    margin: 20px auto 10px;
+  }
+
+  .userpage .user-explanation{
+    width: 100%;
+  }
+
+  .userpage .user-icon-superbig{
+    width: 80px;
+    height: 80px;
+  }
+
+  .follow_follower-number{
+    margin-top: 20px;
+  }
+
+
+  /* プロフィール変更 */
+  .profile-edit-button{
+    position: absolute;
+    right: 0;
+    top:0;
+    line-height: inherit;
+  }
+
+  /*SP（投稿 クリップ いいね 下書き）*/
+  .userpage-sp-nav .userpage-nav-content{
+    width: 100%;
+  }
+
+  .userpage-sp-nav-button{
+    width: 25%;
+  }
+
+  .userpage-sp-nav-button:hover{
+    color: #FF9500;
+    border-bottom: 2px solid #FF9500;
+  }
+
+  .userpage-sp-nav{
+    padding:5px 0;
+    border-top: 1px solid #B2B2B2;
+    border-bottom: 1px solid #B2B2B2;
+  }
+
+  /* 投稿リスト （ジャケ写） */
+  .userpage-content-list-col {
+    width: 25%;
+    margin: 0 0px 15px;
+  }
+
+  .userpage-content-list .post-content-action{
+    display: none;
+  }
+
+  .userpage-content-list{
+    padding:0;
+    width: 100%;
+    margin: 0;
+  }
+
+  .userpage-content-list img{
+    height: 130px;
+  }
+
+  /* フォローフォロワー共通画面 */
+  .userpage{
+    margin-top: 80px;
+  }
+
+  .userpage-follow_follower .userpage-content-list-col{
+    width: 100%;
+    font-size: .8rem;
+  }
+
+  .userpage-follow_follower .user-panel {
+    position: relative;
+  }
+
+  .userpage-follow_follower .user-panel .orange-button{
+    position: absolute;
+    top: 0;
+    right: 0;
+    line-height: inherit;
+  }
+
+  .userpage-follow_follower .box-shadow{
+    box-shadow: none;
+  }
+
+  .userpage-follow_follower .user-panel .flex{
+    flex-direction: row;
+  }
+
+  .userpage-follow_follower .user-name{
+    font-size: 1.2rem;
+    line-height: 50px;
+    margin-left: 10px;
+  }
+
+  /* プロフィール編集 */
+  .profile-edit-table{
+    font-size: .8rem;
+  }
+
+  /*** ユーザーランキング ***/
+  .user-ranking-content .user-icon {
+    width: 60px;
+    height: 60px;
+    margin: 0 10px;
+  }
+
+  .user-ranking-content{
+    margin-top: 15px;
+  }
+
+  /* アイコン 名前 フォローボタン調整 */
+
+  .user-ranking-content .container{
+    padding-right: 0;
+  }
+
+  .user-ranking-content-col{
+    width: auto;
+    padding:0;
+  }
+
+  .user-ranking-content-col .user-name{
+    margin-bottom: 0;
+  }
+
+  /* 名前 */
+  .user-ranking-content .col-md-7{
+    margin-right: auto;
+    line-height: 60px;
+  }
+
+  /* フォローボタン */
+  .user-ranking-content .col-md-3{
+    line-height: 60px;
+  }
+
+  /*** 投稿ランキング ***/ /*** 新着（ new-arrivals ） ***/
+  /* header */
+  .sp-header-search-form{
+    margin: 0 auto ;
+  }
+
+  .sp-header-search-form .header-search-form{
+    width: 100%;
+  }
+
+  .ranking-number{
+    float: left;
+  }
+
+  .post-ranking-content{
+    padding:15px 0 0 0;
+  }
+
+  .post-ranking-content .col-right ,.new-arrivals-content .col-right{
+    padding-left: 0;
+    /**/
+    padding-right: 15px;
+  }
+
+  .post-ranking-content .text{
+    font-weight: normal;
+    /**/
+    margin-left: -25px;
+    position: relative;
+  }
+
+  .new-arrivals-content .text{
+    font-weight: normal;
+  }
+
+  .post-ranking-content img ,.new-arrivals-content img{
+    width: 95px;
+    height: 95px;
+  }
+
+  .new-arrivals-page .box{
+    padding-top: 0;
+  }
+
+  /*** ユーザーランキング、投稿ランキング、新着のグローバルメニュー ***/
+  .ranking-user-title, .ranking-post-title{
+    margin-bottom: 0;
+  }
+
+  @media (max-width: 430px){
+    .userpage-content-list img{
+      height: 100px;
+    }
+
+    .userpage-content-list-col{
+      margin: 0;
+    }
+
+  }
+}
+
+  @media (max-width: 360px){
+    .sp-header-search-form .header-search-form{
+      width: 210px;
+    }
+  }
+
+  @media (max-width: 320px){
+    .userpage-content-list img{
+      height: 80px;
+    }
+  }
