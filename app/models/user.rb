@@ -26,4 +26,6 @@ class User < ApplicationRecord
   has_many :comments, dependent: :destroy
 
   mount_uploader :image, ImageUploader
+
+  validates :name, uniqueness: { case_sensitive: :false }, length: { minimum: 1, maximum: 20 }
 end
