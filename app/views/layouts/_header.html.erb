@@ -2,7 +2,9 @@
 <header class="bg-white">
   <div class="header">
     <div class="header-content">
-      <a href="#"><img class="props-logo" src="..." alt="props"></a>
+      <%= link_to root_path do %>
+        <%= image_tag('PROPS_logo.png',class:"props-logo")%>
+      <% end %>
       <%= render 'searches/search_form' %>
       <a href="#" class="bell mr-auto"><i class="far fa-bell bg-gray"></i></a>
       <a href="#" class="user-icon"></a>
