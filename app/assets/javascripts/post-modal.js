@@ -133,8 +133,7 @@
 
     // モーダルを閉じる (保存)
     for (const elem of document.getElementsByClassName('modal-save')) {
-      elem.addEventListener('click', () => {
-        // TODO: ここに楽曲選択完了時・未選択時の処理を書く
+      elem.addEventListener('click', (e) => {
         modalBack.style.display = 'none';
         blur(false);
       });

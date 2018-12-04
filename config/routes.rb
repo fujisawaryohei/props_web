@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   root "posts#index"
   resources :posts
   resources :users
+  post '/posts/track', to: 'posts#track'
   get 'rankings/post_ranking', to: 'rankings#post_ranking'
   get 'searches/index', to: 'searches#index'
   get 'searches/more_posts', to: 'searches#more_posts'

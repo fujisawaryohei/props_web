@@ -9,58 +9,13 @@
         <p class="search-button"><a href="#" class="modal-search">検索</a></p>
       </div>
       <div class="song-list row sp-hidden">
-        <form onsubmit="return search();"><input type="text" placeholder="曲を検索">
+        <%= form_tag('/posts/track',html:{onsubmit:'return search();'},id:'track_search',method: :post,remote:true) do%>
+          <input type="text" name="query" id="track_name" placeholder="曲を検索する">
           <label><i class="fas fa-search"></i></label>
-        </form>
+        <% end %>
       </div>
-    <div class="song-list row">
-      <div class="post-image col-md-3">
-        <img src="..." alt="" class="">
-        <div class="song-info text-white sp-hidden">
-          <p class="song-title"><i class="far fa-user"></i>WAY OF GLORY</p>
-          <p class="artist"><i class="far fa-dot-circle"></i>AAA</p>
-        </div>
-        <div class="sp-song-info sp-show">
-          <p class="sp-song-title">鈴虫を飼う</p>
-          <p class="artist text-light-gray"><i class="far fa-user"></i>スピッツ</p>
-          <p class="song-title text-light-gray"><i class="far fa-dot-circle"></i>鈴虫を飼う</p>
-        </div>
+      <div class="song-list row" id="artists">
+        <%= render partial:'posts/artist-info'%>
       </div>
-      <div class="post-image col-md-3">
-        <img src="..." alt="" class="">
-        <div class="song-info text-white sp-hidden">
-          <p class="song-title"><i class="far fa-user"></i>WAY OF GLORY</p>
-          <p class="artist"><i class="far fa-dot-circle"></i>AAA</p>
-        </div>
-        <div class="sp-song-info sp-show">
-          <p class="sp-song-title">鈴虫を飼う</p>
-          <p class="artist text-light-gray"><i class="far fa-user"></i>スピッツ</p>
-          <p class="song-title text-light-gray"><i class="far fa-dot-circle"></i>鈴虫を飼う</p>
-        </div>
-      </div>
-      <div class="post-image col-md-3">
-        <img src="..." alt="" class="">
-        <div class="song-info text-white sp-hidden">
-          <p class="song-title"><i class="far fa-user"></i>WAY OF GLORY</p>
-          <p class="artist"><i class="far fa-dot-circle"></i>AAA</p>
-        </div>
-        <div class="sp-song-info sp-show">
-          <p class="sp-song-title">名前を付けてやる</p>
-          <p class="artist text-light-gray"><i class="far fa-user"></i>スピッツ</p>
-          <p class="song-title text-light-gray"><i class="far fa-dot-circle"></i>名前を付けてやる</p>
-        </div>
-      </div>
-      <div class="post-image col-md-3">
-        <img src="..." alt="" class="">
-        <div class="song-info text-white sp-hidden">
-          <p class="song-title"><i class="far fa-user"></i>WAY OF GLORY</p>
-          <p class="artist"><i class="far fa-dot-circle"></i>AAA</p>
-        </div>
-        <div class="sp-song-info sp-show">
-          <p class="sp-song-title">名前を付けてやる</p>
-          <p class="artist text-light-gray"><i class="far fa-user"></i>スピッツ</p>
-          <p class="song-title text-light-gray"><i class="far fa-dot-circle"></i>名前を付けてやる</p>
-        </div>
-      </div>
-    </div>
   </div>
+</div>
