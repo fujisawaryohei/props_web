@@ -3,7 +3,7 @@
       <% if !current_user.following?(user) %>
         <%= link_to 'フォローする',relationships_path(id:user.id), method: :post, remote:true, class:"orange-button text-orange"%>
       <% else %>
-        <%= link_to 'フォロー中',relationship_path(id:user.id), remote:true, class:"orange-button", method: :delete %>
+        <%= link_to 'フォロー中',relationship_path(id:user.id), remote:true, class:"orange-button bg-orange text-white", method: :delete %>
       <% end %>
     <% end %>
   <% end %>
