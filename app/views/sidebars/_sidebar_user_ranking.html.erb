@@ -1,9 +1,7 @@
 <div class="box bg-white mb-3">
     <div class="ranking-user">
         <p class="ranking-user-title"><i class="far fa-user"></i>ユーザーランキング</p>
-<!--  side-bar ユーザーランキング ここから繰り返し -->
         <%= render partial:'rankings/user_rank', collection:@user_ranks, as:'user' %>
-<!--  /side-bar ユーザーランキング ここまで繰り返し -->
         <%= link_to "もっと見る", rankings_user_ranking_path, class: "more" %>
     </div><!-- /ranking-user -->
 </div><!-- /box -->

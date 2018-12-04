@@ -2,10 +2,10 @@
 <div class="user-ranking-content">
   <div class="container">
     <div class="row">
-      <div class="col-md-2">
+      <div class="col-md-5">
         <a href="#" class="user-icon"><%= image_tag "#{ user.image }"%></a>
       </div>
-        <div class="col-md-4 pr-0">
+        <div class="col-md-6 pr-0">
           <p class="user-name mr-auto"><a href="#"><%= user.name %></a></p>
           <p class="user-explanation text-gray ml-0"><%= user.self_comment %></p>
           <ul class="follow-follower">
@@ -23,7 +23,7 @@
             </li>
           </ul>
         </div>
-      <div class="col-md-3">
+      <div class="col-md-8">
         <span id="follow-<%=user.id%>">
           <%= render partial:'relationships/follow', locals:{user:user}%>
         </span>
