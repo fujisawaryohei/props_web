@@ -2,60 +2,31 @@
   <!-- user-panel -->
   <div class="user-panel">
     <div class="mb-2 flex justify-content-between">
-<!--       <a href="#" class="user-icon user-icon-superbig"></a> -->
-      <%= image_tag current_user.image, class: "user-icon user-icon-superbig" %>
+      <%= image_tag @user.image, class: "user-icon user-icon-superbig" %>
       <div class="user-explanation">
-        <p class="user-name mr-auto"><%= current_user.name %></p>
-        <p class=""><%= current_user.self_comment %></p>
+        <p class="user-name mr-auto"><%= @user.name %></p>
+        <p class=""><%= @user.self_comment %></p>
       </div>
       <!-------------------------------------------------->
       <div class="user-panel-button">
         <label for="label1" class="label1" onclick="showButtonContents()"><span class="sp-hidden"><i class="fas fa-ellipsis-v"></i></span></label>
         <span class="button-contents" id="makeButtonContents">
-          <%= link_to "プロフィール編集", edit_user_path(current_user) %><br>
+          <%= link_to "プロフィール編集", edit_user_path(@user) %><br>
           <%= link_to "ログアウト", destroy_user_session_path, method: :delete %><br>
 <!--           <a href="#">キャンセル</a> -->
         </span>
       </div>
       <!-------------------------------------------------->
-      <p><%= link_to "プロフィール編集", edit_user_path(current_user), class: "orange-button profile-edit-button sp-show" %></p>
+      <p><%= link_to "プロフィール編集", edit_user_path(@user), class: "orange-button profile-edit-button sp-show" %></p>
     </div>
     <!-- フォロー数 -->
     <div class="follow_follower-number sp-show">
-      <p><%= current_user.followings.count %><span class="text-light-gray">フォロー中</span>&emsp;<%= current_user.followers.count %><span class="text-light-gray">フォロワー</span></p>
+      <p><%= @user.followings.count %><span class="text-light-gray">フォロー中</span>&emsp;<%= @user.followers.count %><span class="text-light-gray">フォロワー</span></p>
     </div>
     <!-- /フォロー数 -->
   </div><!-- /user-panel -->
 
-  <!-- PC版 nav -->
-  <div class="userpage-nav sp-hidden">
-    <div class="userpage-nav-content flex justify-content-around">
-      <p class="userpage-nav-button"><%= link_to "投稿", user_index_path %><span class="post-number"><%= current_user.posts.count %></span></p>
-      <p class="userpage-nav-button"><%= link_to "フォロー", user_following_path(current_user), remote: true %><span class="follow-number"><%= current_user.followings.count %></span></p>
-      <p class="userpage-nav-button"><%= link_to "フォロワー", user_follower_path(current_user), remote: true %><span class="follower-number"><%= current_user.followers.count %></span></p>
-      <p class="userpage-nav-button"><%= link_to "クリップ", user_clip_path(current_user), remote: true %><span class="clip-number"><%= current_user.clips.count %></span></p>
-      <div class="others-button accbox">
-        <input type="checkbox" id="label2" class="cssacc" />
-        <label for="label2" onclick="showOthers()" class="label2">その他</label>
-        <span class="others" id="makeoOthers">
-          <%= link_to "いいね", user_like_path(current_user), remote: true %><br>
-          <a href="#">下書き</a>
-        </span>
-      </div>
-    </div>
-  </div>
-  <!-- /PC版 nav -->
-
-  <!-- SP版 nav -->
-  <div class="userpage-sp-nav sp-show">
-    <div class="userpage-nav-content flex justify-content-between text-light-gray">
-      <p class="userpage-sp-nav-button"><a href="#">投稿</a></p>
-      <p class="userpage-sp-nav-button"><a href="#">クリップ</a></p>
-      <p class="userpage-sp-nav-button"><a href="#">いいね</a></p>
-      <p class="userpage-sp-nav-button"><a href="#">下書き</a></p>
-    </div>
-  </div>
-  <!-- /SP版 nav -->
+  <%= render partial: 'nav', locals: { user: @user } %>
 
   <div class="userpage-content-list row" id="userpage-content-render"><!-- justify-content-between -->
     <%= render partial: "post", collection: @posts, as: 'post' %>
