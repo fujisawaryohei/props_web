@@ -1,17 +1,4 @@
 <% if user_signed_in? %>
-<<<<<<< HEAD
-<header class="bg-white">
-  <div class="header">
-    <div class="header-content">
-      <a href="#"><img class="props-logo" src="..." alt="props"></a>
-      <%= render 'searches/search_form' %>
-      <a href="#" class="bell mr-auto"><i class="far fa-bell bg-gray"></i></a>
-      <a href="#" class="user-icon"></a>
-      <p><%= link_to "投稿",new_post_path,class:"orange-button text-white bg-orange",id:"post-button"%></p>
-    </div>
-  </div>
-</header>
-=======
   <header class="bg-white">
     <div class="header">
       <div class="header-content">
@@ -21,11 +8,10 @@
           <i class="far fa-bell bg-gray"></i>
         <% end %>
         <a href="#" class="user-icon"></a>
-        <p><a href="#" class="orange-button text-white bg-orange" id="post-button">投稿</a></p>
+        <%= link_to '投稿', new_post_path,class:"orange-button text-white bg-orange",id:"post-button"%>
       </div>
     </div>
   </header>
->>>>>>> 574f82604cfc2f9095be2797fe55e181f3124c38
 <% else %>
   <header class="bg-white modal-blur">
     <div class="header">
@@ -45,8 +31,4 @@
       </div>
     </div>
   </header>
-<<<<<<< HEAD
 <% end %>
-=======
-<% end %>
->>>>>>> 574f82604cfc2f9095be2797fe55e181f3124c38

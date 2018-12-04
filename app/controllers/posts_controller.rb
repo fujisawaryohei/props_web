@@ -21,7 +21,7 @@ class PostsController < ApplicationController
       @post = Post.new(artist_name:artist_name,track_name:track_name,track_image:track_image,preview_url:preview_url)
       if @post
         @post.save
-        redirected_to '/posts/index'
+        redirected_to '/posts/new'
       end
   end
 
