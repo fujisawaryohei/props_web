@@ -22,11 +22,4 @@
 
 .byebug_history
 
-/.gitignore
 /.env
-/Gemfile
-/Gemfile.lock
-/.ruby-version
-/app/views/layouts/application.html.erb
-/app/assets/stylesheets/application.scss
-/app/assets/javascripts/application.js
