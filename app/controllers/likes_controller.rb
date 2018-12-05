@@ -3,9 +3,10 @@ class LikesController < ApplicationController
 
   def create
     @like = Like.new(user_id: current_user.id, post_id: params[:post_id])
+    @post = Post.find_by(id: @like.post_id)
     if @like.save
       respond_to do |format|
-        format.json
+        format.js
       end
     else
       render nothing: true, status: 404
@@ -13,10 +14,11 @@ class LikesController < ApplicationController
   end
 
   def destroy
-    like = Like.find_by(user_id: current_user.id, post_id: params[:post_id])
-    if like.destroy
+    @like = Like.find_by(user_id: current_user.id, post_id: params[:post_id])
+    @post = Post.find_by(id: @like.post_id)
+    if @like.destroy
       respond_to do |format|
-        format.json
+        format.js
       end
     else
       render nothing: true, status: 404
