@@ -1,4 +1,5 @@
 class ClipsController < ApplicationController
+  after_action :create_notifications, only: [:create]
 
   def create
     @clip = Clip.new(user_id: current_user.id, post_id: params[:post_id])
@@ -22,4 +23,13 @@ class ClipsController < ApplicationController
     end
   end
 
+  private
+
+  def create_notifications
+    #下記要修正
+    post = Post.find(params[:post_id])
+
+    return if post.user_id == current_user.id
+    Notification.create(user_id: post.user_id, post_id: post.id, notified_by_id: current_user.id, notified_type: "clip")
+  end
 end

@@ -6,11 +6,11 @@
     <!-- **以下のifの条件は後で変数にする-->
   <% if post.likes.find_by(user_id: current_user.id).exists? %>
     <div class="change_to_unlike" color="blue">
-      <%= link_to post_like_path(like, post_id: params[:id]), method: :delete, id: "id_like", remote: true do %>
+      <%= link_to post_like_path(like, post_id: post.id), method: :delete, id: "id_like", remote: true do %>
         <!-- このボタンを押すとLike -> Unlikeになる -->
         <i class="fas fa-heart">
           <!-- **後で以下を変数にする -->
-          <p><%= Like.where(post_id: params[:id]).count %></p>
+          <p><%= Like.where(post_id: post.id).count %></p>
         </i>
       <% end %>
     </div>
@@ -21,7 +21,7 @@
         <!-- このボタンを押すとUnlike -> Likeになる -->
         <i class="far fa-heart">
           <!-- **後で以下を変数にする -->
-          <p><%= Like.where(post_id: params[:id]).count %></p>
+          <p><%= Like.where(post_id: post.id).count %></p>
         </i>
       <% end %>
     </div>
@@ -30,6 +30,6 @@
 <% else %>
   <i class="far fa-heart">
     <!-- **後で以下を変数にする -->
-    <p><%= Like.where(post_id: params[:id]).count %></p>
+    <p><%= Like.where(post_id: post.id).count %></p>
   </i>
 <% end %>

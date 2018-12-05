@@ -23,4 +23,6 @@ Rails.application.routes.draw do
   get 'searches/index', to: 'searches#index'
   get 'searches/more_posts', to: 'searches#more_posts'
   get 'searches/more_users', to: 'searches#more_users'
+  get 'notifications/index', to: 'notifications#index'
+  get 'notifications/:id/link_through', to: 'notifications#link_through', as: :link_through
 end
