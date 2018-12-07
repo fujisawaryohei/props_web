@@ -24,7 +24,7 @@
 	border-radius: 50%;
 	float: left;
 	margin-right: .5rem;
-  margin-bottom:20px;
+  // margin-bottom:20px;
 }
 
 /* ユーザー名 */
@@ -77,14 +77,6 @@
 
 .action p{
   display: inline-block;
-}
-
-#post-content-action {
-  display: -webkit-flex;
-  display: -moz-flex;
-  display: -ms-flex;
-  display: -o-flex;
-  display: flex;
 }
 
 #post-content-action i{
@@ -160,6 +152,13 @@
 
 #post-panel-user-name{
   color: #8E8E93;
+}
+
+#user-icon-for-post img{
+  display: inline-block;
+  background-color: pink;
+  width: 40px;
+  height: 40px;
 }
 
 .count-beside-btn{

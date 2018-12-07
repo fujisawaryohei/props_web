@@ -10,14 +10,15 @@
       <!-------------------------------------------------->
       <div class="user-panel-button">
         <label for="label1" class="label1" onclick="showButtonContents()"><span class="sp-hidden"><i class="fas fa-ellipsis-v"></i></span></label>
-        <span class="button-contents" id="makeButtonContents">
-          <%= link_to "プロフィール編集", edit_user_path(@user) %><br>
-          <%= link_to "ログアウト", destroy_user_session_path, method: :delete %><br>
-<!--           <a href="#">キャンセル</a> -->
-        </span>
+<!--         <span class="button-contents" id="makeButtonContents">
+          <a href="#">ユーザーを報告</a><br>
+          <a href="#">ブロック</a><br>
+          <a href="#">キャンセル</a>
+        </span> -->
       </div>
       <!-------------------------------------------------->
-      <p><%= link_to "プロフィール編集", edit_user_path(@user), class: "orange-button profile-edit-button sp-show" %></p>
+
+      <p><a href="#" class="orange-button profile-edit-button sp-show following">フォロー中</a></p>
     </div>
     <!-- フォロー数 -->
     <div class="follow_follower-number sp-show">
@@ -29,6 +30,6 @@
   <%= render partial: 'nav', locals: { user: @user } %>
 
   <div class="userpage-content-list row" id="userpage-content-render"><!-- justify-content-between -->
-    <%= render partial: "post", collection: @posts, as: 'post' %>
+    <%= render partial: 'post', collection: @posts, as: 'post' %>
   </div>
 </div>
