@@ -16,7 +16,10 @@ Rails.application.routes.draw do
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root "posts#index"
-  resources :posts
+  resources :posts do
+    resources :likes, only: [:create, :destroy]
+    resources :clips, only: [:create, :destroy]
+  end
   resources :user
   get 'user/:id/following', to: 'user#following', as: :user_following
   get 'user/:id/follower', to: 'user#follower', as: :user_follower
