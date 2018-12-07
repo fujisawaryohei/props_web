@@ -1,4 +1,4 @@
-<div id="id_like">
+<div class="like-clip-btn" id="id_like-<%= post.id %>">
   <!-- ユーザがログインしている場合-->
   <% if user_signed_in? %>
     <!-- 投稿をすでにいいねしている場合-->
@@ -22,7 +22,6 @@
     <% end %>
   <!-- ユーザがログインしていない場合-->
   <% else %>
-    <i class="far fa-heart"></i>
-    <p class="count-beside-btn"><%= Like.where(post_id: post.id).count %></p>
+    <i class="far fa-heart"><p class="count-beside-btn"><%= Like.where(post_id: post.id).count %></p></i>
   <% end %>
 </div>
