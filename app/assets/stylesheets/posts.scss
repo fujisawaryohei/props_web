@@ -79,6 +79,14 @@
   display: inline-block;
 }
 
+#post-content-action {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+}
+
 #post-content-action i{
   margin-right: 2rem;
 }
@@ -152,4 +160,16 @@
 
 #post-panel-user-name{
   color: #8E8E93;
+}
+
+.count-beside-btn{
+  margin-right: 2rem;
+}
+
+#id_like {
+  display: inline-block;
+}
+
+#id_clip {
+  display: inline-block;
 }
