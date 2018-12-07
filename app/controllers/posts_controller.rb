@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  before_action :authenticate_user!, only: [:edit, :update, :destroy, :new, :create]
+
   def index
     @user=User.new
     @user.reset_password_token = params[:reset_password_token]
