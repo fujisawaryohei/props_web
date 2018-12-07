@@ -17,8 +17,8 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root "posts#index"
   resources :posts do
-    resources :likes, only: [:create, :destory]
-    resources :clips, only: [:create, :destory]
+    resources :likes, only: [:create, :destroy]
+    resources :clips, only: [:create, :destroy]
   end
   resources :users
   get 'rankings/post_ranking', to: 'rankings#post_ranking'
