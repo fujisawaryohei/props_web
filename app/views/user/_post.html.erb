@@ -7,7 +7,6 @@
     </div>
   </div>
   <div class="post-user flex sp-hidden">
-<!--     <a href="#" class="user-icon user-icon-small"></a> -->
     <%= link_to image_tag(post.user.image, class: "user-icon user-icon-small"), user_path(post.user) %>
     <div class="post-info">
       <% if post.user == current_user %>
@@ -19,10 +18,10 @@
     </div>
   </div><!-- /post-user -->
   <hr class="m-0">
-  <div class="action post-content-action justify-content-around flex sp-hidden">
-    <i class="far fa-comment-dots"><p>12</p></i>
-    <i class="fas fa-heart"><p>212</p></i>
-    <i class="fas fa-link"><p>106</p></i>
+  <div class="action user-content-post-btn" id="post-content-action justify-content-around flex sp-hidden">
+    <i class="far fa-comment"><p class="count-beside-btn">0</p></i>
+    <%= render partial: 'likes/like', locals: { post: post } %>
+    <%= render partial: 'clips/clip', locals: { post: post} %>
     <i class="fas fa-external-link-alt"></i>
-  </div>
+ </div>
 </div>
