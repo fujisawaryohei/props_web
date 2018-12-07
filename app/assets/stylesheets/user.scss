@@ -342,3 +342,17 @@
   width: 85px;
   height: 85px;
 }
+
+.input-for-user{
+  padding-left: 40px;
+}
+
+.reg-input{
+  border: none;
+  border-radius: 3px;
+  width: -webkit-fill-available;
+  height: 50px;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+  font-size: 0.8rem;
+}

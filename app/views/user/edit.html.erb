@@ -20,7 +20,7 @@
           <% if @user.image? %>
             <%= image_tag @user.image, class: "user-icon user-icon-superbig profile-img", id: "user-img-preview" if @user.image? %>
           <% else %>
-            <p class="user-icon user-icon-superbig profile-img"></p>
+            <p class="user-icon user-icon-superbig profile-img" id="user-img-preview"></p>
           <% end %>
           <p>
             <%= f.label :image, "プロフィール写真を変更", class: "text-orange profile-edit-btn", for: "select-user-image" %>
