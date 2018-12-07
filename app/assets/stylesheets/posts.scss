@@ -24,7 +24,7 @@
 	border-radius: 50%;
 	float: left;
 	margin-right: .5rem;
-  margin-bottom:20px;
+  // margin-bottom:20px;
 }
 
 .user-icon-small {
@@ -151,6 +151,7 @@
   color: #8E8E93;
 }
 
+<<<<<<< HEAD
 
 /* post-page.css */
 .cancel{
@@ -432,3 +433,23 @@ h4{
 .recomend .col-6{
 	margin-top:1rem;
 }
+=======
+#user-icon-for-post img{
+  display: inline-block;
+  background-color: pink;
+  width: 40px;
+  height: 40px;
+}
+
+.count-beside-btn{
+  margin-right: 2rem;
+}
+
+#id_like {
+  display: inline-block;
+}
+
+#id_clip {
+  display: inline-block;
+}
+>>>>>>> bdc127f12ab38f4f5fc9173934faddfa378d3f1b

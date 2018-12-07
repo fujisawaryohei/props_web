@@ -1,4 +1,7 @@
 /***** ホーム *****/
+.all{
+  margin-top: 96px;
+}
 
 .all .box{
   padding: 15px 15px 1.5rem;
@@ -106,3 +109,42 @@
   padding-right: 5px;
 }
 
+.header-container{
+  max-width: 980px;
+  margin: 0 auto;
+  background-color: white;
+  z-index: 10000;
+}
+.navbar-brand{
+  margin: 0 auto;
+}
+
+@media (max-width: 570px){
+  .header-content {
+    display: block;
+    position: static;
+    padding-top: 16px;
+  }
+}
+
+.header-search-input{
+  width: 300px;
+  height: 40px;
+  padding: 5px 20px 5px 35px;
+  border: 1px solid #EFEFF4;
+  border-radius: 30px;
+  margin-right: 1rem;
+  font-weight: bold;
+}
+
+.header-search-form{
+  position: relative;
+}
+
+.header-search-label{
+  position: absolute;
+  left: 15px;
+  top: 0;
+  color: #8E8E93;
+  display: inline-block;
+}

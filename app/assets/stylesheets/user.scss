@@ -1,0 +1,358 @@
+
+/* ユーザーアイコン */
+.userpage .user-icon-superbig{
+  width:134px;
+  height:134px;
+}
+
+/* ユーザー情報 */
+.userpage .user-panel{
+  width: 80%;
+  margin: 50px auto;
+}
+
+.userpage .user-explanation{
+  width: 60%;
+  margin-left: 0;
+}
+
+.userpage .fa-ellipsis-v{
+  border: 1px solid #212529;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  line-height: 28px;
+  text-align: center;
+}
+
+.userpage .user-name {
+  line-height: inherit;
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+}
+
+.userpage-nav{
+  border-bottom: 1px solid#8e8e93;
+}
+
+.userpage-nav-content{
+  width: 70%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.userpage-nav-content span{
+  display: block;
+  font-weight: normal;
+  /*margin: 5px 0;*/
+}
+
+.userpage-nav-content a:hover{
+  text-decoration:none;
+}
+
+.userpage-nav-button{
+  display: inline-block;
+  padding-bottom: 4px;
+  position: relative;
+  width: 82px;
+}
+.userpage-nav-button::after{
+  background-color: #000000;
+  bottom: 0;
+  content: '';
+  display: block;
+  height: 2px;
+  position: absolute;
+  transition: .5s all;
+  width: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.userpage-nav-button:hover::after {
+  width: 80px;
+}
+
+.userpage-nav-button:hover{
+  cursor: pointer;
+}
+
+/* ユーザーページの投稿一覧 */
+.userpage-post-img {
+  width: 100%;
+  height: 200px;
+  display: block;
+  background-color: skyblue;
+}
+
+/* col */
+.userpage-content-list{
+  padding:15px;
+}
+
+.userpage-content-list-col{
+  border: 1px solid #eaeaea;
+  padding: 0px;
+}
+
+.userpage-content-list-col:hover{
+  box-shadow: 0 0px 50px rgba(0,0,0,0.2);
+  transition: .4s;
+}
+
+.userpage-content-list .post-user{
+  padding:15px;
+}
+
+.song-info-position{
+  position: relative;
+}
+
+.post-info{
+  width: 80%;
+}
+
+.userpage-content-list .action i{
+  margin: 0;
+}
+
+.userpage-content-list .post-content-action{
+  margin: 1rem 0;
+}
+
+/*.userpage-content-list-col{
+  width: 32%;
+  margin-bottom: 15px;
+  }*/
+
+.userpage-content-list-col {
+  width: 32%;
+  margin-bottom: 15px;
+  margin: 0 5px 15px;
+}
+
+
+/* userpage-follow_follower.html */
+.userpage-follow_follower .user-panel{
+  width: 90%;
+  margin: 15px;
+  /*position: absolute;*/
+}
+
+.userpage-follow_follower .user-explanation{
+  width: 100%;
+}
+
+.userpage-follow_follower .orange-button {
+  line-height: 40px;
+}
+
+
+/* 吹き出し */
+.others-button {
+  position   : relative;             /* 指定した分だけ相対的に移動 */
+  cursor   : pointer;                /* カーソルをポインターで表示 */
+}
+
+.others {
+  display: none !important;                     /* 要素を非表示 */
+}
+
+.others1 a{
+  line-height: 30px;
+  font-weight: bold;
+}
+
+.others1 {
+  position: absolute;                   /* 親要素を基準 */
+  display: inline;                      /* 要素をインラインとして表示 */
+  padding: 10px;                         /* テキストの前後の余白 */
+  background-color: #FFF;       /* 背景色（透明度） */
+  width:100px;                          /* 吹き出し全体の幅 */
+  left : -15%;                           /* 表示位置 */
+  top : 60%;                           /* 表示位置 */
+  margin-top : 12px;                    /* 表示位置 */
+  font-size: 80%;                       /* 文字サイズ */
+  z-index: 100;
+  box-shadow: 0 0px 20px rgba(0,0,0,0.1);
+}
+
+.others1:after{
+  border-bottom: 12px solid #FFF; /* 吹き出し口の高さ・色 */
+  border-left: 10px solid transparent;    /* 吹き出し口の幅１／２ */
+  border-right: 10px solid transparent;   /* 吹き出し口の幅１／２ */
+  top: -12px;                             /* 吹き出し口の位置調整 */
+  left : 40%;                              /* 吹き出し口の横位置 */
+  content: "";                       /* コンテンツの挿入 */
+  position: absolute;                /* 親要素を基準 */
+}
+
+/*アイコンを表示*/
+.label2:after {
+  content: '\f078';
+  font-family: "Font Awesome 5 Free";
+  padding-left: 8px;
+}
+
+/*チェックは隠す*/
+.userpage-nav input {
+  display:none;
+}
+
+/*アイコンを入れ替える*/
+.cssacc:checked + .label2:after {
+  content: '\f077';
+}
+
+
+
+/***** 他ユーザー *****/
+.follow-button{
+  font-size: 1rem;
+  background-color: white;
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 10px;
+  margin-left: 20px;
+  border: 1px solid #5E5E5E;
+}
+
+
+/*  ユーザーを報告、ブロック、キャンセル 表示・非表示  */
+.user-panel input{
+  display: none;
+}
+
+.user-panel-button{
+  position: relative;
+  cursor: pointer;
+}
+
+.button-contents {
+  display: none !important;                     /* 要素を非表示 */
+}
+
+.button-contents1 a{
+  line-height: 30px;
+  font-weight: bold;
+}
+
+
+.button-contents1 /*.others1*/ {
+  position: absolute;                   /* 親要素を基準 */
+  display: inline;                      /* 要素をインラインとして表示 */
+  padding: 10px 5px;                         /* テキストの前後の余白 */
+  background-color: #FFF;       /* 背景色（透明度） */
+  width:115px;                          /* 吹き出し全体の幅 */
+  left : -138%;                           /* 表示位置 */
+  top : 30%;                           /* 表示位置 */
+  margin-top : 12px;                    /* 表示位置 */
+  font-size: 80%;                       /* 文字サイズ */
+  z-index: 100;
+  box-shadow: 0 0px 20px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.button-contents1:after /*.others1:after*/{
+  border-bottom: 12px solid #FFF; /* 吹き出し口の高さ・色 */
+  border-left: 10px solid transparent;    /* 吹き出し口の幅１／２ */
+  border-right: 10px solid transparent;   /* 吹き出し口の幅１／２ */
+  top: -12px;                             /* 吹き出し口の位置調整 */
+  left : 40%;                              /* 吹き出し口の横位置 */
+  content: "";                       /* コンテンツの挿入 */
+  position: absolute;                /* 親要素を基準 */
+}
+
+.button-contents{
+  display: none !important;
+}
+
+.label1, .label2{
+  cursor: pointer;
+}
+
+
+/* プロフィール編集 */
+.profile-icon{
+  text-align: center;
+}
+
+.profile-icon .user-icon{
+  float: none;
+  margin: 1.3rem 0 0;
+}
+
+.profile-edit .top-bar{
+  line-height: 50px;
+}
+
+.profile-edit-table th{
+  width: 40%;
+  vertical-align: text-top;
+  padding:10px 0;
+}
+
+.profile-edit-table td{
+  padding:10px 0;
+}
+
+.profile-edit-list{
+}
+
+.user-content-self-comment{
+  height: 150px;
+  width: 100%;
+}
+
+.userpage-content-follow{
+  padding: 10px;
+}
+
+.profile-submit{
+  margin-left: 85%;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+#profile-submit-btn{
+  width: 80px;
+  height: 70%;
+  line-height: 50%;
+  text-align: center;
+}
+
+.profile-table{
+  width: 100%;
+}
+
+.profile-input{
+  width: 80%;
+}
+
+#profile-input-self-comment{
+  height: 150px;
+}
+
+.profile-edit-btn:hover{
+  cursor: pointer;
+}
+
+.profile-img{
+  width: 85px;
+  height: 85px;
+}
+
+.input-for-user{
+  padding-left: 40px;
+}
+
+.reg-input{
+  border: none;
+  border-radius: 3px;
+  width: -webkit-fill-available;
+  height: 50px;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+  font-size: 0.8rem;
+}

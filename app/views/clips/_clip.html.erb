@@ -1,38 +1,28 @@
-<!-- 当部分テンプレートは一つの投稿(post)に対するものとして想定している-->
-
-<!-- ユーザがログインしている場合-->
-<% if user_signed_in? %>
-  <!-- 投稿をすでにクリップしている場合-->
-    <!-- **以下のifの条件は後で変数にする-->
-  <% if post.clips.find_by(user_id: current_user.id).exists? %>
-    <div class="change_to_unclip">
-      <%= link_to post_clip_path(clip, post_id: post.id), method: :delete, id: "id_clip", remote: true do %>
-        <!-- **以下の文字の代わりにimgタグでボタンを設置 -->
-        <!-- このボタンを押すとClip -> Unclipになる -->
-        <!-- 以下のアイコン(fas fa-paperclip)の色を変更する必要あり -->
-        <i class="fas fa-paperclip">
-          <!-- **以下のclip数は後で変数にする -->
-          <p><%= Clip.where(post_id: post.id).count %></p>
-        </i>
-      <% end %>
-    </div>
+<div id="id_clip">
+  <!-- ユーザがログインしている場合-->
+  <% if user_signed_in? %>
+    <!-- 投稿をすでにクリップしている場合-->
+    <% if post.clips.find_by(user_id: current_user.id) %>
+      <p class="change_to_unclip">
+        <%= link_to post_clip_path(post.clips.find_by(user_id: current_user.id), post_id: post.id), method: :delete, remote: true do %>
+          <!-- このボタンを押すとClip -> Unclipになる -->
+          <i class="fas fa-paperclip text-orange"></i>
+          <p class="count-beside-btn text-orange"><%= Clip.where(post_id: post.id).count %></p>
+        <% end %>
+      </p>
+    <% else %>
+      <!-- 投稿をまだクリップしていない場合-->
+      <p class="change_to_clip">
+        <%= link_to post_clips_path(post_id: post.id), method: :post, remote: true do %>
+          <!-- このボタンを押すとUnclip -> Clipになる -->
+          <i class="fas fa-paperclip"></i>
+          <p class="count-beside-btn"><%= Clip.where(post_id: post.id).count %></p>
+        <% end %>
+      </p>
+    <% end %>
+  <!-- ユーザがログインしていない場合-->
   <% else %>
-    <!-- 投稿をまだクリップしていない場合-->
-    <div class="change_to_clip">
-      <%= link_to post_clips_path, method: :post, id: "id_clip", remote: true do %>
-        <!-- **以下の文字の代わりにimgタグでボタンを設置 -->
-        <!-- このボタンを押すとUnclip -> Clipになる -->
-        <i class="fas fa-paperclip">
-          <!-- **以下のclip数は後で変数にする -->
-          <p><%= Clip.where(post_id: post.id).count %></p>
-        </i>
-      <% end %>
-    </div>
+    <i class="fas fa-paperclip"></i>
+    <p class="count-beside-btn"><%= Clip.where(post_id: post.id).count %></p>
   <% end %>
-<!-- ユーザがログインしていない場合-->
-<% else %>
-  <i class="fas fa-paperclip">
-    <!-- **以下のclip数は後で変数にする -->
-    <p><%= Clip.where(post_id: post.id).count %></p>
-  </i>
-<% end %>
+</div>

@@ -1,251 +1,174 @@
-body {
-font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", YuGothic, "ヒラギノ角ゴ ProN W3", Hiragino Kaku Gothic ProN, Arial, "メイリオ", Meiryo, sans-serif;
-background-color: #F7F7F7;
-font-weight: bold;
+// Place all the styles related to the posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+/***** ホーム *****/
+
+.all .box{
+	padding: 15px 15px 1.5rem;
 }
 
-/***** 共通 ******/
-
-/* responsive */
-.sp-show{
-  display: none;
+/***** main *****/
+.all .main{
+	padding: 0;
 }
 
-.height-58{
-  height: 58px;
+/*** main 投稿者 ***/
+.post-user{
+	position: relative;
 }
 
-/* 文字 */
-p{
-  margin-bottom: 0;
+.user-icon{
+	display: inline-block;
+	height:50px;
+	width: 50px;
+	border-radius: 50%;
+	float: left;
+	margin-right: .5rem;
+  // margin-bottom:20px;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-weight: bold;
+/* ユーザー名 */
+.user-name{
+  margin-bottom: 3px;
 }
 
-a{
-  color: inherit;
+/* 投稿日 */
+.post-date{
+  font-size: .75rem;
 }
 
-a:hover{
-  /*text-decoration: none;*/
-  color: inherit;
+/*** 投稿曲 ***/
+.post-image{
+  position: relative;
+  /*margin: 1rem 0;*/
 }
 
-.text-gray{
-  color: #5E5E5E;
+.post-image img{
+  background-color: pink;
+  width: auto;
+  height: 200px;
+  display: block;
 }
 
-.text-light-gray{
-  color:#8E8E93;
+/* 曲について */
+.song-info{
+  position: absolute;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.7);
+  display: inline-block;
+  padding:5px 20px 5px 5px;
 }
 
-.text-orange{
-  color: #FF9500;
+.song-info i{
+  width: 20px;
+  text-align: center;
 }
 
-.hr-gray{
-  border-top: 1px solid #8E8E93;
-}
-
-/* 背景色 */
-.bg-white{
-  background-color: #FFF;
-}
-
-.bg-light-gray{
-  background-color: #F7F7F7;
-}
-
-.bg-gray{
-  background-color: #EFEFF4;
-}
-
-.bg-dark-gray{
-  background-color: #8E8E93;
-}
-
-.bg-orange{
-  background-color: #FF9500;
-}
-
-/* ボックスシャドウ */
-.box-shadow{
-  box-shadow: 0 0px 20px rgba(0,0,0,0.1);
-}
-/* border-rasius */
-.border-radius-30{
-  border-radius: 30px;
-}
-
-/* float flex */
-.clear{
-  clear: both;
+/*** 投稿テキスト ***/
+.post-text h4{
   margin: 1rem 0;
 }
 
-.flex{
-  display: flex;
-}
-
-/* hr */
-hr {
+/*** アクション ***/
+.action{
+  color: #C8C7CD;
   margin-top: 1.5rem;
-  margin-bottom: 1.5rem;
-  border-top: 1px solid #707070;
 }
 
-.header-hr{
-  border-top: 1px solid #ababab;
-}
-
-/* もっと見るボタン */
-.more{
-  border:1px solid #333;
-  background-color: #333;
-  color: #fff;
-  padding:5px 10px;
-  border-radius: 30px;
-  display: block;
-  margin: 0 auto;
-  text-align: center;
-  width:50%;
-}
-
-.more:hover{
-  color: #FFF;
-  transition: .4s;
-}
-
-/* オレンジボタン */
-.orange-button{
-  line-height: 50px;
-  border: 2px solid #FF9500;
-  padding: 7px 15px;
-  border-radius: 30px;
-  color: #FF9500;
-}
-
-.orange-button:hover{
-  background-color: #FF9500;
-  color: #FFF;
-  transition: 0.3s;
-  text-decoration: none;
-}
-
-/***** header *****/
-header {
-  top: 0;
-  width: 100%;
-  height: 80px;
-  line-height: 48px;
-  margin-bottom: 1rem;
-}
-
-.header{
-  max-width: 980px;
-  margin: 0 auto;
-}
-
-.props-logo{
-  width: 130px;
-  margin-right: 2rem;
-  /****** あとで変更 ******/
-  display: block;
-  background-color: pink;
-  /****** /あとで変更 ******/
-}
-
-.header-content {
-  display: flex;
-  position: absolute;
-  padding-top: 16px;
-  width: 980px;
-}
-.header-content {
-  display: flex;
-  position: absolute;
-  padding-top: 16px;
-  /*width: 980px;*/
-}
-
-.header-content label ,.song-list label{
-  position: absolute;
-  left: 15px;
-  top: 0;
-  color: #8E8E93;
+.action p{
   display: inline-block;
 }
 
-.header-content form ,.song-list form{
-  position: relative;
+#post-content-action i{
+  margin-right: 2rem;
 }
 
-.header-content input ,.song-list input{
-  width: 300px;
-  height: 40px;
-  padding: 5px 20px 5px 35px;
-  border: 1px solid #EFEFF4;
-  border-radius: 30px;
-  margin-right: 1rem;
-  font-weight: bold;
+#post-content-action p{
+  font-weight: 400;
 }
 
-.bell{
+.action i:before{
+  padding-right: 5px;
+}
+
+/***** side-bar *****/
+.side-bar{
+  height: 100%;
+  padding-right: 0;
+}
+
+/***** ユーザーランキング ＆ 投稿ランキング *****/
+/* (タイトル部分) */
+.ranking-user i, .ranking-post i{
   text-align: center;
 }
 
-header .fa-bell{
-  border-radius: 50%;
-  height: 40px;
+.ranking-user i:before, .ranking-post i:before{
+  padding-right: 5px;
+}
+
+.ranking-user-title, .ranking-post-title{
+  border-bottom: 1px solid #707070;
+  padding-bottom: 5px;
+  margin-bottom: 1rem;
+}
+
+/***** ユーザーランキング *****/
+/* ユーザー名*/
+.user-panel .user-name{
+  line-height: 50px;
+}
+
+/* ユーザーの説明 */
+.user-explanation{
+  margin-left: 50px;
+}
+
+/***** 投稿ランキング *****/
+/* 投稿曲写真 */
+.post-panel-image{
+  margin-left:80px;
+  width: 50px;
+  height: 50px;
+  background-color: pink;
+  display: block;
+}
+
+/* 投稿ランキングのアクション */
+#post-panel-action i{
+  margin-right: .5rem;
+  font-size: .75rem;
+}
+
+#post-panel-action{
+  margin-bottom: 1rem;
+}
+
+/* 投稿ランキングのユーザー欄 */
+#post-panel-user-icon{
+  height: 25px;
+  width: 25px;
+}
+
+#post-panel-user-name{
+  color: #8E8E93;
+}
+
+#user-icon-for-post img{
+  display: inline-block;
+  background-color: pink;
   width: 40px;
-  line-height: 40px !important;
-}
-
-/*** 投稿ランキングページのheader ***/
-#post-button{
-  padding:10px 35px;
-  margin-left: 1rem;
-}
-
-/*** footer ***/
-
-footer{
-  padding:1rem 0;
-}
-
-footer .detail-body{
-  margin-bottom: 0;
-}
-
-.footer i,.footer .user-icon, .footer form{
-  margin: 0 .5rem;
-}
-
-.footer {
-  display: flex;
-  align-items: center;
-}
-
-.footer input{
-  width: 300px;
   height: 40px;
-  padding: 5px 20px;
-  border: 1px solid #EFEFF4;
-  border-radius: 30px;
-  margin-right: 1rem;
-  font-weight: bold;
 }
 
-/*SP版 footer*/
-.footer-nav{
-  height: 45px;
-  padding:10px 0;
-  border-top: 1px solid #b2b2b2;
+.count-beside-btn{
+  margin-right: 2rem;
 }
-.footer-nav i{
-  font-size: 1.3rem;
-  color: #5E5E5E;
-  line-height: 24px;
+
+#id_like {
+  display: inline-block;
+}
+
+#id_clip {
+  display: inline-block;
 }

@@ -1,16 +1,20 @@
 <% if user_signed_in? %>
-  <header class="bg-white">
-    <div class="header">
-      <div class="header-content">
-        <a href="#"><img class="props-logo" src="..." alt="props"></a>
-        <%= render 'searches/search_form' %>
-        <%= link_to notifications_index_path, class: "bell mr-auto" do %>
-          <i class="far fa-bell bg-gray"></i>
-        <% end %>
-        <a href="#" class="user-icon"></a>
-        <%= link_to '投稿', new_post_path,class:"orange-button text-white bg-orange",id:"post-button"%>
+  <header class="bg-white fixed-top">
+    <nav class="navbar navbar-expand-md navbar-light header-container">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <a class="navbar-brand" href="#"><img class="props-logo" src="..." alt="props"></a>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <%= render 'searches/search_form' %>
+          </li>
+        </ul>
+        <%= link_to image_tag(current_user.image, class: "user-icon"), user_index_path %>
+        <p><a href="#" class="orange-button text-white bg-orange" id="post-button">投稿</a></p>
       </div>
-    </div>
+    </nav>
   </header>
 <% else %>
   <header class="bg-white modal-blur">
@@ -20,9 +24,6 @@
           <img class="props-logo" src="..." alt="props">
         </a>
         <%= render 'searches/search_form' %>
-        <a href="#" class="bell mr-auto">
-          <%= fa_icon("bell",class:"fa-bell bg-gray")%>
-        </a>
         <p class="header-left">
           <button type="button" class="like-a-tag" id="register-btn">新規登録</button>
           |
@@ -32,3 +33,7 @@
     </div>
   </header>
 <% end %>
+
+
+
+<!--  -->
