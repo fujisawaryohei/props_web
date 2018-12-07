@@ -1,4 +1,4 @@
-<div id="id_clip">
+<div class="like-clip-btn" id="id_clip-<%= post.id %>">
   <!-- ユーザがログインしている場合-->
   <% if user_signed_in? %>
     <!-- 投稿をすでにクリップしている場合-->
@@ -22,7 +22,6 @@
     <% end %>
   <!-- ユーザがログインしていない場合-->
   <% else %>
-    <i class="fas fa-paperclip"></i>
-    <p class="count-beside-btn"><%= Clip.where(post_id: post.id).count %></p>
+    <i class="fas fa-paperclip"><p class="count-beside-btn"><%= Clip.where(post_id: post.id).count %></p></i>
   <% end %>
 </div>

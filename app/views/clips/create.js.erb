@@ -1,1 +1,1 @@
-$("#id_clip").html("<%= j(render partial: 'clip', locals: { clip: @clip, post: @post }) %>")
+$("#id_clip-<%= @post.id %>").html("<%= j(render partial: 'clip', locals: { clip: @clip, post: @post }) %>")
