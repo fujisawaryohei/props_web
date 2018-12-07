@@ -43,12 +43,12 @@
   /*margin: 1rem 0;*/
 }
 
-.post-image img{
-  background-color: pink;
-  width: auto;
-  height: 200px;
-  display: block;
-}
+// .post-image img{
+//   background-color: pink;
+//   width: auto;
+//   // height: 200px;
+//   display: block;
+// }
 
 /* 曲について */
 .song-info{
@@ -165,10 +165,24 @@
   margin-right: 2rem;
 }
 
-#id_like {
+.like-clip-btn {
   display: inline-block;
 }
 
-#id_clip {
-  display: inline-block;
+.user-icon-mini{
+  height: 50px;
+  width: 50px;
+}
+
+.post-ranking-image{
+  height: 140px;
+  background-color: pink;
+  display: block;
+}
+
+.post-rank-image{
+  background-color: pink;
+  width: auto;
+  height: 200px;
+  display: block;
 }

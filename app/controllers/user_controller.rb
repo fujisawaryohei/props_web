@@ -1,5 +1,6 @@
 class UserController < ApplicationController
   layout 'sub_layout'
+  before_action :authenticate_user!, only: [:index, :edit, :update, :destroy, :new, :create]
   before_action :other_user, only: [:show, :following, :follower, :like, :clip]
 
   def index
