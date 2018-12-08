@@ -11,13 +11,15 @@
           <p class="search-button sp-hidden"><a href="#" class="modal-search a-modal">検索</a></p>
         </div>
         <div class="song-list row">
+          <% @trend_post.each do |trend_post| %>
           <div class="post-image col-3">
-            <img src="..." alt="" class="">
+            <img src="<%=trend_post.track_image%>" alt="" class="">
             <div class="song-info text-white sp-hidden">
-              <p class="song-title"><i class="far fa-user"></i>WAY OF GLORY</p>
-              <p class="artist"><i class="far fa-dot-circle"></i>AAA</p>
+              <p class="song-title"><i class="far fa-user"></i><%=trend_post.track_name%></p>
+              <p class="artist"><i class="far fa-dot-circle"></i><%=trend_post.artist_name%></p>
             </div>
           </div><!-- /post-image -->
+          <% end %>
         </div>
       </div>
     </div>

@@ -169,6 +169,14 @@
   display: inline-block;
 }
 
+.user-icon-mini{
+  height: 50px;
+  width: 50px;
+  width: auto;
+  height: 200px;
+  display: block;
+}
+
 #id_clip {
   display: inline-block;
 }
@@ -456,10 +464,12 @@ h4{
 #post_title {
 	width:500px;
 	height:50px;
+	font-weight: bold;
 }
 #post_text {
 	width:1050px;
 	height:300px;
+	font-weight: bold;
 }
 #submit_btn{
 	float:right;

@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  before_action :authenticate_user!, only: [:edit, :update, :destroy, :new, :create]
   protect_from_forgery :except => [:create]
   before_action :set_query,:increment
   def index
@@ -9,6 +10,9 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
+    posts = Post.all
+    post_rank_ids = Like.group(:post_id).order('count_post_id DESC').limit(12).count(:post_id).keys
+    @trend_post = post_rank_ids.map { |id| Post.find(id) }
   end
 
   def show
@@ -19,12 +23,9 @@ class PostsController < ApplicationController
       respond_to do |format|
         if @post.save
           format.html {redirect_to:posts,notice:"投稿しました"}
-        elsif params[:title].nil?
-          format.html {render:new_post,notice:"タイトルを入力してください"}
-        elsif params[:text].nil?
-          format.html {render:new_post,notice:"レビューを入力してください"}
         else
-          format.html {render:new_post,notice:"曲を選択してください"}
+          flash.now[:alert] = "曲を選択後、タイトル,レビューを入力してください。"
+          format.html {redirect_to:new_post}
         end
       end
   end
@@ -51,6 +52,7 @@ class PostsController < ApplicationController
         format.js
       end
     end
+    puts @track_info
   end
 
   private

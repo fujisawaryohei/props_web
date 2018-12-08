@@ -12,10 +12,10 @@
 
   <body>
     <%= render 'layouts/header'%>
-    <% if notice %>
+    <% if flash[:notice].present? %>
      <p class="alert alert-notice"><%= notice %></p>
     <% end %>
-    <% if alert %>
+    <% if flash[:alert].present? %>
      <p class="alert alert-error"><%= alert %></p>
     <% end %>
     <%= yield %>

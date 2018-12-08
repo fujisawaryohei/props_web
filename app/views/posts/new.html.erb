@@ -15,10 +15,10 @@
     <div class="edit text-light-gray">
       <%= form_for(@post) do |f| %>
       <div class="write-title">
-        <%= f.text_field :title,placehodler:"タイトルを入力してください",class:"post-title"%>
+        <%= f.text_field :title,placeholder:"タイトルを入力してください",class:"post-title"%>
       </div>
       <div class="write-text">
-        <%= f.text_area :text ,placehodler:"本文を1000字で入力してください",class:"post-text"%>
+        <%= f.text_area :text ,placeholder:"本文を1000字で入力してください",class:"post-text"%>
       </div>
       <%=f.hidden_field :artist_name,id:"artist_field",value:""%>
       <%=f.hidden_field :track_name,id:"track_field",value:""%>
