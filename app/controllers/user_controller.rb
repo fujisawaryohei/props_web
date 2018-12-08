@@ -1,19 +1,68 @@
 class UserController < ApplicationController
-  #ユーザー詳細
+  layout 'sub_layout'
+  before_action :authenticate_user!, only: [:index, :edit, :update, :destroy, :new, :create]
+  before_action :other_user, only: [:show, :following, :follower, :like, :clip]
+
+  def index
+    @user = User.find_by(id: current_user)
+    @posts = current_user.posts.order('created_at DESC')
+  end
+
   def show
-    @followings = current_user.followings
-    @followers = current_user.followers
+    @posts = @user.posts.order('created_at DESC')
   end
-  #ユーザー情報編集
+
   def edit
+    @user = User.find_by(id: current_user)
   end
-  #ユーザー情報のupdate
+
   def update
+    @user = User.find_by(id: current_user)
+    if @user.update(user_params)
+      redirect_to user_index_path
+    else
+      render :edit
+    end
   end
-  #フォローボタンの部分テンプレ
-  def follow_form
+
+  def following
+    @user_followings = @user.followings
+    respond_to do |format|
+      format.js
+    end
   end
-  #ログインしているユーザーのフォロー数、フォロワー数を確認できる部分テンプレ user/showにrender
-  def current_user_stats
+
+  def follower
+    @user_followers = @user.followers
+    respond_to do |format|
+      format.js
+    end
   end
+
+  def like
+    user_likes = @user.likes
+    @posts = user_likes.map { |like| Post.find_by(id: like.post_id) }
+    respond_to do |format|
+      format.js
+    end
+  end
+
+  def clip
+    user_clips = @user.clips
+    @posts = user_clips.map { |clip| Post.find_by(id: clip.post_id) }
+    respond_to do |format|
+      format.js
+    end
+  end
+
+  private
+
+  def user_params
+    params.require(:user).permit(:name, :email, :self_comment, :image)
+  end
+
+  def other_user
+    @user = User.find_by(id: params[:id])
+  end
+
 end

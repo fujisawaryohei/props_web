@@ -25,16 +25,7 @@ class User < ApplicationRecord
 
   has_many :comments, dependent: :destroy
 
-#引数にきたuserをフォローしているかを調べるメソッド
-  def following?(other_user)
-    self.following_relationships.find_by(following_id:other_user.id)
-  end
-#フォローするメソッド
-  def follow!(other_user)
-      self.following_relationships.create!(following_id:other_user.id)
-  end
-#フォロー解除するメソッド
-  def unfollow!(other_user)
-    self.following_relationships.find_by(following_id: other_user.id).destroy
-  end
+  mount_uploader :image, ImageUploader
+
+  validates :name, uniqueness: { case_sensitive: :false }, length: { minimum: 1, maximum: 20 }
 end

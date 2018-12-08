@@ -11,7 +11,7 @@
  * It is generally better to create a new file per style scope.
  */
  // @import "bootstrap-sprockets";
- //@import "bootstrap";
+ @import "bootstrap";
  @import "style.scss";
  @import "font-awesome";
  @import "responsive.scss";
@@ -26,3 +26,4 @@
  @import "post_ranking.scss";
  @import "user_ranking.scss";
  @import "side-bar.scss";
+ @import "user.scss";

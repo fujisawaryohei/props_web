@@ -1,10 +1,30 @@
 body {
-font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", YuGothic, "ヒラギノ角ゴ ProN W3", Hiragino Kaku Gothic ProN, Arial, "メイリオ", Meiryo, sans-serif;
-background-color: #F7F7F7;
-font-weight: bold;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", YuGothic, "ヒラギノ角ゴ ProN W3", Hiragino Kaku Gothic ProN, Arial, "メイリオ", Meiryo, sans-serif;
+  background-color: #F7F7F7;
+  font-weight: bold;
 }
 
 /***** 共通 ******/
+/* responsive */
+.sp-show{
+  display: none;
+}
+
+.height-58{
+  height: 58px;
+}
+
+/* フォローしてる */
+.following{
+  background-color:#FF9500;
+  color: #FFF !important;
+}
+
+/* ヘッダー */
+.header-center{
+  margin:0 auto;
+}
+
 /* 文字 */
 p{
   margin-bottom: 0;
@@ -19,7 +39,6 @@ a{
 }
 
 a:hover{
-  /*text-decoration: none;*/
   color: inherit;
 }
 
@@ -40,12 +59,29 @@ a:hover{
   background-color: #FFF;
 }
 
+.bg-light-gray{
+  background-color: #F7F7F7;
+}
+
 .bg-gray{
   background-color: #EFEFF4;
 }
 
+.bg-dark-gray{
+  background-color: #8E8E93;
+}
+
 .bg-orange{
   background-color: #FF9500;
+}
+
+/* ボックスシャドウ */
+.box-shadow{
+  box-shadow: 0 0px 20px rgba(0,0,0,0.1);
+}
+/* border-rasius */
+.border-radius-30{
+  border-radius: 30px;
 }
 
 /* float flex */
@@ -62,7 +98,11 @@ a:hover{
 hr {
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
-  border-top: 1px solid #707070;
+  /*border-top: 1px solid #707070;*/
+  border-top: 1px solid #EAEAEA;
+}
+.header-hr{
+  border-top: 1px solid #ababab;
 }
 
 /* もっと見るボタン */
@@ -76,6 +116,11 @@ hr {
   margin: 10px auto;
   text-align: center;
   width:50%;
+}
+
+.more:hover{
+  color: #FFF;
+  transition: .4s;
 }
 
 /* オレンジボタン */
@@ -100,7 +145,7 @@ header {
   width: 100%;
   height: 80px;
   line-height: 48px;
-  margin-bottom: 1rem;
+  box-shadow: 0 0px 20px rgba(0,0,0,0.1);
 }
 
 .header{
@@ -117,28 +162,67 @@ header {
   /****** /あとで変更 ******/
 }
 
-.header-content {
-  display: flex;
-  position: absolute;
-  padding-top: 16px;
-  width: 980px;
+<<<<<<< HEAD
+/***  11/8  ***/
+
+
+=======
+>>>>>>> 25f229bd20a0ef11ff7da40f53c99a6a1148b7a4
+.header-container{
+  max-width: 980px;
+  margin: 0 auto;
+  background-color: white;
+  z-index: 10000;
+}
+.navbar-brand{
+  margin: 0 auto;
 }
 
-.header-content label {
+.header-search-input{
+  width: 300px;
+  height: 40px;
+  padding: 5px 20px 5px 35px;
+  border: 1px solid #EFEFF4;
+  border-radius: 30px;
+  margin-right: 1rem;
+  font-weight: bold;
+}
+
+.header-search-form{
+  position: relative;
+}
+
+.header-search-label{
   position: absolute;
   left: 15px;
   top: 0;
   color: #8E8E93;
   display: inline-block;
-  /*max-width: 100%;*/
+
+.navbar-light .navbar-toggler {
+  border-color: white;
 }
 
-.header-content form {
+.header-content {
+  display: flex;
+  position: absolute;
+  padding-top: 16px;
+  // width: 980px;
+}
+
+.header-content label ,.song-list label{
+  position: absolute;
+  left: 15px;
+  top: 0;
+  color: #8E8E93;
+  display: inline-block;
+}
+
+.header-content form ,.song-list form{
   position: relative;
-  /*width: 100%;*/
 }
 
-.header-content input{
+.header-content input ,.song-list input{
   width: 300px;
   height: 40px;
   padding: 5px 20px 5px 35px;
@@ -152,7 +236,7 @@ header {
   text-align: center;
 }
 
-.fa-bell{
+header .fa-bell{
   border-radius: 50%;
   height: 40px;
   width: 40px;
@@ -161,6 +245,272 @@ header {
 
 /*** 投稿ランキングページのheader ***/
 #post-button{
-  padding:10px 35px;
+  padding:0px 35px;
   margin-left: 1rem;
+  display:block;
+}
+
+#posts-button{
+  padding:0px 35px;
+  margin-left:1rem;
+  display:none;
+}
+
+/* いいねされました */
+.body-good{
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.header-good{
+  height: auto;
+}
+
+.good-page{
+  margin-top: 58px;
+}
+
+.good-page .user-panel{
+  padding:1rem;
+}
+
+.good-page .box-shadow{
+  padding:5px;
+}
+
+.user-explanation{
+  margin-left: 60px;
+}
+
+.good-page .user-name{
+  line-height: 50px;
+  margin-left: 10px;
+}
+
+/* クリップされました */
+.body-clip{
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.header-clip{
+  height: auto;
+}
+
+
+/* レビュー内容 */
+.body-review{
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.header-review{
+  height: auto;
+}
+
+.review-page{
+  margin-top: 58px;
+  padding: 1rem;
+}
+
+.review-title{
+  margin-bottom: 1rem;
+}
+
+
+/* いいねされました */
+.body-good{
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.header-good{
+  height: auto;
+}
+
+.good-page{
+  margin-top: 58px;
+}
+
+.good-page .user-panel{
+  padding:1rem;
+}
+
+.good-page .box-shadow{
+  padding:5px;
+}
+
+.user-explanation{
+  margin-left: 60px;
+}
+
+.good-page .user-name{
+  line-height: 50px;
+  margin-left: 10px;
+}
+
+/* クリップされました */
+.body-clip{
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.header-clip{
+  height: auto;
+}
+
+
+/* レビュー内容 */
+.body-review{
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.header-review{
+  height: auto;
+}
+
+.review-page{
+  margin-top: 58px;
+  padding: 1rem;
+}
+
+.review-title{
+  margin-bottom: 1rem;
+}
+
+/*** footer ***/
+
+footer{
+  padding:1rem 0;
+}
+
+footer .detail-body{
+  margin-bottom: 0;
+}
+
+.footer i,.footer .user-icon, .footer form{
+  margin: 0 .5rem;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+}
+
+.footer input{
+  width: 300px;
+  height: 40px;
+  padding: 5px 20px;
+  border: 1px solid #EFEFF4;
+  border-radius: 30px;
+  margin-right: 1rem;
+  font-weight: bold;
+}
+
+/*SP版 footer*/
+.footer-nav{
+  height: 45px;
+  padding:10px 0;
+  border-top: 1px solid #b2b2b2;
+}
+.footer-nav i{
+  font-size: 1.3rem;
+  color: #5E5E5E;
+  line-height: 24px;
+}
+
+
+/*** 広告 ***/
+.uni-marble-advertisement img{
+  width: 100%;
+
+}
+
+.uni-marble-advertisement img:hover{
+  opacity: 0.9;
+  transition: 0.4s;
+}
+
+/*** footer 利用規約等 ***/
+.uni-marble-footer-link{
+  margin-top: 2rem;
+}
+
+.uni-marble-footer-link a, .uni-marble-footer-link p{
+  margin: 5px 0;
+  font-weight: normal;
+}
+
+.uni-marble-footer-link span{
+  font-weight: normal;
+}
+
+.uni-marble-footer-link a:hover{
+  text-decoration:none;
+  color: #333;
+  transition: 0.4s;
+}
+
+
+/*** 利用規約 ***/
+/* 利用規約のheader */
+.rules-header{
+  height: auto;
+}
+
+/* 利用規約 左メニュー */
+.rules-menu{
+  padding:0;
+  font-weight: normal;
+}
+
+.rules-menu a{
+  display: block;
+  background-color: #FFF;
+  border:1px solid #F7F7F7;
+  padding:3px 10px;
+  margin-bottom: 5px;
+}
+
+.rules-menu a:hover{
+  text-decoration:none;
+}
+
+/* 利用規約 メインコンテンツ */
+.rules-contents{
+  padding-right: 0;
+  font-weight: normal;
+}
+
+.rules-contents h2{
+  font-size: 1.75rem;
+  font-weight: normal;
+}
+
+.rules-contents h3{
+  font-size: 1.3rem;
+  font-weight: normal;
+}
+
+.rules-contents h4{
+  font-weight: normal;
+  font-size: 1rem;
+}
+
+ .rules-contents-mb, .rules-contents h2, .rules-contents h3{
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 767px){
+  /* 利用規約 メニュー */
+  .rules-menu{
+    margin: 2rem 0;
+    padding:0 15px;
+  }
+
+  /* 利用規約 メインコンテンツ */
+  .rules-contents{
+    padding:0 15px;
+  }
 }

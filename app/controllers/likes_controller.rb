@@ -2,10 +2,12 @@ class LikesController < ApplicationController
   after_action :create_notifications, only: [:create]
 
   def create
+    return if Like.exists?(user_id: current_user.id, post_id: params[:post_id])
     @like = Like.new(user_id: current_user.id, post_id: params[:post_id])
+    @post = Post.find_by(id: @like.post_id)
     if @like.save
       respond_to do |format|
-        format.json
+        format.js
       end
     else
       render nothing: true, status: 404
@@ -13,10 +15,15 @@ class LikesController < ApplicationController
   end
 
   def destroy
-    like = Like.find_by(user_id: current_user.id, post_id: params[:post_id])
-    if like.destroy
+    @like = Like.find_by(user_id: current_user.id, post_id: params[:post_id])
+    @post = Post.find_by(id: @like.post_id)
+    if @like.destroy
+      notification = Notification.find_by(user_id: @post.user_id, post_id: @post.id, notified_by_id: current_user.id, notified_type: 'like')
+      if notification
+        notification.destroy
+      end
       respond_to do |format|
-        format.json
+        format.js
       end
     else
       render nothing: true, status: 404
@@ -26,7 +33,6 @@ class LikesController < ApplicationController
   private
 
   def create_notifications
-    #下記要修正
     post = Post.find(params[:post_id])
 
     return if post.user_id == current_user.id

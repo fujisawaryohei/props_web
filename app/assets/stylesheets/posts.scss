@@ -24,7 +24,7 @@
 	border-radius: 50%;
 	float: left;
 	margin-right: .5rem;
-  margin-bottom:20px;
+  // margin-bottom:20px;
 }
 
 /* ユーザー名 */
@@ -43,12 +43,12 @@
   /*margin: 1rem 0;*/
 }
 
-.post-image img{
-  background-color: pink;
-  width: auto;
-  height: 200px;
-  display: block;
-}
+// .post-image img{
+//   background-color: pink;
+//   width: auto;
+//   // height: 200px;
+//   display: block;
+// }
 
 /* 曲について */
 .song-info{
@@ -152,4 +152,37 @@
 
 #post-panel-user-name{
   color: #8E8E93;
+}
+
+#user-icon-for-post img{
+  display: inline-block;
+  background-color: pink;
+  width: 40px;
+  height: 40px;
+}
+
+.count-beside-btn{
+  margin-right: 2rem;
+}
+
+.like-clip-btn {
+  display: inline-block;
+}
+
+.user-icon-mini{
+  height: 50px;
+  width: 50px;
+}
+
+.post-ranking-image{
+  height: 140px;
+  background-color: pink;
+  display: block;
+}
+
+.post-rank-image{
+  background-color: pink;
+  width: auto;
+  height: 200px;
+  display: block;
 }
