@@ -34,4 +34,6 @@ Rails.application.routes.draw do
   get 'searches/more_users', to: 'searches#more_users'
   get 'notifications/index', to: 'notifications#index'
   get 'notifications/:id/link_through', to: 'notifications#link_through', as: :link_through
+  get '/rules', to: 'policies#rules'
+  get '/policy', to: 'policies#privacypolicy'
 end
