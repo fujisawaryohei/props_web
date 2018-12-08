@@ -27,21 +27,6 @@
   // margin-bottom:20px;
 }
 
-.user-icon-small {
-	width: 40px;
-	height: 40px;
-}
-
-.user-icon-big{
-	width: 60px;
-	height: 60px;
-}
-
-.user-icon-superbig{
-	width: 85px;
-	height: 85px;
-}
-
 /* ユーザー名 */
 .user-name{
   margin-bottom: 3px;
@@ -98,16 +83,34 @@
   margin-right: 2rem;
 }
 
-.post-content-action i{
-	margin-right: 2rem;
-}
-
 #post-content-action p{
   font-weight: 400;
 }
 
 .action i:before{
   padding-right: 5px;
+}
+
+/***** side-bar *****/
+.side-bar{
+  height: 100%;
+  padding-right: 0;
+}
+
+/***** ユーザーランキング ＆ 投稿ランキング *****/
+/* (タイトル部分) */
+.ranking-user i, .ranking-post i{
+  text-align: center;
+}
+
+.ranking-user i:before, .ranking-post i:before{
+  padding-right: 5px;
+}
+
+.ranking-user-title, .ranking-post-title{
+  border-bottom: 1px solid #707070;
+  padding-bottom: 5px;
+  margin-bottom: 1rem;
 }
 
 /***** ユーザーランキング *****/
@@ -151,9 +154,26 @@
   color: #8E8E93;
 }
 
-<<<<<<< HEAD
+#user-icon-for-post img{
+  display: inline-block;
+  background-color: pink;
+  width: 40px;
+  height: 40px;
+}
 
-/* post-page.css */
+.count-beside-btn{
+  margin-right: 2rem;
+}
+
+#id_like {
+  display: inline-block;
+}
+
+#id_clip {
+  display: inline-block;
+}
+
+//post-page
 .cancel{
 	margin-right: 1rem;
 }
@@ -167,7 +187,7 @@
 	height: 200px;
 	align-items: center;
   justify-content: center;
-	cursor:pointer;
+	margin-top:100px;
 }
 
 .write-title{
@@ -293,8 +313,6 @@ h4{
 	padding-left: 125px;
 }
 
-
-/* post-detail.css */
 /***** 投稿詳細　下タブあり *****/
 
 .detail-body{
@@ -330,7 +348,7 @@ h4{
 }
 
 .music-panel{
-	margin-top: 2rem;
+	margin-top: 7rem;
 	margin-bottom: .5rem;
 	display: flex;
 	align-items: center;
@@ -433,23 +451,18 @@ h4{
 .recomend .col-6{
 	margin-top:1rem;
 }
-=======
-#user-icon-for-post img{
-  display: inline-block;
-  background-color: pink;
-  width: 40px;
-  height: 40px;
-}
 
-.count-beside-btn{
-  margin-right: 2rem;
+//投稿
+#post_title {
+	width:500px;
+	height:50px;
 }
-
-#id_like {
-  display: inline-block;
+#post_text {
+	width:1050px;
+	height:300px;
 }
-
-#id_clip {
-  display: inline-block;
+#submit_btn{
+	float:right;
+	width:300px;
+	margin-bottom:40px;
 }
->>>>>>> bdc127f12ab38f4f5fc9173934faddfa378d3f1b

@@ -21,6 +21,7 @@ Rails.application.routes.draw do
     resources :likes, only: [:create, :destroy]
     resources :clips, only: [:create, :destroy]
   end
+  post '/posts/track', to: 'posts#track'
   resources :user
   get 'user/:id/following', to: 'user#following', as: :user_following
   get 'user/:id/follower', to: 'user#follower', as: :user_follower

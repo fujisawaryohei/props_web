@@ -1,13 +1,12 @@
  <% if @params %>
    <% track_info.each do |track| %>
-    <div class="post-image col-md-3">
-      <%= link_to '/posts', track:track, method: :post do %>
-        <img src="<%= track['track_image'] %>">
+    <div class="post-image col-md-3" id="artist-info<%=@i%>">
+        <img src="<%= track['track_image'] %>" id="track_image<%=@i%>">
       <div class="song-info text-white sp-hidden">
-        <p class="song-title"><i class="far fa-user"></i><%= track['artist_name'] %></p>
-        <p class="artist"><i class="far fa-dot-circle"></i><%= track['track_name'] %></p>
+        <p class="song-title"><i class="far fa-user"></i><span id="artist_name<%=@i%>"><%= track['artist_name'] %></span></p>
+        <p class="artist"><i class="far fa-dot-circle"></i><span id="track_name<%=@i%>"><%= track['track_name'] %></span></p>
       </div>
-      <% end %>
     </div>
-  <% end %>
-<% end %>
+    <% @i += 1 %>
+   <% end %>
+ <% end %>
