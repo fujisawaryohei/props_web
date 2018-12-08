@@ -60,8 +60,16 @@ a:hover{
   background-color: #FFF;
 }
 
+.bg-light-gray{
+  background-color: #F7F7F7;
+}
+
 .bg-gray{
   background-color: #EFEFF4;
+}
+
+.bg-dark-gray{
+  background-color: #8E8E93;
 }
 
 .bg-orange{
@@ -92,6 +100,9 @@ hr {
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
   border-top: 1px solid #707070;
+}
+.header-hr{
+  border-top: 1px solid #ababab;
 }
 
 /* もっと見るボタン */
@@ -229,8 +240,15 @@ header .fa-bell{
 
 /*** 投稿ランキングページのheader ***/
 #post-button{
-  padding:10px 35px;
+  padding:0px 35px;
   margin-left: 1rem;
+  display:block;
+}
+
+#posts-button{
+  padding:0px 35px;
+  margin-left:1rem;
+  display:none;
 }
 
 /* いいねされました */

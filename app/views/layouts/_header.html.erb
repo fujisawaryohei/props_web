@@ -4,7 +4,9 @@
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <a class="navbar-brand" href="#"><img class="props-logo" src="..." alt="props"></a>
+      <%= link_to root_path do%>
+        <img class="props-logo" src="..." alt="props">
+      <% end %>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
@@ -12,7 +14,7 @@
           </li>
         </ul>
         <%= link_to image_tag(current_user.image, class: "user-icon"), user_index_path %>
-        <p><a href="#" class="orange-button text-white bg-orange" id="post-button">投稿</a></p>
+        <%= link_to "投稿", new_post_path, class:"orange-button text-white bg-orange",id:"post-button" %>
       </div>
     </nav>
   </header>

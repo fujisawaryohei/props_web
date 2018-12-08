@@ -1,9 +1,9 @@
 <div class="box-shadow userpage-content-list-col">
   <div class="song-info-position">
-    <img src="..." alt="" class="userpage-post-img">
+    <img src="<%= post.track_image%>" alt="" class="userpage-post-img">
     <div class="song-info text-white sp-hidden">
-      <p class="song-title"><i class="far fa-user"></i>WAY OF GLORY</p>
-      <p class="artist"><i class="far fa-dot-circle"></i>AAA</p>
+      <p class="song-title"><i class="far fa-user"></i><%=post.artist_name %></p>
+      <p class="artist"><i class="far fa-dot-circle"></i><%=post.track_name%></p>
     </div>
   </div>
   <div class="post-user flex sp-hidden">

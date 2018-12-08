@@ -1,0 +1,26 @@
+
+  <div class="post-page bg-white container border-radius-30">
+    <div class="top-bar flex sp-hidden">
+      <p class="cancel mr-auto"><a href="#" class="text-gray modal-cancel">キャンセル</a></p>
+      <p><a href="#" class="orange-button text-white bg-orange save-button modal-save">保存</a></p>
+    </div>
+    <div class="bg-light-gray">
+      <div class="post-page-content">
+        <div class="post-page-nav flex">
+          <p class="trend-button sp-hidden"><a href="#" class="modal-trend a-modal" >トレンド</a></p>
+          <p class="search-button sp-hidden"><a href="#" class="modal-search a-modal">検索</a></p>
+        </div>
+        <div class="song-list row">
+          <% @trend_post.each do |trend_post| %>
+          <div class="post-image col-3">
+            <img src="<%=trend_post.track_image%>" alt="" class="">
+            <div class="song-info text-white sp-hidden">
+              <p class="song-title"><i class="far fa-user"></i><%=trend_post.track_name%></p>
+              <p class="artist"><i class="far fa-dot-circle"></i><%=trend_post.artist_name%></p>
+            </div>
+          </div><!-- /post-image -->
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>

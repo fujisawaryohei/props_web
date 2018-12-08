@@ -22,7 +22,7 @@
   background-color: pink;
   border-radius: 50%;
   float: left;
-  margin-right: .5rem;
+  margin-right: 5px;
 }
 
 .user-icon{
@@ -95,6 +95,10 @@
 
 .action p{
   display: inline-block;
+}
+
+.post-content-action{
+	margin-top: 1.5rem;
 }
 
 #post-content-action i{
