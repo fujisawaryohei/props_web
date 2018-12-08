@@ -1,22 +1,21 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Props</title>
-    <%= csrf_meta_tags %>
+  <html>
+    <head>
+     <title>Props</title>
+     <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <script defer src="https://use.fontawesome.com/releases/v5.1.0/js/all.js" integrity="sha384-3LK/3kTpDE/Pkp8gTNp2gR/2gOiwQ6QaO7Td0zV76UFJVhqLl4Vl3KL1We6q6wR9" crossorigin="anonymous"></script>
-  </head>
-
+     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+      <script defer src="https://use.fontawesome.com/releases/v5.1.0/js/all.js" integrity="sha384-3LK/3kTpDE/Pkp8gTNp2gR/2gOiwQ6QaO7Td0zV76UFJVhqLl4Vl3KL1We6q6wR9" crossorigin="anonymous"></script>
+    </head>
   <body>
     <%= render 'layouts/header'%>
-    <% if notice %>
+    <% if flash[:notice].present? %>
      <p class="alert alert-notice"><%= notice %></p>
     <% end %>
-    <% if alert %>
+    <% if flash[:alert].present? %>
      <p class="alert alert-error"><%= alert %></p>
     <% end %>
     <%= yield %>
   </body>
-</html>
+ </html>

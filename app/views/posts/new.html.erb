@@ -1,35 +1,34 @@
   <hr class="sp-show m-0 header-hr">
     <div class="post-page bg-white container">
-      <div class="click-select bg-dark-gray flex sp-hidden" id="music-jacket-select">
+      <div class="click-select bg-dark-gray flex sp-hidden" id="music-jacket-select" style="cursor:pointer;">
         <p class="text-white">クリックして曲を選んでください</p>
       </div>
-      <div id="music-panel" class="music-panel text-gray box-shadow">
-          <img src="..." alt="" class="music-panel-image">
+      <div id="music-panel" class="music-panel text-gray box-shadow" style="cursor:pointer;">
+          <img src="..." alt="" id="music-panel-image" class="music-panel-image">
           <div class="music-panel-info">
-            <p class="song-title"><i class="far fa-user"></i>WAY OF GLORY</p>
-            <p class="artist"><i class="far fa-dot-circle"></i>AAA</p>
+            <p class="song-title"><i class="far fa-user"></i><span id="track"></span></p>
+            <p class="artist"><i class="far fa-dot-circle" ></i><span id ="artist"></span></p>
           </div>
       </div><!-- /music-panel -->
     <hr class="sp-show">
+
     <div class="edit text-light-gray">
+      <%= form_for(@post) do |f| %>
       <div class="write-title">
-        <h4 class="mr-auto">タイトル<span class="sp-hidden">を入力してください</span></h4>
-        <p class="counter">0/30</p>
+        <%= f.text_field :title,placeholder:"タイトルを入力してください",class:"post-title"%>
       </div>
       <div class="write-text">
-        <p class="mr-auto sp-hidden">本文を入力してください</p>
-        <div class="sp-show">
-          <h5 class="mr-auto sp-show">レビュー</h5>
-          <i class="fas fa-chevron-right"></i>
-          <p class="sp-show review-ex">例：かぎはゴーシュのアンコール窓たちが仲間をつかまえるかっこうですた。するとちょっと下手ございございという下やた。</p>
-        </div>
-        <p class="counter sp-hidden">0/1000</p>
+        <%= f.text_area :text ,placeholder:"本文を1000字で入力してください",class:"post-text"%>
       </div>
+      <%=f.hidden_field :artist_name,id:"artist_field",value:""%>
+      <%=f.hidden_field :track_name,id:"track_field",value:""%>
+      <%=f.hidden_field :track_image,id:"image_field",value:""%>
+      <%=f.hidden_field :user_id,value:current_user.id %>
+      <%= f.submit "送信",class:"orange-button",id:"submit_btn"%>
+      <% end %>
     </div>
+
     <hr class="sp-show">
-      <div class="draft-button sp-show">
-        <p class="orange-button text-center">下書きに保存する</p>
-      </div>
     </div>
     <div id="modal-back">
         <div id="modal">

@@ -1,6 +1,6 @@
 <div class="user-panel">
     <div class="flex mb-2">
-        <a href="#" class="user-icon"><%= image_tag "#{ user.image }"%></a>
+        <%= link_to image_tag(user.image, class: "user-icon user-icon-mini"), user_path(user) %>
         <p class="user-name mr-auto"><a href="#"><%= user.name %></a></p>
         <p><a href="#" class="orange-button text-orange">フォロー</a></p>
     </div>

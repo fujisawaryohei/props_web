@@ -12,12 +12,12 @@
         <!-- いいねしたユーザーのアイコン(最大10件？)を並べる-->
         <% some_notifications(notification).limit(10).each do |nt| %>
           <!-- 後で変更する -->
-          <li class="user-icon-small"><a href="#"></a></li>
+          <li class="user-icon-small"><%= image_tag User.find_by(id: nt.notified_by_id).image, class: "user-icon user-icon-mini" %></li>
         <% end %>
       </ul>
       <div class="clear"></div>
       <% if some_notifications(notification).count > 1 %>
-        <p class="activity-displayText text-gray"><strong><%= User.find_ by(id: notification.notified_by_id).name %></strong>さんと<strong>他<span class="count-wrap"><%= some_notifications(notification).count - 1 %></span>人</strong>があなたの投稿に「クリップ」しました
+        <p class="activity-displayText text-gray"><strong><%= User.find_by(id: notification.notified_by_id).name %></strong>さんと<strong>他<span class="count-wrap"><%= some_notifications(notification).count - 1 %></span>人</strong>があなたの投稿に「クリップ」しました
           <span class="activity-time"><%= nt_time(notification.created_at) %></span>
         </p>
       <% else %>

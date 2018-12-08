@@ -11,7 +11,7 @@
       <ul class="activity-userIcon">
         <!-- いいねしたユーザーのアイコン(最大10件？)を並べる-->
         <% some_notifications(notification).limit(10).each do |nt| %>
-          <li class="user-icon-small"><a href="#"></a></li>
+          <li class="user-icon-small"><%= image_tag User.find_by(id: nt.notified_by_id).image, class: "user-icon user-icon-mini" %></li>
         <% end %>
       </ul>
       <div class="clear"></div>

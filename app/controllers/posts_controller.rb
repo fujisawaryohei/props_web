@@ -1,27 +1,33 @@
 class PostsController < ApplicationController
-  before_action :set_query
+  before_action :authenticate_user!, only: [:edit, :update, :destroy, :new, :create]
+  protect_from_forgery :except => [:create]
+  before_action :set_query,:increment
+
   def index
     @user=User.new
     @user.reset_password_token = params[:reset_password_token]
-    @posts = Post.all
+    @posts = Post.all.order(created_at:"DESC")
   end
 
   def new
-
+    @post = Post.new
+    posts = Post.all
+    post_rank_ids = Like.group(:post_id).order('count_post_id DESC').limit(12).count(:post_id).keys
+    @trend_post = post_rank_ids.map { |id| Post.find(id) }
   end
 
   def show
   end
 
   def create
-    artist_name = params['track']['artist_name']
-    track_name = params['track']['track_name']
-    track_image = params['track']['track_image']
-    preview_url = params['track']['preview_url']
-      @post = Post.new(artist_name:artist_name,track_name:track_name,track_image:track_image,preview_url:preview_url)
-      if @post
-        @post.save
-        redirected_to '/posts/index'
+    @post = Post.new(set_params)
+      respond_to do |format|
+        if @post.save
+          format.html {redirect_to:posts,notice:"投稿しました"}
+        else
+          flash.now[:alert] = "曲を選択後、タイトル,レビューを入力してください。"
+          format.html {redirect_to:new_post}
+        end
       end
   end
 
@@ -32,6 +38,12 @@ class PostsController < ApplicationController
   end
 
   def destroy
+    @post = Post.find_by(id:params[:id])
+    respond_to do |format|
+      if @post.destroy
+        format.html {redirect_to:posts,notice:"削除しました"}
+      end
+    end
   end
 
   def track
@@ -41,10 +53,15 @@ class PostsController < ApplicationController
         format.js
       end
     end
+    puts @track_info
   end
 
   private
   #パラメータがあるかないかでartist_infoテンプレの表示、非表示の制御
+  def increment
+    @i = 0
+  end
+
   def set_query
     return @params = params[:query]
   end
@@ -53,8 +70,8 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
   end
 
-  def post_params
-    params.require(:post).permit(:artist_name,:track_name,:track_image,:preview_url)
+  def set_params
+    params.require(:post).permit(:user_id,:title,:text,:artist_name,:track_name,:track_image)
   end
 
   def search_track(track_name)

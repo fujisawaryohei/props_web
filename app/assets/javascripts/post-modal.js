@@ -51,13 +51,7 @@
    const modal = document.getElementById('modal');
    const modalBack = document.getElementById('modal-back');
 
-    // aタグの無効化
-    for (const a of document.querySelectorAll('#modal a')) {
-      a.addEventListener('click', e => {
-        e.preventDefault();
-      });
-    }
-
+  
     // ぼかしを入れる要素
     const header = document.querySelector('body > header');
     const hr = document.querySelector('body > hr');

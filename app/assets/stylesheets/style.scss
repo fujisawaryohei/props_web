@@ -54,10 +54,6 @@ a:hover{
   color: #FF9500;
 }
 
-.hr-gray{
-  border-top: 1px solid #8E8E93;
-}
-
 /* 背景色 */
 .bg-white{
   background-color: #FFF;
@@ -105,7 +101,6 @@ hr {
   /*border-top: 1px solid #707070;*/
   border-top: 1px solid #EAEAEA;
 }
-
 .header-hr{
   border-top: 1px solid #ababab;
 }
@@ -167,9 +162,12 @@ header {
   /****** /あとで変更 ******/
 }
 
+<<<<<<< HEAD
 /***  11/8  ***/
 
 
+=======
+>>>>>>> 25f229bd20a0ef11ff7da40f53c99a6a1148b7a4
 .header-container{
   max-width: 980px;
   margin: 0 auto;
@@ -200,19 +198,16 @@ header {
   top: 0;
   color: #8E8E93;
   display: inline-block;
-}
 
 .navbar-light .navbar-toggler {
   border-color: white;
 }
 
-/***  /11/8  ***/
-
 .header-content {
   display: flex;
   position: absolute;
   padding-top: 16px;
-  /*width: 980px;*/
+  // width: 980px;
 }
 
 .header-content label ,.song-list label{
@@ -250,8 +245,76 @@ header .fa-bell{
 
 /*** 投稿ランキングページのheader ***/
 #post-button{
-  padding:10px 35px;
+  padding:0px 35px;
   margin-left: 1rem;
+  display:block;
+}
+
+#posts-button{
+  padding:0px 35px;
+  margin-left:1rem;
+  display:none;
+}
+
+/* いいねされました */
+.body-good{
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.header-good{
+  height: auto;
+}
+
+.good-page{
+  margin-top: 58px;
+}
+
+.good-page .user-panel{
+  padding:1rem;
+}
+
+.good-page .box-shadow{
+  padding:5px;
+}
+
+.user-explanation{
+  margin-left: 60px;
+}
+
+.good-page .user-name{
+  line-height: 50px;
+  margin-left: 10px;
+}
+
+/* クリップされました */
+.body-clip{
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.header-clip{
+  height: auto;
+}
+
+
+/* レビュー内容 */
+.body-review{
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.header-review{
+  height: auto;
+}
+
+.review-page{
+  margin-top: 58px;
+  padding: 1rem;
+}
+
+.review-title{
+  margin-bottom: 1rem;
 }
 
 

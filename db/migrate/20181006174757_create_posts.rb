@@ -8,7 +8,7 @@ class CreatePosts < ActiveRecord::Migration[5.1]
       t.string :artist_name, null:false
       t.string :track_name, null:false
       t.string :track_image, null:false
-      t.string :preview_url, null:false
+      t.string :preview_url
 
       t.timestamps
     end

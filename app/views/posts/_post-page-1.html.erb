@@ -7,29 +7,19 @@
     <div class="bg-light-gray">
       <div class="post-page-content">
         <div class="post-page-nav flex">
-          <p class="trend-button sp-hidden"><a href="#" class="modal-trend">トレンド</a></p>
-          <p class="search-button sp-hidden"><a href="#" class="modal-search">検索</a></p>
-          <p class="trend-button sp-show"><a href="#" class="modal-trend">人気</a></p>
-          <p class="search-button sp-show"><a href="#" class="modal-search">最近使ったもの</a></p>
+          <p class="trend-button sp-hidden"><a href="#" class="modal-trend a-modal" >トレンド</a></p>
+          <p class="search-button sp-hidden"><a href="#" class="modal-search a-modal">検索</a></p>
         </div>
         <div class="song-list row">
-
+          <% @trend_post.each do |trend_post| %>
           <div class="post-image col-3">
-            <img src="..." alt="" class="">
+            <img src="<%=trend_post.track_image%>" alt="" class="">
             <div class="song-info text-white sp-hidden">
-              <p class="song-title"><i class="far fa-user"></i>WAY OF GLORY</p>
-              <p class="artist"><i class="far fa-dot-circle"></i>AAA</p>
+              <p class="song-title"><i class="far fa-user"></i><%=trend_post.track_name%></p>
+              <p class="artist"><i class="far fa-dot-circle"></i><%=trend_post.artist_name%></p>
             </div>
           </div><!-- /post-image -->
-
-          <div class="post-image col-3">
-            <img src="..." alt="" class="">
-              <div class="song-info text-white sp-hidden">
-                <p class="song-title"><i class="far fa-user"></i>WAY OF GLORY</p>
-                <p class="artist"><i class="far fa-dot-circle"></i>AAA</p>
-              </div>
-          </div><!-- /post-image -->
-
+          <% end %>
         </div>
       </div>
     </div>
