@@ -5,7 +5,7 @@
       <div class="col-left col-md-3 p-0">
         <div class="post-image">
           <!-- <img src="" alt="" class=""> -->
-          <%= image_tag "#{ post.track_image }"%>
+          <%= image_tag "#{ post.track_image }", class: "post-rank-image" %>
           <div class="song-info text-white">
             <p class="song-title"><i class="far fa-user"></i>WAY OF GLORY</p>
             <p class="artist"><i class="far fa-dot-circle"></i>AAA</p>
@@ -14,9 +14,8 @@
       </div>
       <div class="col-right col-md-9">
         <div class="post-user">
-          <a href="#" class="user-icon">
-          </a>
-          <p class="user-name text-gray"><a href="#"><%= post.user.name %></a></p>
+          <%= link_to image_tag(post.user.image, class: "user-icon user-icon-mini"), user_path(post.user) %>
+          <p class="user-name text-gray"><%= link_to "#{post.user.name}", user_path(post.user) %></p>
           <p><%= post.title %></p>
         </div><!-- /post-user -->
         <div class="clear"></div>
@@ -25,10 +24,8 @@
     </div><!-- /row -->
   </div><!-- /container -->
   <div class="action" id="post-content-action">
-    <i class="far fa-comment-dots"><p>12</p></i>
-<!--     <i class="fas fa-heart"><p>212</p></i> -->
+    <i class="far fa-comment-dots"><p>0</p></i>
     <%= render partial: 'likes/like', locals: { post: post }%>
-<!--     <i class="fas fa-link"><p>106</p></i> -->
     <%= render partial: 'clips/clip', locals: { post: post}%>
     <i class="fas fa-external-link-alt"></i>
   </div><!-- /action -->

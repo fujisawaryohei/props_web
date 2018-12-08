@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   before_action :authenticate_user!, only: [:edit, :update, :destroy, :new, :create]
   protect_from_forgery :except => [:create]
   before_action :set_query,:increment
-  
+
   def index
     @user=User.new
     @user.reset_password_token = params[:reset_password_token]
