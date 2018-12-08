@@ -1,7 +1,7 @@
 body {
-font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", YuGothic, "ヒラギノ角ゴ ProN W3", Hiragino Kaku Gothic ProN, Arial, "メイリオ", Meiryo, sans-serif;
-background-color: #F7F7F7;
-font-weight: bold;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", YuGothic, "ヒラギノ角ゴ ProN W3", Hiragino Kaku Gothic ProN, Arial, "メイリオ", Meiryo, sans-serif;
+  background-color: #F7F7F7;
+  font-weight: bold;
 }
 
 /***** 共通 ******/
@@ -39,7 +39,6 @@ a{
 }
 
 a:hover{
-  /*text-decoration: none;*/
   color: inherit;
 }
 
@@ -99,7 +98,8 @@ a:hover{
 hr {
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
-  border-top: 1px solid #707070;
+  /*border-top: 1px solid #707070;*/
+  border-top: 1px solid #EAEAEA;
 }
 .header-hr{
   border-top: 1px solid #ababab;
@@ -113,7 +113,7 @@ hr {
   padding:5px 10px;
   border-radius: 30px;
   display: block;
-  margin: 0 auto;
+  margin: 10px auto;
   text-align: center;
   width:50%;
 }
@@ -127,7 +127,7 @@ hr {
 .orange-button{
   line-height: 50px;
   border: 2px solid #FF9500;
-  padding: 7px 15px;
+  padding: 7px 7px;
   border-radius: 30px;
   color: #FF9500;
 }
@@ -162,6 +162,12 @@ header {
   /****** /あとで変更 ******/
 }
 
+<<<<<<< HEAD
+/***  11/8  ***/
+
+
+=======
+>>>>>>> 25f229bd20a0ef11ff7da40f53c99a6a1148b7a4
 .header-container{
   max-width: 980px;
   margin: 0 auto;
@@ -192,7 +198,6 @@ header {
   top: 0;
   color: #8E8E93;
   display: inline-block;
-}
 
 .navbar-light .navbar-toggler {
   border-color: white;
@@ -312,6 +317,68 @@ header .fa-bell{
   margin-bottom: 1rem;
 }
 
+
+/* いいねされました */
+.body-good{
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.header-good{
+  height: auto;
+}
+
+.good-page{
+  margin-top: 58px;
+}
+
+.good-page .user-panel{
+  padding:1rem;
+}
+
+.good-page .box-shadow{
+  padding:5px;
+}
+
+.user-explanation{
+  margin-left: 60px;
+}
+
+.good-page .user-name{
+  line-height: 50px;
+  margin-left: 10px;
+}
+
+/* クリップされました */
+.body-clip{
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.header-clip{
+  height: auto;
+}
+
+
+/* レビュー内容 */
+.body-review{
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.header-review{
+  height: auto;
+}
+
+.review-page{
+  margin-top: 58px;
+  padding: 1rem;
+}
+
+.review-title{
+  margin-bottom: 1rem;
+}
+
 /*** footer ***/
 
 footer{
@@ -351,4 +418,99 @@ footer .detail-body{
   font-size: 1.3rem;
   color: #5E5E5E;
   line-height: 24px;
+}
+
+
+/*** 広告 ***/
+.uni-marble-advertisement img{
+  width: 100%;
+
+}
+
+.uni-marble-advertisement img:hover{
+  opacity: 0.9;
+  transition: 0.4s;
+}
+
+/*** footer 利用規約等 ***/
+.uni-marble-footer-link{
+  margin-top: 2rem;
+}
+
+.uni-marble-footer-link a, .uni-marble-footer-link p{
+  margin: 5px 0;
+  font-weight: normal;
+}
+
+.uni-marble-footer-link span{
+  font-weight: normal;
+}
+
+.uni-marble-footer-link a:hover{
+  text-decoration:none;
+  color: #333;
+  transition: 0.4s;
+}
+
+
+/*** 利用規約 ***/
+/* 利用規約のheader */
+.rules-header{
+  height: auto;
+}
+
+/* 利用規約 左メニュー */
+.rules-menu{
+  padding:0;
+  font-weight: normal;
+}
+
+.rules-menu a{
+  display: block;
+  background-color: #FFF;
+  border:1px solid #F7F7F7;
+  padding:3px 10px;
+  margin-bottom: 5px;
+}
+
+.rules-menu a:hover{
+  text-decoration:none;
+}
+
+/* 利用規約 メインコンテンツ */
+.rules-contents{
+  padding-right: 0;
+  font-weight: normal;
+}
+
+.rules-contents h2{
+  font-size: 1.75rem;
+  font-weight: normal;
+}
+
+.rules-contents h3{
+  font-size: 1.3rem;
+  font-weight: normal;
+}
+
+.rules-contents h4{
+  font-weight: normal;
+  font-size: 1rem;
+}
+
+ .rules-contents-mb, .rules-contents h2, .rules-contents h3{
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 767px){
+  /* 利用規約 メニュー */
+  .rules-menu{
+    margin: 2rem 0;
+    padding:0 15px;
+  }
+
+  /* 利用規約 メインコンテンツ */
+  .rules-contents{
+    padding:0 15px;
+  }
 }
