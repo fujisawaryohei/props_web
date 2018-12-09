@@ -2,6 +2,7 @@
     <div class="ranking-user">
         <p class="ranking-user-title"><i class="far fa-user"></i>ユーザーランキング</p>
 <!--  side-bar ユーザーランキング ここから繰り返し -->
+  <%= render partial:'rankings/user_rank', collection:@user_ranks, as:'user' %>
         <% @side_user_ranks.each do |user| %>
             <div class="user-panel">
                 <div class="flex mb-2">

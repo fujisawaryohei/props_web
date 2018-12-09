@@ -5,7 +5,7 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <%= link_to root_path do%>
-        <img class="props-logo" src="..." alt="props">
+        <%= image_tag('PROPS_logo.png',class:"props-logo")%>
       <% end %>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
@@ -18,13 +18,13 @@
       </div>
     </nav>
   </header>
->>>>>>> 25f229bd20a0ef11ff7da40f53c99a6a1148b7a4
 <% else %>
   <header class="bg-white modal-blur">
     <div class="header">
       <div class="header-content">
-        <a href="#">
-          <img class="props-logo" src="..." alt="props">
+        <%= link_to root_path do%>
+          <%= image_tag('PROPS_logo.png',class:"props-logo")%>
+        <% end %>
         </a>
         <%= render 'searches/search_form' %>
         <p class="header-left">
@@ -36,10 +36,3 @@
     </div>
   </header>
 <% end %>
-<<<<<<< HEAD
-=======
-
-
-
-<!--  -->
->>>>>>> 25f229bd20a0ef11ff7da40f53c99a6a1148b7a4

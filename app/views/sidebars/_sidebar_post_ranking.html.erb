@@ -2,6 +2,7 @@
     <div class="ranking-post">
         <p class="ranking-post-title"><i class="far fa-user"></i>投稿ランキング</p>
 <!--  side-bar 投稿ランキング ここから繰り返し -->
+<%= render partial:'rankings/post_rank', collection:@post_ranks, as:'post'%>
         <% @side_post_ranks.each do |post| %>
           <div class="post-panel">
               <div class="flex">
