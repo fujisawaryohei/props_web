@@ -2,14 +2,15 @@
   <%= link_to "", link_through_path(notification), class: "stretched-link" %>
   <div class="activity-item row">
     <div class="quotemedia col-3">
-      <img src="..." alt="" class="quotemedia-img">
+      <!-- <img src="..." alt="" class="quotemedia-img"> -->
+      <%= image_tag Post.find_by(id: notification.post_id).track_image, class: "quotemedia-img" %>
       <div class="activity-icon">
         <i class="fas fa-heart"></i>
       </div>
     </div><!-- /quotemedia -->
     <div class="activity-main col-9">
       <ul class="activity-userIcon">
-        <li class="user-icon-small"><%= image_tag User.find_by(id: notification.notified_by_id).image, class: "user-icon user-icon-mini" %></li>
+        <li class="user-icon-small"><%= image_tag User.find_by(id: notification.notified_by_id).image, class: "user-icon user-icon-mini", style: "height: 50px; width: 50px;" %></li>
       </ul>
       <div class="clear"></div>
       <p class="activity-displayText text-gray"><strong><%= User.find_by(id: notification.notified_by_id).name %></strong>さんがあなたの投稿を「いいね」しました

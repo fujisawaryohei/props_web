@@ -1,79 +1,64 @@
 <div class="all container modal-blur">
-      <div class="row">
-          <div class="col-md-8 main">
-              <div class="box bg-white">
+  <div class="row">
+    <div class="col-md-8 main">
+      <div class="box bg-white">
 <!--  main ここから繰り返し -->
-              <% if @posts %>
-                <% @posts.each do |post| %>
-                  <div class="post-content">
-                      <div class="post-user">
-                          <%= link_to user_path(id:post.user.id) do %>
-                            <img src="<%=post.user.image%>" class="user-icon">
-                          <% end %>
-                          <p class="user-name"><%=post.user.name%></p>
-                          <p class="post-date text-gray"><%=post.created_at%></p>
-                      </div><!-- /post-user -->
-                      <div class="clear"></div>
-                      <div class="post-image">
-                          <img src="<%=post.track_image%>" alt="" class="">
-                          <div class="song-info text-white">
-                              <p class="song-title"><i class="far fa-user"></i><%=post.track_name%></p>
-                              <p class="artist"><i class="far fa-dot-circle"></i><%=post.artist_name%></p>
-                          </div>
-                      </div><!-- /post-image -->
-                      <div class="post-text">
-                          <h4><%=post.title%></h4>
-                          <p class="text text-gray"><%=post.text%></p>
-                      </div>
-                      <div class="action" id="post-content-action">
-                          <%= fa_icon("comment-dots")%><p>12</p></i>
-                          <%= fa_icon("heart")%><p>212</p></i>
-                          <%= fa_icon("link")%><p>106</p></i>
-                          <% if current_user_post?(post)%>
-                            <%= link_to post_path(id:post.id),method: :delete do %>
-                              <%= fa_icon("trash")%></i>
-                            <% end %>
-                          <% end %>
-                      </div>
-                  </div><!-- /post-content -->
-                  <hr>
+        <% if @posts %>
+          <% @posts.each do |post| %>
+            <div class="post-content">
+              <div class="post-user">
+                <%= link_to user_path(id:post.user.id) do %>
+                  <img src="<%=post.user.image%>" class="user-icon">
+                <% end %>
+                <p class="user-name"><%= post.user.name%></p>
+                <p class="post-date text-gray"><%= nt_time(post.created_at) %></p>
+              </div><!-- /post-user -->
+              <div class="clear"></div>
+              <div class="post-image">
+                <img src="<%=post.track_image%>" alt="" class="">
+                <div class="song-info text-white">
+                  <p class="song-title"><i class="far fa-user"></i><%=post.track_name%></p>
+                  <p class="artist"><i class="far fa-dot-circle"></i><%=post.artist_name%></p>
+                </div>
+              </div><!-- /post-image -->
+              <div class="post-text">
+                <h4><%=post.title%></h4>
+                <p class="text text-gray"><%=post.text%></p>
+              </div>
+
+              <div class="action user-content-post-btn" id="post-content-action justify-content-around flex sp-hidden">
+                <%= fa_icon("comment-dots")%><p class="count-beside-btn">0</p></i>
+                <%= render partial: 'likes/like', locals: { post: post } %>
+                <%= render partial: 'clips/clip', locals: { post: post} %>
+                <% if current_user_post?(post)%>
+                  <%= link_to post_path(id:post.id),method: :delete do %>
+                    <%= fa_icon("trash")%></i>
                   <% end %>
                 <% end %>
+              </div>
+            </div><!-- /post-content -->
+            <hr>
+          <% end %>
+        <% end %>
 <!--  /main ここまで繰り返し -->
-              </div>
-          </div><!-- /main -->
+      </div>
+    </div><!-- /main -->
 
-
-          <div class="col-md-4 side-bar">
-            <div class="bg-white mb-3">
-                <div class="uni-marble-advertisement">
-                  <a href="https://uni-marble.stores.jp/">
-                    <%= image_tag('storejp_banner.jpg') %>
-                  </a>
-                </div>
-              </div>
-              <div class="box bg-white mb-3">
-                  <div class="ranking-user">
-                      <%= render 'sidebars/sidebar_user_ranking' %>
-                  </div><!-- /ranking-user -->
-              </div><!-- /box -->
-              <%= render 'sidebars/sidebar_post_ranking' %>
-                  </div><!-- /ranking-post -->
-              </div><!-- /box -->
-              <!-- footer -->
-              <div class="uni-marble-footer-link text-light-gray">
-                  <%= link_to '利用規約', '/rules' %><span>  /  </span>
-                  <%=link_to 'プライバシーポリシー', '/policy' %>
-                  <br>
-                  <a href="http://uni-marble.com">運営会社</a><span>  /  </span>
-                  <a href="https://goo.gl/forms/cI1lhFlbeLPh33lJ3">お問い合わせ</a><span>  /  </span>
-                  <a href="https://twitter.com/PROPS_music">公式twitter</a>
-                  <p class="mt-3">&copy;2018 PROPS</p>
-              </div>
-              <!-- footer ここまで-->
-          </div><!-- /col-md-4 side-bar bg-white -->
-      </div><!-- /row -->
-  </div><!-- /container -->
+    <!-- sidebar-->
+    <%= render partial: "sidebars/sidebar" %>
+    <!-- footer -->
+    <div class="uni-marble-footer-link text-light-gray">
+      <%= link_to '利用規約', '/rules' %><span>  /  </span>
+      <%=link_to 'プライバシーポリシー', '/policy' %>
+      <br>
+      <a href="http://uni-marble.com">運営会社</a><span>  /  </span>
+      <a href="https://goo.gl/forms/cI1lhFlbeLPh33lJ3">お問い合わせ</a><span>  /  </span>
+      <a href="https://twitter.com/PROPS_music">公式twitter</a>
+      <p class="mt-3">&copy;2018 PROPS</p>
+    </div>
+    <!-- footer ここまで-->
+  </div><!-- /row -->
+</div><!-- /container -->
 
  <%= render "devise/registrations/new" %>
  <%= render "devise/sessions/new" %>

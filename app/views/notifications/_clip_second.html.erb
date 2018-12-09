@@ -2,7 +2,8 @@
   <%= link_to "", link_through_path(notification), class: "stretched-link" %>
   <div class="activity-item row">
     <div class="quotemedia col-3">
-      <img src="..." alt="" class="quotemedia-img">
+<!--       <img src="..." alt="" class="quotemedia-img"> -->
+      <%= image_tag Post.find_by(id: notification.post_id).track_image, class: "quotemedia-img" %>
       <div class="activity-icon">
         <i class="fas fa-paperclip"></i>
       </div>
@@ -12,7 +13,7 @@
         <!-- いいねしたユーザーのアイコン(最大10件？)を並べる-->
         <% some_notifications(notification).limit(10).each do |nt| %>
           <!-- 後で変更する -->
-          <li class="user-icon-small"><%= image_tag User.find_by(id: nt.notified_by_id).image, class: "user-icon user-icon-mini" %></li>
+          <li class="user-icon-small"><%= image_tag User.find_by(id: nt.notified_by_id).image, class: "user-icon user-icon-mini", style: "height: 50px; width: 50px;" %></li>
         <% end %>
       </ul>
       <div class="clear"></div>

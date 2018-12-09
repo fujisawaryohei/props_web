@@ -2,11 +2,10 @@
     <div class="ranking-user">
         <p class="ranking-user-title"><i class="far fa-user"></i>ユーザーランキング</p>
 <!--  side-bar ユーザーランキング ここから繰り返し -->
-  <%= render partial:'rankings/user_rank', collection:@user_ranks, as:'user' %>
         <% @side_user_ranks.each do |user| %>
             <div class="user-panel">
                 <div class="flex mb-2">
-                    <%= link_to image_tag(user.image, class: "user-icon user-icon-mini"), user_path(user) %>
+                    <%= link_to image_tag(user.image, class: "user-icon user-icon-mini", style: "height: 50px; width: 50px;"), user_path(user) %>
                     <p class="user-name mr-auto"><%= link_to "#{user.name}", user_path(user) %></p>
                     <p><a href="#" class="orange-button text-orange">フォロー</a></p>
                 </div>
