@@ -36,6 +36,7 @@ gem 'ransack'
 
 gem 'font-awesome-rails'
 
+gem 'bootstrap'
 gem 'jquery-rails'
 
 group :development, :test do
