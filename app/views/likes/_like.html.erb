@@ -15,7 +15,8 @@
       <p class="change_to_like">
         <%= link_to post_likes_path(post_id: post.id), method: :post, remote: true do %>
           <!-- このボタンを押すとUnlike -> Likeになる -->
-          <i class="far fa-heart"></i>
+<!--           <i class="far fa-heart"></i> -->
+          <%= fa_icon("heart")%>
           <p class="count-beside-btn"><%= Like.where(post_id: post.id).count %></p>
         <% end %>
       </p>

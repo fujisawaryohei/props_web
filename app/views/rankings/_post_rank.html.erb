@@ -5,16 +5,16 @@
       <div class="col-left col-md-3 p-0">
         <div class="post-image">
           <!-- <img src="" alt="" class=""> -->
-          <%= image_tag "#{ post.track_image }", class: "post-rank-image" %>
+          <%= image_tag "#{ post.track_image }", class: "post-rank-image", style: "height: 140px; width: 100%;" %>
           <div class="song-info text-white">
-            <p class="song-title"><i class="far fa-user"></i>WAY OF GLORY</p>
-            <p class="artist"><i class="far fa-dot-circle"></i>AAA</p>
+            <p class="song-title"><i class="far fa-user"></i><%= post.track_name %></p>
+            <p class="artist"><i class="far fa-dot-circle"></i><%= post.artist_name %></p>
           </div>
         </div><!-- /post-image -->
       </div>
       <div class="col-right col-md-9">
         <div class="post-user">
-          <%= link_to image_tag(post.user.image, class: "user-icon user-icon-mini"), user_path(post.user) %>
+          <%= link_to image_tag(post.user.image, class: "user-icon user-icon-mini", style: "height: 50px; width: 50px;"), user_path(post.user) %>
           <p class="user-name text-gray"><%= link_to "#{post.user.name}", user_path(post.user) %></p>
           <p><%= post.title %></p>
         </div><!-- /post-user -->

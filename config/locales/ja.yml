@@ -102,6 +102,12 @@ ja:
     - :day
   datetime:
     distance_in_words:
+      less_than_x_minutes:
+        one: 1分以内
+        other: "%{count}分未満"
+      less_than_x_seconds:
+        one: 1秒以内
+        other: "%{count}秒未満"
       about_x_hours:
         one: 約1時間
         other: 約%{count}時間

@@ -2,32 +2,30 @@
     <div class="ranking-post">
         <p class="ranking-post-title"><i class="far fa-user"></i>投稿ランキング</p>
 <!--  side-bar 投稿ランキング ここから繰り返し -->
-<%= render partial:'rankings/post_rank', collection:@post_ranks, as:'post'%>
         <% @side_post_ranks.each do |post| %>
           <div class="post-panel">
               <div class="flex">
                   <p class="post-panel-title mr-auto"><%= post.title %></p>
-                  <img src="..." alt="" class="post-panel-image">
+                  <% if post.track_image %>
+                    <%= image_tag(post.track_image, class: "post-panel-image")%>
+                  <% else %>
+                    <img src="..." alt="" class="post-panel-image">
+                  <% end %>
               </div>
-  <!--             <div class="action" id="post-panel-action">
-                  <i class="far fa-comment-dots"><p>58</p></i>
-                  <i class="fas fa-heart"><p>2</p></i>
-                  <i class="fas fa-link"><p>1</p></i>
-              </div> -->
-              <div class="action" id="post-content-action">
-                <i class="far fa-comment-dots"><p>0</p></i>
-                <%= render partial: 'likes/like', locals: { post: post }%>
-                <%= render partial: 'clips/clip', locals: { post: post}%>
+              <div class="action" id="post-panel-action">
+                <%= fa_icon("comment")%><p class="count-beside-btn">0</p>
+                <%= fa_icon("heart") %><p class="count-beside-btn"><%= Like.where(post_id: post.id).count %></p>
+                <%= fa_icon("paperclip") %><p class="count-beside-btn"><%= Clip.where(post_id: post.id).count %></p>
                 <i class="fas fa-external-link-alt"></i>
               </div><!-- /action -->
               <div class="flex">
-                  <%= link_to image_tag(post.user.image, class: "user-icon user-icon-mini", id: "post-panel-user-icon"), user_path(post.user) %>
-                  <p class="user-name"><%= link_to "#{post.user.name}", user_path(post.user), id: "post-panel-user-name" %></p>
+                <%= link_to image_tag(post.user.image, class: "user-icon user-icon-mini", id: "post-panel-user-icon"), user_path(post.user) %>
+                <p class="user-name"><%= link_to "#{post.user.name}", user_path(post.user), id: "post-panel-user-name" %></p>
               </div>
               <hr>
           </div><!-- /post-panel -->
         <% end %>
 <!--  /side-bar 投稿ランキング ここまで繰り返し -->
         <%= link_to "もっと見る", rankings_post_ranking_path, class: "more" %>
-    </div><!-- /ranking-post -->
+      </div><!-- /ranking-post -->
 </div><!-- /box -->
