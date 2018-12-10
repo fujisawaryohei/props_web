@@ -6,7 +6,20 @@ class PostsController < ApplicationController
   def index
     @user=User.new
     @user.reset_password_token = params[:reset_password_token]
+    @posts = []
+    @posts = Post.all.order(created_at:"DESC").limit(5)
+    # @post_user = [current_user,current_user.followings]
+    #   @post_user.each do |post_user|
+    #     @posts = post_user.posts.all.order(created_at:"DESC")
+    #   end
+  end
+
+  def all_index
     @posts = Post.all.order(created_at:"DESC")
+    # @post_user = [current_user,current_user.followings]
+    #   @post_user.each do |post_user|
+    #     @posts = post_user.posts.all.order(created_at:"DESC")
+    #   end
   end
 
   def new
@@ -17,6 +30,10 @@ class PostsController < ApplicationController
   end
 
   def show
+    @post = Post.find(params[:id])
+    @posts = @post.user.posts.all.order(created_at:"DESC").limit(3)
+    @comment = Comment.new
+    @comments = @post.comments.all
   end
 
   def create

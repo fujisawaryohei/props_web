@@ -1,9 +1,11 @@
 <div class="box-shadow userpage-content-list-col">
   <div class="song-info-position">
-    <img src="<%= post.track_image%>" alt="" class="userpage-post-img">
+    <%= link_to post_path(id:post.id) do %>
+     <img src="<%= post.track_image%>" alt="" class="userpage-post-img">
+    <% end %>
     <div class="song-info text-white sp-hidden">
-      <p class="song-title"><i class="far fa-user"></i><%=post.artist_name %></p>
-      <p class="artist"><i class="far fa-dot-circle"></i><%=post.track_name%></p>
+      <p class="song-title"><%=fa_icon('user')%></i><%=post.artist_name %></p>
+      <p class="artist"><%=fa_icon('dot-circle')%></i><%=post.track_name%></p>
     </div>
   </div>
   <div class="post-user flex sp-hidden">
@@ -19,7 +21,7 @@
   </div><!-- /post-user -->
   <hr class="m-0">
   <div class="action user-content-post-btn" id="post-content-action justify-content-around flex sp-hidden">
-    <i class="far fa-comment"><p class="count-beside-btn">0</p></i>
+    <%=fa_icon('comment')%><p class="count-beside-btn"><%=post.comments.count%></p></i>
     <%= render partial: 'likes/like', locals: { post: post } %>
     <%= render partial: 'clips/clip', locals: { post: post} %>
     <i class="fas fa-external-link-alt"></i>

@@ -1,20 +1,23 @@
-  <hr class="sp-show m-0 header-hr">
-    <div class="post-page bg-white container">
-      <div class="click-select bg-dark-gray flex sp-hidden" id="music-jacket-select" style="cursor:pointer;">
+  <hr class="sp-show mb-0 header-hr">
+    <div class="all post-page bg-white container post-page-0">
+      <div class="click-select bg-dark-gray flex sp-show" id="music-jacket-select" style="cursor:pointer;">
         <p class="text-white">クリックして曲を選んでください</p>
       </div>
-      <div id="music-panel" class="music-panel text-gray box-shadow" style="cursor:pointer;">
+      <div id="music-panel" class="sp-show music-panel text-gray box-shadow" style="cursor:pointer;">
           <img src="..." alt="" id="music-panel-image" class="music-panel-image">
           <div class="music-panel-info">
-            <p class="song-title"><i class="far fa-user"></i><span id="track"></span></p>
-            <p class="artist"><i class="far fa-dot-circle" ></i><span id ="artist"></span></p>
+            <p class="song-title"><%=fa_icon('user')%></i><span id="track"></span></p>
+            <p class="artist"><%=fa_icon('dot-circle')%></i><span id ="artist"></span></p>
           </div>
       </div><!-- /music-panel -->
-    <hr class="sp-show">
 
+    <hr class="sp-show mb-0">
     <div class="edit text-light-gray">
       <%= form_for(@post) do |f| %>
       <div class="write-title">
+<!--
+        <h4 class="mr-auto">タイトル<span class="sp-hidden"></span></h4>
+-->
         <%= f.text_field :title,placeholder:"タイトルを入力してください",class:"post-title"%>
       </div>
       <div class="write-text">

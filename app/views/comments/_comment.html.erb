@@ -1,0 +1,21 @@
+  <% if post %>
+  <% @comments.each do |comment| %>
+ <div class="activity-main" id ="comment_index">
+  <ul class="activity-userIcon">
+    <li class="user-icon user-icon-small">
+      <%=link_to user_path(id:comment.user.id) do %>
+      <img src="<%= comment.user.image%>" class="user-icon user-icon-small">
+      <% end %>
+    </li>
+  </ul>
+  <div class="activity-displayText">
+    <p class="text-gray mb-2"><strong><%= comment.user.name%></strong>
+    </p>
+    <p class="text-gray sp-box-shadow">
+      <%= comment.comment_text %>
+    </p>
+  </div>
+</div>
+<hr>
+  <% end %>
+<% end %>

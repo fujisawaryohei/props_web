@@ -195,9 +195,6 @@
 }
 
 //post-page
-.cancel{
-	margin-right: 1rem;
-}
 
 .post-page{
 	padding:0;
@@ -373,7 +370,7 @@ h4{
 	margin-bottom: .5rem;
 	display: flex;
 	align-items: center;
-	width: 60%;
+	/*width: 60%;*/
 }
 
 .music-panel-image{
@@ -488,4 +485,62 @@ h4{
 	float:right;
 	width:300px;
 	margin-bottom:40px;
+}
+
+@media (max-width:767px){
+	.post-page-3 .post-image img{
+		width: 90px;
+		height: 85px;
+	}
+
+	.post-page-3 .post-image{
+		padding:15px 15px 0;
+		display: flex;
+	}
+
+	/* 曲りスト */
+
+	.post-page-3 .post-image img{
+		width: 75px;
+		height: 75px;
+	}
+
+	.post-page-3 .post-image{
+		padding:15px 0 0;
+		display: flex;
+	}
+
+	.sp-song-info{
+		margin-left: 20px;
+		width: 70%;
+		border-bottom: 1px solid #b4b4b4;
+		padding-bottom: 15px;
+	}
+
+	.sp-song-title{
+		margin-bottom: 10px;
+	}
+
+	.sp-song-info .text-light-gray{
+		font-size: .8rem;
+	}
+
+	.song-list .song-info{
+     margin-left:100px;
+		 display:none;
+	}
+
+	.song-list .post-image img {
+		height:75px;
+	}
+}
+
+@media (min-width: 768px){
+	.post-page{
+		max-width: 600px;
+	}
+
+	.post-page-1 ,.post-page-3{
+		margin-top: 0;
+	}
 }

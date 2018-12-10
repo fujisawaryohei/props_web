@@ -1,15 +1,28 @@
 <!DOCTYPE html>
   <html>
     <head>
-     <title>Props</title>
-     <%= csrf_meta_tags %>
-
-     <%= stylesheet_link_tag    'application'%>
-     <%= javascript_include_tag 'application'%>
-      <script defer src="https://use.fontawesome.com/releases/v5.1.0/js/all.js" integrity="sha384-3LK/3kTpDE/Pkp8gTNp2gR/2gOiwQ6QaO7Td0zV76UFJVhqLl4Vl3KL1We6q6wR9" crossorigin="anonymous"></script>
+      <!-- Global site tag (gtag.js) - Google Analytics -->
+      <script async src="https://www.googletagmanager.com/gtag/js?id=UA-130670261-1"></script>
+      <script>
+       window.dataLayer = window.dataLayer || [];
+       function gtag(){dataLayer.push(arguments);}
+       gtag('js', new Date());
+       gtag('config', 'UA-130670261-1');
+      </script>
+      <title>PROPS （プロップス）| 音楽情報共有アプリ</title>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <%= csrf_meta_tags %>
+      <%= stylesheet_link_tag    'application'%>
+      <%= javascript_include_tag 'application'%>
     </head>
   <body>
-    <%= render 'layouts/header'%>
+    <div class="sp-hidden">
+      <%= render 'layouts/header'%>
+    </div>
+    <div class="sp-show">
+      <%= render 'layouts/sp-header'%>
+    </div>
     <% if flash[:notice].present? %>
      <p class="alert alert-notice"><%= notice %></p>
     <% end %>

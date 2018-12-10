@@ -18,7 +18,9 @@
       </div>
       <!-------------------------------------------------->
 
-      <p><a href="#" class="orange-button profile-edit-button sp-show following">フォロー中</a></p>
+      <span id="follwing-<%=user.id%>">
+        <%= render partial:'relationships/follow',locals:{user:@user}%>
+      </span>
     </div>
     <!-- フォロー数 -->
     <div class="follow_follower-number sp-show">

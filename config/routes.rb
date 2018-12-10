@@ -23,6 +23,8 @@ Rails.application.routes.draw do
   end
   post '/posts/track', to: 'posts#track'
   resources :user
+  resources :relationships, only: [:create,:destroy]
+  resources :comments , only: [:create, :destroy]
   get 'user/:id/following', to: 'user#following', as: :user_following
   get 'user/:id/follower', to: 'user#follower', as: :user_follower
   get 'user/:id/like', to: 'user#like', as: :user_like
