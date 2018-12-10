@@ -154,3 +154,31 @@
   color: #8E8E93;
   display: inline-block;
 }
+
+.def-user-icon ,.def-user-icon-small ,.def-user-icon-big{
+  display: inline-block;
+  border-radius: 50%;
+  float: left;
+  margin-right: 5px;
+}
+
+.def-user-icon{
+  height:50px;
+  width: 50px;
+}
+
+.def-user-icon-small{
+  width: 40px;
+  height: 40px;
+}
+
+.def-user-icon-big{
+  width: 60px;
+  height: 60px;
+}
+
+.def-user-icon-superbig{
+  width: 85px;
+  height: 85px;
+}
+

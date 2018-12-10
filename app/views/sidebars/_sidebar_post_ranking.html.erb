@@ -19,7 +19,12 @@
                 <i class="fas fa-external-link-alt"></i>
               </div><!-- /action -->
               <div class="flex">
-                <%= link_to image_tag(post.user.image, class: "user-icon user-icon-mini", id: "post-panel-user-icon"), user_path(post.user) %>
+<!--                 <%= link_to image_tag(post.user.image, class: "user-icon user-icon-mini", id: "post-panel-user-icon"), user_path(post.user) %> -->
+                <% if post.user.image? %>
+                  <%= link_to image_tag(post.user.image, class: "user-icon user-icon-mini", id: "post-panel-user-icon"), user_path(post.user) %>
+                <% else %>
+                  <%= link_to image_tag('default_img.png', class: "def-user-icon", id: "post-panel-user-icon"), user_path(id:post.user.id) %>
+                <% end %>
                 <p class="user-name"><%= link_to "#{post.user.name}", user_path(post.user), id: "post-panel-user-name" %></p>
               </div>
               <hr>

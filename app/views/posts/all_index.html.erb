@@ -7,8 +7,10 @@
           <% @posts.each do |post| %>
             <div class="post-content">
               <div class="post-user">
-                <%= link_to user_path(id:post.user.id) do %>
-                  <img src="<%=post.user.image%>" class="user-icon">
+                <% if post.user.image? %>
+                  <%= link_to image_tag(post.user.image, class: "user-icon"), user_path(id:post.user.id) %>
+                <% else %>
+                  <%= link_to image_tag('default_img.png', class: "def-user-icon"), user_path(id:post.user.id) %>
                 <% end %>
                 <p class="user-name"><%= post.user.name%></p>
                 <p class="post-date text-gray"><%= nt_time(post.created_at) %></p>

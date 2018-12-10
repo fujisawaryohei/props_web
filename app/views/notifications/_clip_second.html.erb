@@ -13,7 +13,12 @@
         <!-- いいねしたユーザーのアイコン(最大10件？)を並べる-->
         <% some_notifications(notification).limit(10).each do |nt| %>
           <!-- 後で変更する -->
-          <li class="user-icon-small"><%= image_tag User.find_by(id: nt.notified_by_id).image, class: "user-icon user-icon-mini", style: "height: 50px; width: 50px;" %></li>
+          <% if User.find_by(id: nt.notified_by_id).image? %>
+            <li class="user-icon-small"><%= image_tag User.find_by(id: nt.notified_by_id).image, class: "user-icon user-icon-mini", style: "height: 50px; width: 50px;" %></li>
+          <% else %>
+            <li class="user-icon-small"><%= image_tag 'default_img.png', class: "user-icon user-icon-mini", style: "height: 50px; width: 50px;" %></li>
+          <% end %>
+<!--           <li class="user-icon-small"><%= image_tag User.find_by(id: nt.notified_by_id).image, class: "user-icon user-icon-mini", style: "height: 50px; width: 50px;" %></li> -->
         <% end %>
       </ul>
       <div class="clear"></div>

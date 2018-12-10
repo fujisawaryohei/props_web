@@ -12,8 +12,10 @@
 
     <div class="user-panel box-shadow">
       <div class="flex mb-2">
-        <%= link_to user_path(id:@post.user.id) do %>
-          <img src="<%=@post.user.image%>" class="user-icon user-icon-superbig">
+        <% if @post.user.image? %>
+          <%= link_to image_tag(@post.user.image, class: "user-icon user-icon-superbig"), user_path(id:@post.user.id) %>
+        <% else %>
+          <%= link_to image_tag('default_img.png', class: "def-user-icon"), user_path(id:@post.user.id) %>
         <% end %>
         <p class="user-name mr-auto"><%=@post.user.name%></a></p>
         <span id="follow-<%=@post.user.id%>">
@@ -64,8 +66,13 @@
 -->
 <div class="detail-body another-post detail-content bg-white container sp-hidden">
   <div class="flex">
-    <%=link_to user_path(id:@post.user.id) do %>
+<!--     <%=link_to user_path(id:@post.user.id) do %>
       <img src="<%=@post.user.image%>" class="user-icon post-panel-user-icon">
+    <% end %> -->
+    <% if @post.user.image? %>
+      <%= link_to image_tag(@post.user.image, class: "user-icon post-panel-user-icon"), user_path(id:@post.user.id) %>
+    <% else %>
+      <%= link_to image_tag('default_img.png', class: "def-user-icon"), user_path(id:@post.user.id) %>
     <% end %>
     <p class="user-name" id="post-panel-user-name"><a href="#" class="pr-2"><%=@post.user.name %></a>さんの他の投稿</p>
   </div>
@@ -99,13 +106,18 @@
       <%= fa_icon("link")%><p></p></i>
     </div>
 -->
-    <%= link_to user_path(id:@post.user.id) do %>
-      <img src="<%=current_user.image%>" class="user-icon user-icon-small">
-    <% end %>
-     <%= form_for(@comment) do |f| %>
-       <%= f.text_field :comment_text, placeholder:"コメントを150文字で追加", class:"bg-gray" %>
-       <%= f.hidden_field :post_id, value:@post.id%>
-       <%= f.hidden_field :user_id, value:current_user.id %>
+
+    <% if user_signed_in? %>
+      <% if current_user.image? %>
+        <%= image_tag current_user.image, class: "user-icon user-icon-small" %>
+      <% else %>
+        <%= image_tag 'default_img.png', class: "def-user-icon" %>
+      <% end %>
+       <%= form_for(@comment) do |f| %>
+         <%= f.text_field :comment_text, placeholder:"コメントを150文字で追加", class:"bg-gray" %>
+         <%= f.hidden_field :post_id, value:@post.id%>
+         <%= f.hidden_field :user_id, value:current_user.id %>
+       <% end %>
      <% end %>
   </div>
 </footer>

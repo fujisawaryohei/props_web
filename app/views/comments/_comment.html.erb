@@ -3,8 +3,10 @@
  <div class="activity-main" id ="comment_index">
   <ul class="activity-userIcon">
     <li class="user-icon user-icon-small">
-      <%=link_to user_path(id:comment.user.id) do %>
-      <img src="<%= comment.user.image%>" class="user-icon user-icon-small">
+      <% if comment.user.image? %>
+        <%= link_to image_tag(comment.user.image, class: "user-icon user-icon-small"), user_path(comment.user) %>
+      <% else %>
+        <%= link_to image_tag('default_img.png', class: "def-user-icon"), user_path(comment.user) %>
       <% end %>
     </li>
   </ul>
