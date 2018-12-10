@@ -1,0 +1,32 @@
+<div class="container position-relative">
+  <%= link_to "", link_through_path(notification), class: "stretched-link" %>
+  <div class="activity-item row">
+    <div class="quotemedia col-3">
+      <!-- <img src="..." alt="" class="quotemedia-img"> -->
+      <%= image_tag Post.find_by(id: notification.post_id).track_image, class: "quotemedia-img" %>
+      <div class="activity-icon">
+        <i class="fas fa-heart"></i>
+      </div>
+    </div><!-- /quotemedia -->
+    <div class="activity-main col-9">
+      <ul class="activity-userIcon">
+        <!-- いいねしたユーザーのアイコン(最大10件？)を並べる-->
+        <% some_notifications(notification).limit(10).each do |nt| %>
+          <li class="user-icon-small"><%= image_tag User.find_by(id: nt.notified_by_id).image, class: "user-icon user-icon-mini", style: "height: 50px; width: 50px;" %></li>
+        <% end %>
+      </ul>
+      <div class="clear"></div>
+
+      <% if some_notifications(notification).count > 1 %>
+        <p class="activity-displayText text-gray"><strong><%= User.find_by(id: notification.notified_by_id).name %></strong>さんと<strong>他<span class="count-wrap"><%= some_notifications(notification).count - 1 %></span>人</strong>があなたの投稿に「いいね」しました
+          <span class="activity-time"><%= nt_time(notification.created_at) %></span>
+        </p>
+      <% else %>
+        <p class="activity-displayText text-gray"><strong><%= User.find_by(id: notification.notified_by_id).name %></strong>さんがあなたの投稿を「いいね」しました
+          <span class="activity-time"><%= nt_time(notification.created_at) %></span>
+        </p>
+      <% end %>
+    </div><!-- /activity-main -->
+  </div><!-- /activity-item -->
+</div><!-- /container -->
+<hr class="mb-0 hr-gray">

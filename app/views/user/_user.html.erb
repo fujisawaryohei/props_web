@@ -1,0 +1,15 @@
+<div class="box-shadow userpage-content-list-col userpage-content-follow">
+  <div>
+    <%= link_to image_tag(user.image, class: "user-icon user-icon-small"), user_path(user) %>
+    <span id="follow-<%=user.id%>">
+    <p><%= render partial:'relationships/follow',locals:{user:user} %></p>
+    </span>
+  </div>
+  <div class="flex">
+    <p class="user-name"><%= link_to "#{user.name}", user_path(user) %></p>
+  </div><!-- /post-user -->
+  <hr class="m-0">
+  <div class="user-content-self-comment">
+    <p class="text-gray"><%= user_self_comment_lim80(user) %></p>
+  </div>
+</div>

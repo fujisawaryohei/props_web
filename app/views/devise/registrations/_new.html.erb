@@ -1,0 +1,26 @@
+<div class="modal" id="register-modal">
+    <div class="modal-contents" id="register-form">
+      <img class="form-props-logo" src="..." alt="PROPS">
+      <%= form_for(resource, as: resource_name, url: user_registration_path(resource), html: {id:"registers",class: "modal-form",method: :post}) do |f| %>
+        <%= devise_error_messages! %>
+
+        <%= f.text_field :name, autocomplete: "name", class: "bg-gray input-for-user",id:"register-name", placeholder:"ユーザーネーム" %>
+        <label><%= fa_icon("user", class:"user")%></label>
+
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "bg-gray input-for-user",id:"register-email", placeholder:"Eメール"%>
+        <label><%= fa_icon("envelope", class:"email")%></label>
+
+        <% if @minimum_password_length %>
+          <em>(<%= @minimum_password_length %> characters minimum)</em>
+        <% end %><br/>
+        <%= f.password_field :password, autocomplete: "new-password", class: "bg-gray input-for-user",id:"register-password", placeholder:"パスワード"%>
+        <label><%= fa_icon("lock", class:"pass")%></label>
+
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "bg-gray input-for-user", id:"register-password-confirmation", placeholder:"パスワード確認"%>
+        <label><%= fa_icon("lock",class:"pass")%></label>
+
+        <%= f.submit("登録する", class:"form-submit")%>
+      <% end %>
+    </div>
+    <!-- /modal-contents -->
+</div>

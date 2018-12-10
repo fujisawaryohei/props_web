@@ -1,0 +1,21 @@
+<div class="box bg-white mb-3">
+    <div class="ranking-user">
+        <p class="ranking-user-title"><i class="far fa-user"></i>ユーザーランキング</p>
+<!--  side-bar ユーザーランキング ここから繰り返し -->
+        <% @side_user_ranks.each do |user| %>
+            <div class="user-panel">
+                <div class="flex mb-2">
+                    <%= link_to image_tag(user.image, class: "user-icon user-icon-mini", style: "height: 50px; width: 50px;"), user_path(user) %>
+                    <p class="user-name mr-auto"><%= link_to "#{user.name}", user_path(user) %></p>
+                    <span id="follow-<%=user.id%>">
+                    <p><%= render partial:'relationships/follow', locals:{user:user}%></p>
+                   </span>
+                </div>
+                <p class="user-explanation text-gray"><%= user.self_comment %></p>
+                <hr>
+            </div>
+        <% end %>
+<!--  /side-bar ユーザーランキング ここまで繰り返し -->
+        <%= link_to "もっと見る", rankings_user_ranking_path, class: "more" %>
+    </div><!-- /ranking-user -->
+</div><!-- /box -->

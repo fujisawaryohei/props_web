@@ -1,0 +1,111 @@
+
+      <hr class="sp-show m-0 header-hr">
+      <div class="detail-body bg-white container all">
+        <div class="post-image">
+          <img src="<%=@post.track_image%>" alt="" id="detail-top-image">
+          <div class="song-info text-white">
+            <p class="song-title"><i class="far fa-user"></i><%= @post.track_name %></p>
+            <p class="artist"><i class="far fa-dot-circle"></i><%= @post.artist_name %></p>
+          </div>
+        </div>
+        <div class="detail-content box">
+          <h4><%=@post.title%></h4>
+
+          <div class="user-panel box-shadow">
+            <div class="flex mb-2">
+              <%= link_to user_path(id:@post.user.id) do %>
+                <img src="<%=@post.user.image%>" class="user-icon user-icon-superbig">
+              <% end %>
+              <p class="user-name mr-auto"><%=@post.user.name%></a></p>
+                <%= render partial:'relationships/follow', locals:{user:@post.user} %>
+            </div>
+            <p class="user-explanation"><%=@post.user.self_comment%></p>
+          </div>
+
+          <div class="text-gray">
+            <%= @post.text%>
+          </div>
+
+          <div class="music-panel text-gray box-shadow">
+            <img src="<%=@post.track_image%>" alt="" class="music-panel-image">
+            <div class="music-panel-info">
+              <p class="song-title"><i class="far fa-user"></i><%= @post.track_name%></p>
+              <p class="artist"><i class="far fa-dot-circle"></i><%= @post.artist_name%></p>
+            </div>
+          </div><!-- /music-panel -->
+          <p class="post-date text-light-gray"><%=nt_time(@post.created_at)%></p>
+          <div class="action post-content-action sp-show justify-content-around">
+            <%=fa_icon('comment-dots')%><p><%=@post.comments.count%></p></i>
+            <%=fa_icon('heart')%><p><%=@post.likes.count%></p></i>
+            <%=fa_icon('link')%><p><%=@post.clips.count%></p></i>
+          </div>
+        </div><!-- /detail-content -->
+        <hr class="sp-hidden mb-3">
+        <div class="clip-like sp-show">
+          <p><%=@post.clips.count%><span class="text-light-gray">件のクリップ</span>&emsp;<%=@post.likes.count%><span class="text-light-gray">件のいいね</span></p>
+        </div>
+        <hr class="mt-3 mb-0">
+
+        <div class="comment-list detail-content box">
+          <p class="text-gray sp-hidden"><span><%=@comments.count%></span>件のコメント</p>
+          <div class="container reply">
+          <!--  コメント　-->
+            <%= render partial:'comments/comment',locals:{post:@post}%>
+          <hr>
+          <!--  /コメント　-->
+        </div>
+      </div>
+    </div><!-- /all detail-body -->
+<!--
+      <div class="detail-body more-comment bg-white container">
+        <a href="#" class="text-orange">コメントを更に表示</a>
+      </div>
+-->
+      <div class="detail-body another-post detail-content bg-white container sp-hidden">
+        <div class="flex">
+          <%=link_to user_path(id:@post.user.id) do %>
+            <img src="<%=@post.user.image%>" class="user-icon post-panel-user-icon">
+          <% end %>
+          <p class="user-name" id="post-panel-user-name"><a href="#" class="pr-2"><%=@post.user.name %></a>さんの他の投稿</p>
+        </div>
+        <hr>
+        <!-- ここから　〇〇さんの他の投稿　-->
+        <% @posts.each do |post| %>
+          <%= link_to post_path(id:post.id) do %>
+        <div class="another-post-content">
+          <div class="another-post-text mr-auto">
+            <p><%= post.title %></p>
+<!--
+            <div class="action post-content-action">
+              <%= fa_icon("comment")%><p></p></i>
+              <%= fa_icon("link")%><p></p></i>
+            </div>
+-->
+          </div>
+          <img src="<%= post.track_image%>" alt="">
+        </div>
+        <hr>
+         <% end %>
+        <% end %>
+        <!-- /ここまで　〇〇さんの他の投稿　-->
+
+      <!-- footer -->
+      <footer class="bg-white sp-hidden">
+        <div class="footer detail-body container">
+<!--
+          <div class="action">
+            <%= fa_icon("heart")%><p></p></i>
+            <%= fa_icon("link")%><p></p></i>
+          </div>
+-->
+          <%= link_to user_path(id:@post.user.id) do %>
+            <img src="<%=current_user.image%>" class="user-icon user-icon-small">
+          <% end %>
+           <%= form_for(@comment) do |f| %>
+             <%= f.text_field :comment_text, placeholder:"コメントを150文字で追加", class:"bg-gray" %>
+             <%= f.hidden_field :post_id, value:@post.id%>
+             <%= f.hidden_field :user_id, value:current_user.id %>
+           <% end %>
+        </div>
+      </footer>
+      <!-- /footer -->

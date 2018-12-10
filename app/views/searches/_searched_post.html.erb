@@ -1,0 +1,31 @@
+<div class="post-ranking-content">
+  <div class="container pr-0">
+    <div class="row">
+      <div class="col-left col-md-3 p-0">
+        <div class="post-image">
+          <%= image_tag "#{ post.track_image }", class: "post-ranking-image" %>
+          <div class="song-info text-white">
+            <p class="song-title"><i class="far fa-user"></i>WAY OF GLORY</p>
+            <p class="artist"><i class="far fa-dot-circle"></i>AAA</p>
+          </div>
+        </div><!-- /post-image -->
+      </div>
+      <div class="col-right col-md-9">
+        <div class="post-user">
+          <%= link_to image_tag(post.user.image, class: "user-icon user-icon-mini"), user_path(post.user) %>
+          <p class="user-name text-gray"><a href="#"><%= post.user.name %></a></p>
+          <p><%= post.title %></p>
+        </div><!-- /post-user -->
+        <div class="clear"></div>
+        <p class="text text-gray"><%= post.text %></p>
+      </div>
+    </div><!-- /row -->
+  </div><!-- /container -->
+  <div class="action" id="post-content-action">
+    <i class="far fa-comment"><p class="count-beside-btn">0</p></i>
+    <%= render partial: 'likes/like', locals: { post: post } %>
+    <%= render partial: 'clips/clip', locals: { post: post } %>
+    <i class="fas fa-external-link-alt"></i>
+  </div>
+</div><!-- /post-ranking-content -->
+<hr>

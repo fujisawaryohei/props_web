@@ -1,0 +1,28 @@
+<div class="like-clip-btn" id="id_like-<%= post.id %>">
+  <!-- ユーザがログインしている場合-->
+  <% if user_signed_in? %>
+    <!-- 投稿をすでにいいねしている場合-->
+    <% if post.likes.find_by(user_id: current_user.id) %>
+      <p class="change_to_unlike">
+        <%= link_to post_like_path(post.likes.find_by(user_id: current_user.id), post_id: post.id), method: :delete, remote: true do %>
+          <!-- このボタンを押すとLike -> Unlikeになる -->
+          <i class="fas fa-heart text-orange"></i>
+          <p class="count-beside-btn text-orange"><%= Like.where(post_id: post.id).count %></p>
+        <% end %>
+      </p>
+    <% else %>
+      <!-- 投稿をまだいいねしていない場合-->
+      <p class="change_to_like">
+        <%= link_to post_likes_path(post_id: post.id), method: :post, remote: true do %>
+          <!-- このボタンを押すとUnlike -> Likeになる -->
+<!--           <i class="far fa-heart"></i> -->
+          <%= fa_icon("heart")%>
+          <p class="count-beside-btn"><%= Like.where(post_id: post.id).count %></p>
+        <% end %>
+      </p>
+    <% end %>
+  <!-- ユーザがログインしていない場合-->
+  <% else %>
+    <i class="far fa-heart"><p class="count-beside-btn"><%= Like.where(post_id: post.id).count %></p></i>
+  <% end %>
+</div>

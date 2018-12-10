@@ -1,16 +1,34 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Props</title>
-    <%= csrf_meta_tags %>
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
-
+  <html>
+    <head>
+      <!-- Global site tag (gtag.js) - Google Analytics -->
+      <script async src="https://www.googletagmanager.com/gtag/js?id=UA-130670261-1"></script>
+      <script>
+       window.dataLayer = window.dataLayer || [];
+       function gtag(){dataLayer.push(arguments);}
+       gtag('js', new Date());
+       gtag('config', 'UA-130670261-1');
+      </script>
+      <title>PROPS （プロップス）| 音楽情報共有アプリ</title>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <%= csrf_meta_tags %>
+      <%= stylesheet_link_tag    'application'%>
+      <%= javascript_include_tag 'application'%>
+    </head>
   <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <div class="sp-hidden">
+      <%= render 'layouts/header'%>
+    </div>
+    <div class="sp-show">
+      <%= render 'layouts/sp-header'%>
+    </div>
+    <% if flash[:notice].present? %>
+     <p class="alert alert-notice"><%= notice %></p>
+    <% end %>
+    <% if flash[:alert].present? %>
+     <p class="alert alert-error"><%= alert %></p>
+    <% end %>
     <%= yield %>
   </body>
-</html>
+ </html>

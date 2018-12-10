@@ -12,12 +12,13 @@ gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 gem 'therubyracer', platforms: :ruby
-gem 'turbolinks', '~> 5'
+#gem 'mini_racer', platforms: :ruby
+#gem 'turbolinks', '~> 5'
 #JsonをDSLで表記できる。
 gem 'jbuilder', '~> 2.5'
 gem 'redis', '~> 4.0'
 #bootstrapのsass版
-gem 'bootstrap-sass'
+#gem 'bootstrap-sass'
 #認証機能が実装できる。
 gem 'devise'
 #画像のアップロード機能ができる。
@@ -33,6 +34,13 @@ gem 'rails_admin'
 #検索機能が実装できるgem
 gem 'ransack'
 
+gem 'font-awesome-rails'
+
+gem 'bootstrap'
+gem 'jquery-rails'
+
+gem 'execjs'
+
 group :development, :test do
 
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
@@ -47,6 +55,7 @@ group :development, :test do
   gem 'rails-controller-testing'
   #メールの送信が正常に行われているか開発環境で確認できるgem
   gem 'letter_opener'
+  gem 'letter_opener_web'
 end
 
 group :development do

@@ -1,0 +1,21 @@
+  <div class="post-page bg-white container border-radius-30 post-page-3" style="cursor:pointer;">
+    <div class="top-bar flex">
+      <p class="cancel mr-auto"><a href="#" class="text-gray modal-cancel a-modal">キャンセル</a></p>
+      <p><a href="#" id="modal-save" class="orange-button text-white bg-orange save-button modal-save a-modal">保存</a></p>
+    </div>
+    <div class="post-page-content bg-light-gray">
+      <div class="post-page-nav flex sp-hidden">
+        <p class="trend-button"><a href="#" class="modal-trend a-modal">トレンド</a></p>
+        <p class="search-button"><a href="#" class="modal-search a-modal">検索</a></p>
+      </div>
+      <div class="song-list row sp-hidden">
+        <%= form_tag('/posts/track',html:{onsubmit:'return search();'},method: :post, remote:true) do%>
+          <input type="text" name="query" placeholder="曲を検索する">
+          <label><i class="fas fa-search"></i></label>
+        <% end %>
+      </div>
+      <div class="song-list row" id="artists">
+        <%= render partial:'posts/artist-info'%>
+      </div>
+  </div>
+</div>
