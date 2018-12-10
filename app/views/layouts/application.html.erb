@@ -17,12 +17,7 @@
       <%= javascript_include_tag 'application'%>
     </head>
   <body>
-    <div class="sp-hidden">
       <%= render 'layouts/header'%>
-    </div>
-    <div class="sp-show">
-      <%= render 'layouts/sp-header'%>
-    </div>
     <% if flash[:notice].present? %>
      <p class="alert alert-notice"><%= notice %></p>
     <% end %>
