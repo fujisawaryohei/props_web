@@ -5,7 +5,11 @@
     <% @side_user_ranks.each do |user| %>
       <div class="user-panel">
         <div class="flex mb-2">
-          <%= link_to image_tag(user.image, class: "user-icon user-icon-mini", style: "height: 50px; width: 50px;"), user_path(user) %>
+          <% if user.image? %>
+            <%= link_to image_tag(user.image, class: "user-icon user-icon-mini", style: "height: 50px; width: 50px;"), user_path(user) %>
+          <% else %>
+            <%= link_to image_tag('default_img.png', class: "def-user-icon def-user-icon-mini", style: "height: 50px; width: 50px;"), user_path(user) %>
+          <% end %>
           <p class="user-name mr-auto"><%= link_to "#{user.name}", user_path(user) %></p>
         </div>
         <span id="follow-<%=user.id%>">

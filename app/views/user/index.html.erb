@@ -2,7 +2,11 @@
   <!-- user-panel -->
   <div class="user-panel">
     <div class="mb-2 flex justify-content-between">
-      <%= image_tag @user.image, class: "user-icon user-icon-superbig" %>
+      <% if @user.image? %>
+        <%= image_tag @user.image, class: "user-icon user-icon-superbig" %>
+      <% else %>
+        <%= image_tag 'default_img.png', class: "def-user-icon def-user-icon-superbig" %>
+      <% end %>
       <div class="user-explanation">
         <p class="user-name mr-auto"><%= @user.name %></p>
         <p class=""><%= @user.self_comment %></p>

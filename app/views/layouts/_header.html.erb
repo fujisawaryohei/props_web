@@ -13,12 +13,17 @@
             <%= render 'searches/search_form' %>
           </li>
         </ul>
-          <%= link_to image_tag(current_user.image, class: "user-icon"), user_index_path %>
+          <% if current_user.image? %>
+            <%= link_to image_tag(current_user.image, class: "user-icon"), user_index_path %>
+          <% else %>
+            <%= link_to image_tag('default_img.png', class: "def-user-icon"), user_index_path %>
+          <% end %>
           <%= link_to "投稿", new_post_path, class:"orange-button text-white bg-orange",id:"post-button" %>
       </div>
     </nav>
   </header>
 <% else %>
+  <header class="bg-white fixed-top">
     <div class="header">
       <div class="header-content">
         <%= link_to root_path do%>

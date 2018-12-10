@@ -351,6 +351,8 @@
 .profile-img{
   width: 85px;
   height: 85px;
+  float: none;
+  margin: 1.5rem 0 1.0rem;
 }
 
 .input-for-user{
@@ -391,4 +393,9 @@
 
 .user-edit-column{
   text-align: center;
+}
+
+.userpage .def-user-icon-superbig{
+  width:134px;
+  height:134px;
 }

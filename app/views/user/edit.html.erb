@@ -18,9 +18,9 @@
       <div class="user-panel profile-icon">
         <div class="mb-2">
           <% if @user.image? %>
-            <%= image_tag @user.image, class: "user-icon user-icon-superbig profile-img", id: "user-img-preview" if @user.image? %>
+            <%= image_tag @user.image, class: "user-icon user-icon-superbig profile-img", id: "user-img-preview" %>
           <% else %>
-            <p class="user-icon user-icon-superbig profile-img" id="user-img-preview"></p>
+            <%= image_tag 'default_img.png', class: "def-user-icon profile-img ", id: "user-img-preview" %>
           <% end %>
           <p>
             <%= f.label :image, "プロフィール写真を変更", class: "text-orange profile-edit-btn", for: "select-user-image" %>

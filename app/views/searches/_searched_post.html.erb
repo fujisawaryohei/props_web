@@ -12,7 +12,11 @@
       </div>
       <div class="col-right col-md-9">
         <div class="post-user">
-          <%= link_to image_tag(post.user.image, class: "user-icon user-icon-mini"), user_path(post.user) %>
+          <% if post.user.image? %>
+            <%= link_to image_tag(post.user.image, class: "user-icon user-icon-mini", style: "height: 50px; width: 50px;"), user_path(post.user) %>
+          <% else %>
+            <%= link_to image_tag('default_img.png', class: "def-user-icon def-user-icon-mini", style: "height: 50px; width: 50px;"), user_path(post.user) %>
+          <% end %>
           <p class="user-name text-gray"><a href="#"><%= post.user.name %></a></p>
           <p><%= post.title %></p>
         </div><!-- /post-user -->

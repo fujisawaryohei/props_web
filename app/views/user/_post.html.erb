@@ -9,7 +9,11 @@
     </div>
   </div>
   <div class="post-user flex sp-hidden">
-    <%= link_to image_tag(post.user.image, class: "user-icon user-icon-small"), user_path(post.user) %>
+    <% if post.user.image? %>
+      <%= link_to image_tag(post.user.image, class: "user-icon user-icon-small"), user_path(post.user) %>
+    <% else %>
+      <%= link_to image_tag('default_img.png', class: "def-user-icon def-user-icon-small"), user_path(post.user) %>
+    <% end %>
     <div class="post-info">
       <% if post.user == current_user %>
         <p class="user-name text-gray"><%= post.user.name %></p>
