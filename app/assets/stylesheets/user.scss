@@ -318,8 +318,15 @@
 #profile-submit-btn{
   width: 80px;
   height: 70%;
-  line-height: 50%;
+  line-height: 20px;
   text-align: center;
+}
+
+@media (max-width:767px){
+  #profile-submit-btn{
+    padding: 0;
+    line-height: 30px;
+  }
 }
 
 .profile-table{
@@ -328,6 +335,9 @@
 
 .profile-input{
   width: 80%;
+  border-radius: 10px;
+  border-color: darkgray;
+  border-width: 1px;
 }
 
 #profile-input-self-comment{
@@ -377,4 +387,8 @@
   //   height: 30px;
   //   padding-left: 22px;
   // }
+}
+
+.user-edit-column{
+  text-align: center;
 }
