@@ -29,9 +29,9 @@
               </div>
 
               <div class="action user-content-post-btn" id="post-content-action justify-content-around flex sp-hidden">
-                <%= fa_icon("comment-dots")%><p class="count-beside-btn"><%= post.comments.count %></p></i>
+                <%= fa_icon("comment")%><p class="count-beside-btn"><%= post.comments.count %></p></i>
                 <%= render partial: 'likes/like', locals: { post: post } %>
-                <%= render partial: 'clips/clip', locals: { post: post} %>
+                <%= render partial: 'clips/clip', locals: { post: post } %>
                 <% if current_user_post?(post)%>
                   <%= link_to post_path(id:post.id),method: :delete do %>
                     <%= fa_icon("trash")%></i>

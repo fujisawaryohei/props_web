@@ -9,7 +9,7 @@
       </div>
       <!-------------------------------------------------->
       <div class="user-panel-button">
-        <label for="label1" class="label1" onclick="showButtonContents()"><span class="sp-hidden"><i class="fas fa-ellipsis-v"></i></span></label>
+<!--         <label for="label1" class="label1" onclick="showButtonContents()"><span class="sp-hidden"><i class="fas fa-ellipsis-v"></i></span></label> -->
 <!--         <span class="button-contents" id="makeButtonContents">
           <a href="#">ユーザーを報告</a><br>
           <a href="#">ブロック</a><br>
@@ -17,11 +17,10 @@
         </span> -->
       </div>
       <!-------------------------------------------------->
-
-      <span id="follwing-<%=user.id%>">
-        <%= render partial:'relationships/follow',locals:{user:@user}%>
-      </span>
     </div>
+    <span id="follow-<%=@user.id%>">
+      <%= render partial:'relationships/follow',locals:{user:@user}%>
+    </span>
     <!-- フォロー数 -->
     <div class="follow_follower-number sp-show">
       <p><%= @user.followings.count %><span class="text-light-gray">フォロー中</span>&emsp;<%= @user.followers.count %><span class="text-light-gray">フォロワー</span></p>
