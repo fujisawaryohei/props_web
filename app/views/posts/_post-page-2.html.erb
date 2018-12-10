@@ -8,7 +8,7 @@
         <p class="trend-button"><a href="#" class="modal-trend a-modal">トレンド</a></p>
         <p class="search-button"><a href="#" class="modal-search a-modal">検索</a></p>
       </div>
-      <div class="song-list row sp-hidden">
+      <div class="song-list row sp-show">
         <%= form_tag('/posts/track',html:{onsubmit:'return search();'},method: :post, remote:true) do%>
           <input type="text" name="query" placeholder="曲を検索する">
           <label><i class="fas fa-search"></i></label>
