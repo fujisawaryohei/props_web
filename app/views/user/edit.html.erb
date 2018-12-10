@@ -33,15 +33,15 @@
       <table class="text-left profile-edit-table profile-table">
         <tbody>
           <tr class="border-bottom">
-            <th>ユーザー名</th>
+            <th class="user-edit-column">ユーザー名</th>
             <td><%= f.text_field :name, placeholder: "ニックネーム", class: "profile-input" %></td>
           </tr>
           <tr class="border-bottom">
-            <th>自己紹介</th>
+            <th class="user-edit-column">自己紹介</th>
             <td><%= f.text_area :self_comment, class: "profile-input", id: "profile-input-self-comment" %></td>
           </tr>
           <tr class="border-bottom">
-            <th>メールアドレス</th>
+            <th class="user-edit-column">メールアドレス</th>
             <td><%= f.email_field :email, class: "profile-input" %></td>
           </tr>
           <!-- パスワード -->
