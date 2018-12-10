@@ -22,6 +22,7 @@ Rails.application.routes.draw do
     resources :clips, only: [:create, :destroy]
   end
   post '/posts/track', to: 'posts#track'
+  get '/all_index', to: 'posts#all_index'
   resources :user
   resources :relationships, only: [:create,:destroy]
   resources :comments , only: [:create, :destroy]
