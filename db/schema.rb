@@ -80,7 +80,6 @@ ActiveRecord::Schema.define(version: 20181207162406) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "notified_by_id", null: false
     t.string "name", null: false
     t.string "image"
     t.text "self_comment"
