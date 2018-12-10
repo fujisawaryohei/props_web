@@ -1,6 +1,6 @@
 <div class="modal" id="login-modal">
   <div class="modal-contents" id="login-form">
-    <img class="form-props-logo" src="..." alt="PROPS">
+    <%= image_tag('PROPS_logo.png',class:"props-logo")%>
     <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {id:"sessions",class:"modal-form"}) do |f| %>
 
       <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"bg-gray input-for-user",id:"session-email",placeholder:"メールアドレス" %>
