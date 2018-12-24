@@ -31,7 +31,7 @@ gem 'dotenv-rails'
 gem 'cancancan'
 #アドミンのデータ管理がGUIでできる
 gem 'rails_admin'
-#検索機能が実装できるgem
+ #検索機能が実装できるgem
 gem 'ransack'
 
 gem 'font-awesome-rails'
