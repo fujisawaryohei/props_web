@@ -1,0 +1,15 @@
+<div class="all container">
+  <div class="row">
+    <div class="col-md-8 main">
+      <div class="box bg-white">
+        <p class="ranking-post-title mb-0" >ユーザーランキング</p>
+        <%= render partial: 'user_rank', collection: @user_ranks, as: 'user' %>
+      </div><!-- /box -->
+    </div><!-- /col-md-8 main -->
+
+    <!-- ランキングサイドバー -->
+    <div class="col-md-4 side-bar">
+      <%= render partial: 'sidebars/sidebar_post_ranking' %>
+    </div><!-- /col-md-4 side-bar bg-white -->
+  </div><!-- /row -->
+</div><!-- /container -->

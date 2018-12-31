@@ -1,0 +1,55 @@
+<div class="post-page bg-white container profile-edit all">
+  <% if @user.errors.any? %>
+    <div id="error_explanation" class="alert alert-danger">
+      <ul>
+        <% @user.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <%= form_for(@user) do |f| %>
+    <div class="top-bar flex">
+<!--       <p class="cancel mr-auto"><a href="#" class="text-gray">キャンセル</a></p>
+ --><!--       <p><a href="#" class="orange-button text-white bg-orange save-button">保存</a></p> -->
+      <div class="profile-submit"><%= f.submit "保存", class: "orange-button text-white bg-orange save-button profile-edit-btn", id: "profile-submit-btn" %></div>
+    </div>
+    <hr class="m-0">
+      <div class="user-panel profile-icon">
+        <div class="mb-2">
+          <% if @user.image? %>
+            <%= image_tag @user.image, class: "user-icon user-icon-superbig profile-img", id: "user-img-preview" %>
+          <% else %>
+            <%= image_tag 'default_img.png', class: "def-user-icon profile-img ", id: "user-img-preview" %>
+          <% end %>
+          <p>
+            <%= f.label :image, "プロフィール写真を変更", class: "text-orange profile-edit-btn", for: "select-user-image" %>
+            <%= f.file_field :image, id: "select-user-image" %>
+          </p>
+        </div>
+      </div>
+      <hr class="m-0">
+
+      <table class="text-left profile-edit-table profile-table">
+        <tbody>
+          <tr class="border-bottom">
+            <th class="user-edit-column">ユーザー名</th>
+            <td><%= f.text_field :name, placeholder: "ニックネーム", class: "profile-input" %></td>
+          </tr>
+          <tr class="border-bottom">
+            <th class="user-edit-column">自己紹介</th>
+            <td><%= f.text_area :self_comment, class: "profile-input", id: "profile-input-self-comment" %></td>
+          </tr>
+          <tr class="border-bottom">
+            <th class="user-edit-column">メールアドレス</th>
+            <td><%= f.email_field :email, class: "profile-input" %></td>
+          </tr>
+          <!-- パスワード -->
+    <!--       <tr>
+            <th>***</th>
+            <td>*********</td>
+          </tr> -->
+        </tbody>
+      </table>
+  <% end %>
+</div>

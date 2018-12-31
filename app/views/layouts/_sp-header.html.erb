@@ -1,0 +1,45 @@
+<% if user_signed_in? %>
+  <header class="bg-white fixed-top">
+    <nav class="navbar navbar-expand-md navbar-light header-container">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <%= link_to root_path do%>
+        <%= image_tag('PROPS_logo.png',class:"props-logo")%>
+      <% end %>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li><%= link_to image_tag(current_user.image, class: "user-icon"), user_index_path %>
+          <span><%= current_user.name %></span>
+          </li>
+          <li><%= link_to "投稿", new_post_path, class:"orange-button text-white bg-orange",id:"post-button" %></li>
+          <li class="nav-item active">
+            <%= render 'searches/search_form' %>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+<% else %>
+  <header class="bg-white fixed-top modal-blur">
+    <nav class="navbar navbar-expand-md navbar-light header-container">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    <div class="header">
+      <div class="header-content">
+        <%= link_to root_path do%>
+          <%= image_tag('PROPS_logo.png',class:"props-logo")%>
+        <% end %>
+        </a>
+        <%= render 'searches/search_form' %>
+        <p class="header-left">
+          <button type="button" class="like-a-tag" id="register-btn">新規登録</button>
+          |
+          <button type="button" class="like-a-tag" id="login-btn">ログイン</button>
+        </p>
+      </div>
+     </nav>
+    </div>
+  </header>
+<% end %>

@@ -1,0 +1,27 @@
+<div class="like-clip-btn" id="id_clip-<%= post.id %>">
+  <!-- ユーザがログインしている場合-->
+  <% if user_signed_in? %>
+    <!-- 投稿をすでにクリップしている場合-->
+    <% if post.clips.find_by(user_id: current_user.id) %>
+      <p class="change_to_unclip">
+        <%= link_to post_clip_path(post.clips.find_by(user_id: current_user.id), post_id: post.id), method: :delete, remote: true do %>
+          <!-- このボタンを押すとClip -> Unclipになる -->
+          <i class="fas fa-paperclip text-orange"></i>
+          <p class="count-beside-btn text-orange"><%= Clip.where(post_id: post.id).count %></p>
+        <% end %>
+      </p>
+    <% else %>
+      <!-- 投稿をまだクリップしていない場合-->
+      <p class="change_to_clip">
+        <%= link_to post_clips_path(post_id: post.id), method: :post, remote: true do %>
+          <!-- このボタンを押すとUnclip -> Clipになる -->
+          <i class="fas fa-paperclip"></i>
+          <p class="count-beside-btn"><%= Clip.where(post_id: post.id).count %></p>
+        <% end %>
+      </p>
+    <% end %>
+  <!-- ユーザがログインしていない場合-->
+  <% else %>
+    <i class="fas fa-paperclip"><p class="count-beside-btn"><%= Clip.where(post_id: post.id).count %></p></i>
+  <% end %>
+</div>

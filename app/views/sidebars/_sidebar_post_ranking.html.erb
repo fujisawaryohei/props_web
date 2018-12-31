@@ -1,0 +1,36 @@
+<div class="box bg-white">
+    <div class="ranking-post">
+        <p class="ranking-post-title"><i class="far fa-user"></i>投稿ランキング</p>
+<!--  side-bar 投稿ランキング ここから繰り返し -->
+        <% @side_post_ranks.each do |post| %>
+          <div class="post-panel">
+              <div class="flex">
+                  <p class="post-panel-title mr-auto"><%= post.title %></p>
+                  <% if post.track_image %>
+                    <%= image_tag(post.track_image, class: "post-panel-image")%>
+                  <% else %>
+                    <img src="..." alt="" class="post-panel-image">
+                  <% end %>
+              </div>
+              <div class="action" id="post-panel-action">
+                <%= fa_icon("comment")%><p class="count-beside-btn">0</p>
+                <%= fa_icon("heart") %><p class="count-beside-btn"><%= Like.where(post_id: post.id).count %></p>
+                <%= fa_icon("paperclip") %><p class="count-beside-btn"><%= Clip.where(post_id: post.id).count %></p>
+                <i class="fas fa-external-link-alt"></i>
+              </div><!-- /action -->
+              <div class="flex">
+<!--                 <%= link_to image_tag(post.user.image, class: "user-icon user-icon-mini", id: "post-panel-user-icon"), user_path(post.user) %> -->
+                <% if post.user.image? %>
+                  <%= link_to image_tag(post.user.image, class: "user-icon user-icon-mini", id: "post-panel-user-icon"), user_path(post.user) %>
+                <% else %>
+                  <%= link_to image_tag('default_img.png', class: "def-user-icon", id: "post-panel-user-icon"), user_path(id:post.user.id) %>
+                <% end %>
+                <p class="user-name"><%= link_to "#{post.user.name}", user_path(post.user), id: "post-panel-user-name" %></p>
+              </div>
+              <hr>
+          </div><!-- /post-panel -->
+        <% end %>
+<!--  /side-bar 投稿ランキング ここまで繰り返し -->
+        <%= link_to "もっと見る", rankings_post_ranking_path, class: "more" %>
+      </div><!-- /ranking-post -->
+</div><!-- /box -->

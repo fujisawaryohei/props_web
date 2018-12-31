@@ -1,0 +1,18 @@
+ <% if @params %>
+   <% track_info.each do |track| %>
+    <div class="post-image col-md-3 sp-hidden" id="artist-info<%=@i%>">
+        <img src="<%= track['track_image'] %>" id="track_image<%=@i%>">
+      <div class="song-info text-white sp-hidden">
+        <p class="song-title"><i class="far fa-user"></i><span id="artist_name<%=@i%>"><%= track['artist_name'] %></span></p>
+        <p class="artist"><%=fa_icon('dot-circle')%></i><span id="track_name<%=@i%>"><%= track['track_name'] %></span></p>
+      </div>
+<!-- スマホ-->
+      <div class="sp-song-info sp-show">
+        <p class="sp-song-title text-light-gray"><i class="far fa-user"></i><span id="artist_name<%=@i%>"><%= track['artist_name'] %></span></p>
+        <p class="artist text-light-gray"><%=fa_icon('dot-circle')%><span id="track_name<%=@i%>"><%= track['track_name'] %></span></p>
+      </div>
+    </div>
+
+    <% @i += 1 %>
+   <% end %>
+ <% end %>

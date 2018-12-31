@@ -1,0 +1,25 @@
+<div class="modal" id="login-modal">
+  <div class="modal-contents" id="login-form">
+    <%= image_tag('PROPS_logo.png',class:"props-logo")%>
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {id:"sessions",class:"modal-form"}) do |f| %>
+
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"bg-gray input-for-user",id:"session-email",placeholder:"メールアドレス" %>
+      <label><%= fa_icon("envelope",class:"email")%></label>
+
+      <%= f.password_field :password, autocomplete: "current-password", class:"bg-gray input-for-user", id:"session-password", placeholder:"パスワード"%>
+      <label><%= fa_icon("lock",class:"pass")%></label>
+
+      <%= link_to "パスワードを忘れた場合は",root_path,{id:"forget-pass-btn"}%>
+
+      <div class="field">
+        <% if devise_mapping.rememberable? %>
+          <%= f.check_box :remember_me %>
+          <%= f.label :remember_me %>
+        <% end %>
+      </div>
+
+      <%= f.submit("ログイン",class:"form-submit") %>
+    <% end %>
+  </div>
+    <!-- /modal-contents -->
+ </div>
