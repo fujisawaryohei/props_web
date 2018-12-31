@@ -92,8 +92,8 @@ class PostsController < ApplicationController
   end
 
   def search_track(track_name)
-    client_id = '08f6b6d35a0e4a8cb0b5710475e2e6f4'
-    client_secret = '7d7e993dfaaa4e00b1a518570dd15660'
+    client_id = 'CLIENT_ID'
+    client_secret = 'CLIENT_SECRET'
     RSpotify.authenticate(client_id, client_secret)
       tracks = RSpotify::Track.search(track_name, limit: 12, market: 'JP')
       array = []
